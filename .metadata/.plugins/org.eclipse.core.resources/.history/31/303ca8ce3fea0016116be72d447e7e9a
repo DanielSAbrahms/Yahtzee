@@ -1,0 +1,51 @@
+
+
+/**
+ * @author Daniel
+ *
+ */
+public class Hand {
+	Dice[] die;
+	int rollsLeft;
+	int diceNumber;
+	
+	public Hand(int initialDiceNumber, int initialRollsLeft) {
+		diceNumber = initialDiceNumber;
+		rollsLeft = initialRollsLeft;
+		die = new Dice[diceNumber];
+	}
+	
+	public void rollHand() {
+		for (int i = 0; i < diceNumber; i++) {
+			if (die[i].getKept() != true) {
+				die[i].roll();
+			}
+		}
+	}
+	
+	public int getRollsLeft() {
+		return rollsLeft;
+	}
+	
+	public void setRollsLeft(int newRollsLeft) {
+		rollsLeft = newRollsLeft;
+	}
+	
+	public int getDiceNumber() {
+		return diceNumber;
+	}
+	
+	public void setDiceNumber(int newDiceNumber) {
+		diceNumber = newDiceNumber;
+	}
+	
+	public void displayHand(){
+		System.out.print("Hand: ")
+		for (int i = 0; i < diceNumber; i++) {
+			System.out.print(die[i].getValue())
+		}
+		System.out.println();
+	}
+	
+	
+}

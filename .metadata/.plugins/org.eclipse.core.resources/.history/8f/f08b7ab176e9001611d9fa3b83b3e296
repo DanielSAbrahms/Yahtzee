@@ -1,0 +1,17 @@
+
+
+/**
+ * @author Daniel
+ *
+ */
+public class Hand {
+	Dice[] die;
+	int rollsLeft;
+	int diceNumber;
+	
+	public Hand(int newDiceNumber) {
+		
+	}
+	
+	
+}

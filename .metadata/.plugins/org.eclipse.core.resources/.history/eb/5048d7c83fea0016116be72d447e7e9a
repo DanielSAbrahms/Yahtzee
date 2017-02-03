@@ -1,0 +1,9 @@
+
+public class YahtzeeProject {
+	public static void main(String[] args) {
+		final int rollsPerTurn = 5;
+		final int diceInGame = 3;
+		Hand playerOneHand = new Hand(rollsPerTurn, diceInGame);
+	}
+
+}
