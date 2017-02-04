@@ -56,20 +56,12 @@ public class Hand {
 	
 	public void changeHand() {
 		
-		System.out.print("Y/N for keep: ");
-		String newHand = scan.next();
+		String newHand;
 		
-		try {
-			for (int i = 0; i < diceNumber; i++) {
-				char temp = newHand.charAt(i);
-			}
-			if (newHand.length() > diceNumber) {
-				throw new StringIndexOutOfBoundsException();
-			}
-		} catch (StringIndexOutOfBoundsException e1) {
+		do {
 			System.out.print("Y/N for keep: ");
-			String s = scan.next();
-		}
+			newHand = scan.next();
+		} while (newHand.length() != diceNumber);
 
 		
 		for (int i = 0; i < diceNumber; i++){
