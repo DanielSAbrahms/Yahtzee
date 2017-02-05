@@ -1,0 +1,9 @@
+
+public class ScoreCard {
+
+	ScoreCardLine line[];
+	
+	public ScoreCard() {
+		
+	}
+}
