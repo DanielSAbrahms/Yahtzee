@@ -27,6 +27,11 @@ public class Hand {
 		}
 	}
 	
+	public Dice getDice(int index) {
+		return die[index];
+	}
+
+	
 	public int getRollsLeft() {
 		return rollsLeft;
 	}
@@ -54,8 +59,7 @@ public class Hand {
 		System.out.println();
 	}
 	
-	// @pre: Hand is unchanged
-	// @post: hand is now changed according to "yn string" 
+	
 	public void changeHand() {
 		
 		String newHand;
@@ -71,6 +75,27 @@ public class Hand {
 				die[i].roll();
 			}
 		}
+	}
+	
+	public void sortHand() {
+		Dice temp;
+		for (int i = 0; i < diceNumber - 1; i++) {
+			for (int j = 1; j < diceNumber - i; j++) {
+				if (die[j-1].getValue() > die[j].getValue()) {
+					temp = die[j - 1];
+					die[j - 1] = die[j];
+					die[j] = temp;
+				}
+			}
+		}
+	}
+	
+	public int sum() {
+		int sum = 0;
+		for (int i = 0; i < diceNumber; i++) {
+			sum += die[i].getValue();
+		}
+		return sum;
 	}
 	
 	

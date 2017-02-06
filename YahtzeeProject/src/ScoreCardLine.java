@@ -33,4 +33,16 @@ public class ScoreCardLine {
 	public boolean getUsed() {
 		return used;
 	}
+	
+	public void print(int multiplier) {
+		if (used) {
+			System.out.println("-------------------------------------------------");
+			return;
+		}
+		System.out.print(name + ": ");
+		for (int i = 0 ; i < 20 - name.length(); i++) {
+			System.out.print(" ");
+		}
+		System.out.println(points*multiplier);
+	}
 }
