@@ -1,3 +1,10 @@
+/* 
+ * Author: Daniel Abrahms
+ * Last Edited: 2/3/17
+ * Class: CPSC 224-02
+ * Class: YahtzeeProject
+ * Description: This is the main file. It plays one round of the game using the included function. It will eventually be migrated into another class. 
+ */
 
 public class YahtzeeProject {
 	public static void main(String[] args) {

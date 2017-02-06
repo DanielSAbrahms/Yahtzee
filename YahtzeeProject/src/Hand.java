@@ -1,15 +1,23 @@
 import java.util.Scanner;
 
-/**
- * @author Daniel
- *
+/* 
+ * Author: Daniel Abrahms
+ * Last Edited: 2/5/17
+ * Class: CPSC 224-02
+ * Class: hand
+ * Description: This is the Hand Class. It holds an array of Dice and has a counter for number of rolls left. 
  */
 public class Hand {
+	// the array of dice objects
 	Dice[] die;
+	// the number of rollsLeft in this round
 	int rollsLeft;
+	// The number of Dice in game
 	int diceNumber;
 	Scanner scan = new Scanner(System.in);
 	
+	// constructor for Hand
+	// instantiates array of dice
 	public Hand(int initialDiceNumber, int initialRollsLeft) {
 		diceNumber = initialDiceNumber;
 		rollsLeft = initialRollsLeft;
@@ -19,6 +27,7 @@ public class Hand {
 		}
 	}
 	
+	// rolls each die, unless die's kept is true
 	public void rollHand() {
 		for (int i = 0; i < diceNumber; i++) {
 			if (die[i].getKept() != true) {
@@ -27,27 +36,32 @@ public class Hand {
 		}
 	}
 	
+	// returns the Dice at a given index
 	public Dice getDice(int index) {
 		return die[index];
 	}
 
-	
+	// returns the rollsLeft attribute
 	public int getRollsLeft() {
 		return rollsLeft;
 	}
 	
+	// sets the rollsLeft attribute
 	public void setRollsLeft(int newRollsLeft) {
 		rollsLeft = newRollsLeft;
 	}
 	
+	// gets the diceNumber attribute
 	public int getDiceNumber() {
 		return diceNumber;
 	}
 	
+	// sets the diceNumber attribute
 	public void setDiceNumber(int newDiceNumber) {
 		diceNumber = newDiceNumber;
 	}
 	
+	// prints each die
 	public void displayHand(){
 		System.out.print("Hand: ");
 		for (int i = 0; i < diceNumber; i++) {
@@ -59,7 +73,7 @@ public class Hand {
 		System.out.println();
 	}
 	
-	
+	// prompts user for which die to roll
 	public void changeHand() {
 		
 		String newHand;
@@ -77,6 +91,7 @@ public class Hand {
 		}
 	}
 	
+	// sorts hand from lowest -> highest 
 	public void sortHand() {
 		Dice temp;
 		for (int i = 0; i < diceNumber - 1; i++) {
@@ -90,6 +105,7 @@ public class Hand {
 		}
 	}
 	
+	// returns sum of die's value
 	public int sum() {
 		int sum = 0;
 		for (int i = 0; i < diceNumber; i++) {

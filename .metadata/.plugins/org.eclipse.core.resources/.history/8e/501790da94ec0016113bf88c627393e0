@@ -1,0 +1,50 @@
+import java.util.*;
+/* 
+ * Author: Daniel Abrahms
+ * Last Edited: 2/3/17
+ * Class: CPSC 224-02
+ * Class: Dice
+ * Description: This is the main file. It plays one round of the game using the included function. It will eventually be migrated into another class. 
+ */
+public class Dice {
+	int range;
+	int value;
+	boolean kept;
+	
+	public Dice(int sides){
+		range = sides;
+		kept = false;
+		Random rand = new Random();
+		value = rand.nextInt((range - 1) + 1) + 1;
+		
+	}
+	
+	public void roll(){
+		Random rand = new Random();
+		value = rand.nextInt((range - 1) + 1) + 1;
+	}
+	
+	public void setRange(int newRange) {
+		range = newRange;
+	}
+	
+	public int getRange() {
+		return range;
+	}
+	
+	public void setValue(int newValue) {
+		value = newValue;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	public void setKept(boolean newKept) {
+		kept = newKept;
+	}
+	
+	public boolean getKept() {
+		return kept;
+	}
+	
+}
