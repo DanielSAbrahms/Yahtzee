@@ -9,12 +9,12 @@ import java.util.Scanner;
  */
 public class Hand {
 	// the array of dice objects
-	Dice[] die;
+	private Dice[] die;
 	// the number of rollsLeft in this round
-	int rollsLeft;
+	private int rollsLeft;
 	// The number of Dice in game
-	int diceNumber;
-	Scanner scan = new Scanner(System.in);
+	private int diceNumber;
+	private Scanner scan = new Scanner(System.in);
 	
 	// constructor for Hand
 	// instantiates array of dice
@@ -30,7 +30,7 @@ public class Hand {
 	// rolls each die, unless die's kept is true
 	public void rollHand() {
 		for (int i = 0; i < diceNumber; i++) {
-			if (die[i].getKept() != true) {
+			if (!die[i].getKept()) {
 				die[i].roll();
 			}
 		}
@@ -86,9 +86,11 @@ public class Hand {
 		
 		for (int i = 0; i < diceNumber; i++){
 			if ((newHand.charAt(i)) == ('N') || (newHand.charAt(i)) == ('n')) {
-				die[i].roll();
+				die[i].setKept(false);
 			}
 		}
+		rollHand();
+
 	}
 	
 	// sorts hand from lowest -> highest 
