@@ -4,7 +4,7 @@ import java.util.*;
  * Last Edited: 2/1/17
  * Class: CPSC 224-02
  * Class: Dice
- * Description: This is the Dice Class. It virtualizes a die and its ability to randomly roll within a specified range. 
+ * Description: This is the Dice Class. It visualizes a die and its ability to randomly roll within a specified range.
  */
 public class Dice {
 	// the range of integers that can be rolled
@@ -14,9 +14,10 @@ public class Dice {
 	// whether of not the dice will be rolled
 	boolean kept;
 	
-	// constructor of Dice
-	// sets range attribute
-	// rolls Die
+
+	// @param sides: The number of sides for the Dice
+	// @pre Dice object is Null
+	// @post Dice object has been created with random value within range
 	public Dice(int sides){
 		range = sides;
 		kept = false;

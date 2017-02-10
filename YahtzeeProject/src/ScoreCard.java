@@ -88,7 +88,7 @@ public class ScoreCard {
 		}
 		line[12].print(hand.sum());
 		
-		
+		System.out.println("Max Found: " + maxOfAKind(hand));
 	}
 	
 	// returns the total of given number in given hand
@@ -100,7 +100,26 @@ public class ScoreCard {
 			}
 		}
 		return sum;
-	}	
+	}
+
+	private int maxStraight(Hand hand) {
+	    int maxFound = 0;
+	    hand.sortHand();
+		for (int i = 1; i <= hand.getDiceRange(); i++){
+		    int maxFoundTemp = 0;
+		    for (int j = 0; j < hand.getDiceNumber(); j++) {
+		        if (hand.getDice(j).getValue() == i+j) {
+		            maxFoundTemp++;
+                }
+            }
+            maxFound = Math.max(maxFound, maxFoundTemp);
+        }
+        return maxFound;
+	}
+
+    private int maxOfAKind(Hand hand) {
+
+    }
 	// returns if given hand contains three of kind of given num
 	private boolean isThreeOfKind(int num, Hand hand) {
 		if (totalOfNum(num, hand) == 3) {
@@ -125,37 +144,18 @@ public class ScoreCard {
 	// returns if given hand contains a small straight
 	// @pre: hand is sorted lowest->highest
 	private boolean isSmallStraight(Hand hand) {
-		if (
-				(	
-					hand.getDice(0).getValue() == hand.getDice(1).getValue()-1 && 
-					hand.getDice(1).getValue() == hand.getDice(2).getValue()-1 && 
-					hand.getDice(2).getValue() == hand.getDice(3).getValue()-1 
-				) || ( 
-					hand.getDice(1).getValue() == hand.getDice(2).getValue()-1 && 
-					hand.getDice(2).getValue() == hand.getDice(3).getValue()-1 && 
-					hand.getDice(3).getValue() == hand.getDice(4).getValue()-1 
-				)
-			)   
-		{
-			return true; 
-		}
-		return false;
+		if (maxStraight(hand) > 3) {
+		    return true;
+        }
+        return false;
 	}
 	// returns if given hand contains a large straight
 	// @pre: hand is sorted lowest->highest
 	private boolean isLargeStraight(Hand hand) {
-		if (
-				(	
-					hand.getDice(0).getValue() == hand.getDice(1).getValue()-1 && 
-					hand.getDice(1).getValue() == hand.getDice(2).getValue()-1 && 
-					hand.getDice(2).getValue() == hand.getDice(3).getValue()-1 &&
-					hand.getDice(3).getValue() == hand.getDice(4).getValue()-1
-				) 
-			)   
-		{
-			return true; 
-		}
-		return false;
+		if (maxStraight(hand) > 4) {
+		    return true;
+        }
+        return false;
 	}
 	// returns if given hand contains a full house
 	private boolean isFullHouse(Hand hand) {

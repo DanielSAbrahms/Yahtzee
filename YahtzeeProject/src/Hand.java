@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.lang.*;
+
+import static java.lang.Character.toLowerCase;
 
 /* 
  * Author: Daniel Abrahms
@@ -14,16 +17,19 @@ public class Hand {
 	private int rollsLeft;
 	// The number of Dice in game
 	private int diceNumber;
+	// The number of sides for each dice
+    private int diceRange;
 	private Scanner scan = new Scanner(System.in);
 	
 	// constructor for Hand
 	// instantiates array of dice
-	public Hand(int initialDiceNumber, int initialRollsLeft) {
+	public Hand(int initialDiceNumber, int initialRollsLeft, int newDiceRange) {
 		diceNumber = initialDiceNumber;
 		rollsLeft = initialRollsLeft;
+		diceRange = newDiceRange;
 		die = new Dice[diceNumber];
 		for (int i = 0; i < diceNumber; i++) {
-			die[i] = new Dice(6);
+			die[i] = new Dice(diceRange);
 		}
 	}
 	
@@ -60,8 +66,19 @@ public class Hand {
 	public void setDiceNumber(int newDiceNumber) {
 		diceNumber = newDiceNumber;
 	}
-	
-	// prints each die
+
+   public int getDiceRange(){
+	    return diceRange;
+   }
+
+    public void setDiceRange(int newDiceRange) {
+        diceRange = newDiceRange;
+    }
+
+
+
+
+    // prints each die
 	public void displayHand(){
 		System.out.print("Hand: ");
 		for (int i = 0; i < diceNumber; i++) {
@@ -81,12 +98,12 @@ public class Hand {
 		do {
 			System.out.print("Y/N for keep: ");
 			newHand = scan.next();
-		} while (newHand.length() != diceNumber);
+		} while ((newHand.length() != diceNumber) || (validStringCheck(newHand)));
 
 		
 		for (int i = 0; i < diceNumber; i++){
-			if ((newHand.charAt(i)) == ('N') || (newHand.charAt(i)) == ('n')) {
-				die[i].setKept(false);
+			if (toLowerCase(newHand.charAt(i)) == 'y'){
+				die[i].setKept(true);
 			}
 		}
 		rollHand();
@@ -114,6 +131,24 @@ public class Hand {
 			sum += die[i].getValue();
 		}
 		return sum;
+	}
+
+    private boolean validStringCheck(String str) {
+	    str = str + "t";
+        String[] characters = str.split("[YyNn]", 2);
+        if (characters.length > 1) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean doesValueExist(int valueCheck) {
+		for (int i = 0; i < diceNumber; i++) {
+			if (die[i].getValue() == valueCheck) {
+			    return true;
+            }
+		}
+        return false;
 	}
 	
 	

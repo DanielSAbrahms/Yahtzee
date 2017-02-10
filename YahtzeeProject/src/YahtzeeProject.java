@@ -11,8 +11,9 @@ public class YahtzeeProject {
 		
 		final int rollsPerTurn = 3;
 		final int diceInGame = 5;
+		final int sidesPerDice = 6;
 		
-		Hand playerOneHand = new Hand(diceInGame, rollsPerTurn);
+		Hand playerOneHand = new Hand(diceInGame, rollsPerTurn, sidesPerDice);
 		playerOneHand.displayHand();
 		ScoreCard playerOneScoreCard = new ScoreCard();
 		
