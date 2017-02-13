@@ -13,22 +13,30 @@ public class ScoreCard {
 	
 	// Constructor for ScoreCard
 	// instantiates the array of scorecardlines
-	public ScoreCard() {
-		line = new ScoreCardLine[13];
-		String names[] = {"Aces", "Twos", "Threes", "Fours", "Fives", "Sixes", 
-				"3 of a Kind", "4 of a Kind", "Full House", "Sm. Straight", "Lg. Straight",
-				"Yahtzee", "Chance"};
-		int pointValues[] = {1, 2, 3, 4, 5, 6, 1, 1, 25, 30, 40, 50, 1};
-		
-		for (int i = 0; i < line.length; i++) {
-			line[i] = new ScoreCardLine(names[i], pointValues[i], false);
-		}
+	public ScoreCard(int sidesPerDice) {
+		line = new ScoreCardLine[7+sidesPerDice];
+
+        for (int i = 0; i < sidesPerDice; i++) {
+            line[i] = new ScoreCardLine(String.valueOf(i+1), i+1, false);
+        }
+
+		line[sidesPerDice + 0] = new ScoreCardLine("3 of a Kind", 1, false);
+		line[sidesPerDice + 1] = new ScoreCardLine("4 of a Kind", 1, false);
+		line[sidesPerDice + 2] = new ScoreCardLine("Full House", 25, false);
+		line[sidesPerDice + 3] = new ScoreCardLine("Small Straight", 30, false);
+		line[sidesPerDice + 4] = new ScoreCardLine("Large Straight", 40, false);
+		line[sidesPerDice + 5] = new ScoreCardLine("Yahtzee", 50, false);
+		line[sidesPerDice + 6] = new ScoreCardLine("Chance", 1, false);
+
+
+
 		 
 	}
 	
 	// Checks score using private methods
 	public void checkScore(Hand hand) {
 		hand.sortHand();
+		int sidesPerDice = hand.getDiceRange();
 		
 		boolean threeOfKindPrinted = false;
 		boolean fourOfKindPrinted = false;
@@ -36,59 +44,61 @@ public class ScoreCard {
 
 		
 		System.out.println("Upper Section");
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < sidesPerDice; i++) {
 			line[i].print(totalOfNum(i+1, hand));
 		}
 		
 		System.out.println("Lower Section");
-		for (int i = 0; i < 7; i++) {
+		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isThreeOfKind(i, hand)){
-				line[6].print(hand.sum());
+				line[sidesPerDice + 0].print(hand.sum());
 				threeOfKindPrinted = true;
+				break;
 			}
 		}
 		
 		if (!threeOfKindPrinted) {
-			line[6].print(0);
+			line[sidesPerDice + 0].print(0);
 		}
 		
-		for (int i = 1; i < 7; i++) {
+		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isFourOfKind(i, hand)){
-				line[7].print(hand.sum());
+				line[sidesPerDice + 1].print(hand.sum());
 				fourOfKindPrinted = true;
+				break;
 			}
 		}
 		
 		if (!fourOfKindPrinted) {
-			line[7].print(0);
+			line[sidesPerDice + 1].print(0);
 		}
 		if (isFullHouse(hand)) {
-			line[8].print(1);
+			line[sidesPerDice + 2].print(1);
 		} else {
-			line[8].print(0);
+			line[sidesPerDice + 2].print(0);
 		}
 		if (isSmallStraight(hand)) {
-			line[9].print(1);
+			line[sidesPerDice + 3].print(1);
 		} else {
-			line[9].print(0);
+			line[sidesPerDice + 3].print(0);
 		}
 		if (isLargeStraight(hand)) {
-			line[10].print(1);
+			line[sidesPerDice - 2].print(1);
 		} else {
-			line[10].print(0);
+			line[sidesPerDice + 4].print(0);
 		}
-		for (int i = 0; i < 7; i++) {
+		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isYahtzee(i, hand)){
-				line[11].print(1);
+				line[sidesPerDice + 5].print(1);
 				yahtzeePrinted = true;
+				break;
 			}
 		}
 		if (!yahtzeePrinted) {
-			line[11].print(0);
+			line[sidesPerDice + 5].print(0);
 		}
-		line[12].print(hand.sum());
-		
-		System.out.println("Max Found: " + maxOfAKind(hand));
+		line[sidesPerDice + 6].print(hand.sum());
+
 	}
 	
 	// returns the total of given number in given hand
@@ -109,7 +119,7 @@ public class ScoreCard {
 		    int maxFoundTemp = 0;
 		    for (int j = 0; j < hand.getDiceNumber(); j++) {
 		        if (hand.getDice(j).getValue() == i+j) {
-		            maxFoundTemp++;
+                    maxFoundTemp++;
                 }
             }
             maxFound = Math.max(maxFound, maxFoundTemp);
@@ -117,26 +127,23 @@ public class ScoreCard {
         return maxFound;
 	}
 
-    private int maxOfAKind(Hand hand) {
-
-    }
 	// returns if given hand contains three of kind of given num
 	private boolean isThreeOfKind(int num, Hand hand) {
-		if (totalOfNum(num, hand) == 3) {
+		if (totalOfNum(num, hand) >= 3) {
 			return true;
 		} 
 		return false;
 	}
 	// returns if given hand contains four of kind of given num
 	private boolean isFourOfKind(int num, Hand hand) {
-		if (totalOfNum(num, hand) == 4) {
+		if (totalOfNum(num, hand) >= 4) {
 			return true;
 		}
 		return false;
 	}
 	// returns if given hand contains five of kind of given num
 	private boolean isYahtzee(int num, Hand hand) {
-		if (totalOfNum(num, hand) == 5) {
+		if (totalOfNum(num, hand) >= 5) {
 			return true;
 		}
 		return false;
