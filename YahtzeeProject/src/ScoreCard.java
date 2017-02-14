@@ -1,5 +1,5 @@
 /* 
- * Author: Daniel Abrahms
+ * @author Daniel Abrahms
  * Last Edited: 2/6/17
  * Class: CPSC 224-02
  * Class: ScoreCard
@@ -83,7 +83,7 @@ public class ScoreCard {
 			line[sidesPerDice + 3].print(0);
 		}
 		if (isLargeStraight(hand)) {
-			line[sidesPerDice - 2].print(1);
+			line[sidesPerDice + 4].print(1);
 		} else {
 			line[sidesPerDice + 4].print(0);
 		}
@@ -99,6 +99,7 @@ public class ScoreCard {
 		}
 		line[sidesPerDice + 6].print(hand.sum());
 
+
 	}
 	
 	// returns the total of given number in given hand
@@ -113,15 +114,15 @@ public class ScoreCard {
 	}
 
 	private int maxStraight(Hand hand) {
-	    int maxFound = 0;
-	    hand.sortHand();
-		for (int i = 1; i <= hand.getDiceRange(); i++){
-		    int maxFoundTemp = 0;
-		    for (int j = 0; j < hand.getDiceNumber(); j++) {
-		        if (hand.getDice(j).getValue() == i+j) {
-                    maxFoundTemp++;
-                }
-            }
+        int maxFound = 1;
+        int maxFoundTemp = 1;
+        for(int i = 0; i < hand.getDiceNumber()-1; i++)
+        {
+            if ((hand.getDice(i).getValue()) + 1 == hand.getDice(i + 1).getValue()) {
+                maxFoundTemp++;
+            } else if ((hand.getDice(i).getValue() + 1) < (hand.getDice(i+1).getValue())) {
+            maxFoundTemp = 1;
+        }
             maxFound = Math.max(maxFound, maxFoundTemp);
         }
         return maxFound;
@@ -164,16 +165,15 @@ public class ScoreCard {
         }
         return false;
 	}
-	// returns if given hand contains a full house
+
+	 /*
+	 @pre Hand is sorted
+     @post Hand is unchanged
+     @param hand, a custom Hand class object
+     @return boolean value on whether hand contains a Full House
+     @see isFullHouse
+     */
 	private boolean isFullHouse(Hand hand) {
-		if (hand.getDice(0).getValue() == hand.getDice(1).getValue() && hand.getDice(1).getValue() == hand.getDice(2).getValue()
-				&& hand.getDice(3).getValue() == hand.getDice(4).getValue() && hand.getDice(2).getValue() != hand.getDice(3).getValue()) {
-			return true;
-		}
-		if (hand.getDice(2).getValue() == hand.getDice(3).getValue() && hand.getDice(3).getValue() == hand.getDice(4).getValue()
-				&& hand.getDice(0).getValue() == hand.getDice(1).getValue() && hand.getDice(1).getValue() != hand.getDice(2).getValue()) {
-			return true;
-		}
-		return false; 
+
 	}
 }

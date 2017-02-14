@@ -8,10 +8,11 @@
 
 public class YahtzeeProject {
 	public static void main(String[] args) {
-		
-		final int rollsPerTurn = 1;
-		final int diceInGame = 100;
-		final int sidesPerDice = 3;
+
+		int sidesPerDice = 6;
+		int diceInGame = 5;
+		int rollsPerTurn = 3;
+
 		
 		Hand playerOneHand = new Hand(diceInGame, rollsPerTurn, sidesPerDice);
 		playerOneHand.displayHand();
