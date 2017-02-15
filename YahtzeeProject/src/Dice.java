@@ -1,17 +1,14 @@
 import java.util.*;
 /* 
- * Author: Daniel Abrahms
- * Last Edited: 2/1/17
+ * @author: Daniel Abrahms
+ * Last Edited: 2/14/17
  * Class: CPSC 224-02
  * Class: Dice
  * Description: This is the Dice Class. It visualizes a die and its ability to randomly roll within a specified range.
  */
 public class Dice {
-	// the range of integers that can be rolled
 	int range;
-	// the current result of rolling the die
 	int value;
-	// whether of not the dice will be rolled
 	boolean kept;
 	
 
@@ -23,41 +20,40 @@ public class Dice {
 		kept = false;
 		Random rand = new Random();
 		value = rand.nextInt((range - 1) + 1) + 1;
-		
 	}
 	
-	// assigns value a new random int according to range 
+	// @post value attribute is assigned a random value within range
 	public void roll(){
 		Random rand = new Random();
 		value = rand.nextInt((range - 1) + 1) + 1;
 	}
 	
-	// sets the range attribute
+	// @param newRange: the int for range attribute to be set to
 	public void setRange(int newRange) {
 		range = newRange;
 	}
 	
-	// returns the range attribute
+	// @return returns the range attribute
 	public int getRange() {
 		return range;
 	}
-	
-	// sets the value attribute
+
+	// @param newValue: the int for value attribute to be set to
 	public void setValue(int newValue) {
 		value = newValue;
 	}
-	
-	// returns the value attribute
+
+	// @return returns the value attribute
 	public int getValue() {
 		return value;
 	}
 	
-	// sets the kept attribute
+	// @param newKept: the boolean for kept attribute to be set to
 	public void setKept(boolean newKept) {
 		kept = newKept;
 	}
 	
-	// returns the kept attribute
+	// @return returns the kept attribute
 	public boolean getKept() {
 		return kept;
 	}

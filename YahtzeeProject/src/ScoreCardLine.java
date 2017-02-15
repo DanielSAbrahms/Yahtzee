@@ -1,6 +1,6 @@
 /* 
  * Author: Daniel Abrahms
- * Last Edited: 2/5/17
+ * Last Edited: 2/14/17
  * Class: CPSC 224-02
  * Class: ScoreCardLine
  * Description: This is the ScoreCardLine Class. It has a name, points, and used factor. 

@@ -4,25 +4,26 @@ import java.lang.*;
 import static java.lang.Character.toLowerCase;
 
 /* 
- * Author: Daniel Abrahms
- * Last Edited: 2/5/17
+ * @author: Daniel Abrahms
+ * Last Edited: 2/14/17
  * Class: CPSC 224-02
  * Class: hand
  * Description: This is the Hand Class. It holds an array of Dice and has a counter for number of rolls left. 
  */
 public class Hand {
-	// the array of dice objects
 	private Dice[] die;
-	// the number of rollsLeft in this round
 	private int rollsLeft;
-	// The number of Dice in game
 	private int diceNumber;
-	// The number of sides for each dice
     private int diceRange;
 	private Scanner scan = new Scanner(System.in);
-	
-	// constructor for Hand
-	// instantiates array of dice
+
+	/*
+	@pre Hand object is null
+	@post Hand object is created and die attribute is initialized
+	@param initialDiceNumber: the number of dice in the game
+	@param initialRollsLeft: the number of rolls left in the game
+	@param newDiceRange: the number of sides per dice
+	 */
 	public Hand(int initialDiceNumber, int initialRollsLeft, int newDiceRange) {
 		diceNumber = initialDiceNumber;
 		rollsLeft = initialRollsLeft;
@@ -33,7 +34,8 @@ public class Hand {
 		}
 	}
 	
-	// rolls each die, unless die's kept is true
+	// @pre: hand has been initialized and kept values fot each dice are set
+    // @post: each dice in hand is rolled if their kept attribute is false
 	public void rollHand() {
 		for (int i = 0; i < diceNumber; i++) {
 			if (!die[i].getKept()) {
@@ -42,35 +44,38 @@ public class Hand {
 		}
 	}
 	
-	// returns the Dice at a given index
+	// @return the Dice at a given index
+    // @param index: value between 0-(diceNumber-1)
 	public Dice getDice(int index) {
 		return die[index];
 	}
 
-	// returns the rollsLeft attribute
+	// @return the rollsLeft attribute
 	public int getRollsLeft() {
 		return rollsLeft;
 	}
 	
-	// sets the rollsLeft attribute
+	// @param newRollsLeft: the value of how many rolls are left in the lane
 	public void setRollsLeft(int newRollsLeft) {
 		rollsLeft = newRollsLeft;
 	}
-	
-	// gets the diceNumber attribute
+
+    // @return the diceNumber attribute
 	public int getDiceNumber() {
 		return diceNumber;
 	}
-	
-	// sets the diceNumber attribute
+
+    // @param newDiceNumber: the value of how many dice are in play
 	public void setDiceNumber(int newDiceNumber) {
 		diceNumber = newDiceNumber;
 	}
 
+    // @return the diceRange attribute
    public int getDiceRange(){
 	    return diceRange;
    }
 
+    // @param newDiceRange: the value of how many sides per dice
     public void setDiceRange(int newDiceRange) {
         diceRange = newDiceRange;
     }

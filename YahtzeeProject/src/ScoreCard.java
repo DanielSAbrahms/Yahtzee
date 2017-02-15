@@ -1,6 +1,6 @@
 /* 
  * @author Daniel Abrahms
- * Last Edited: 2/6/17
+ * Last Edited: 2/14/17
  * Class: CPSC 224-02
  * Class: ScoreCard
  * Description: This is the ScoreCard Class. It has an array of ScoreCardLines. 
@@ -8,11 +8,13 @@
  */
 public class ScoreCard {
 
-	// the arrays of ScoreCardLines
 	ScoreCardLine line[];
 	
-	// Constructor for ScoreCard
-	// instantiates the array of scorecardlines
+	/*
+	@pre ScoreCard object is null
+	@post ScoreCard object has been created
+	@param sidesPerDice: the number of sides per dice
+	 */
 	public ScoreCard(int sidesPerDice) {
 		line = new ScoreCardLine[7+sidesPerDice];
 
@@ -27,13 +29,10 @@ public class ScoreCard {
 		line[sidesPerDice + 4] = new ScoreCardLine("Large Straight", 40, false);
 		line[sidesPerDice + 5] = new ScoreCardLine("Yahtzee", 50, false);
 		line[sidesPerDice + 6] = new ScoreCardLine("Chance", 1, false);
-
-
-
-		 
 	}
 	
-	// Checks score using private methods
+	// @print: Every possible score has been printed
+    // @param hand: hand object that has been initiated
 	public void checkScore(Hand hand) {
 		hand.sortHand();
 		int sidesPerDice = hand.getDiceRange();
@@ -102,7 +101,10 @@ public class ScoreCard {
 
 	}
 	
-	// returns the total of given number in given hand
+	/* @param num: int value of what number to check total of
+	   @param hand: hand object that has been initiated
+	   @return int value of total number of times that num exists in hand
+	 */
 	private int totalOfNum(int num, Hand hand) {
 		int sum = 0;
 		for (int i = 0; i < hand.getDiceNumber(); i++) {
@@ -113,6 +115,10 @@ public class ScoreCard {
 		return sum;
 	}
 
+    /*
+       @param hand: hand object that has been initiated
+       @return int the longest straight that exists within hand
+     */
 	private int maxStraight(Hand hand) {
         int maxFound = 1;
         int maxFoundTemp = 1;
@@ -128,28 +134,38 @@ public class ScoreCard {
         return maxFound;
 	}
 
-	// returns if given hand contains three of kind of given num
+    /* @param num: int value of what number to check
+       @param hand: hand object that has been initiated
+       @return boolean value of whether a three of num exists in hand
+     */
 	private boolean isThreeOfKind(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 3) {
 			return true;
 		} 
 		return false;
 	}
-	// returns if given hand contains four of kind of given num
+	/* @param num: int value of what number to check
+       @param hand: hand object that has been initiated
+       @return boolean value of whether a four of num exists in hand
+     */
 	private boolean isFourOfKind(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 4) {
 			return true;
 		}
 		return false;
 	}
-	// returns if given hand contains five of kind of given num
+
+    /* @param num: int value of what number to check
+       @param hand: hand object that has been initiated
+       @return boolean value of whether a five of num exists in hand
+     */
 	private boolean isYahtzee(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 5) {
 			return true;
 		}
 		return false;
 	}
-	// returns if given hand contains a small straight
+	// @return boolean value if given hand contains a small straight
 	// @pre: hand is sorted lowest->highest
 	private boolean isSmallStraight(Hand hand) {
 		if (maxStraight(hand) > 3) {
@@ -157,8 +173,8 @@ public class ScoreCard {
         }
         return false;
 	}
-	// returns if given hand contains a large straight
-	// @pre: hand is sorted lowest->highest
+    // @return boolean value if given hand contains a large straight
+    // @pre: hand is sorted lowest->highest
 	private boolean isLargeStraight(Hand hand) {
 		if (maxStraight(hand) > 4) {
 		    return true;
@@ -174,6 +190,6 @@ public class ScoreCard {
      @see isFullHouse
      */
 	private boolean isFullHouse(Hand hand) {
-
+		return false;
 	}
 }
