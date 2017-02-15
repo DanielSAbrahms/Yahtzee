@@ -88,24 +88,15 @@ public class SaveFile {
     public int getSidesPerDice(){
         return sidesPerDice;
     }
-    // @param newSidesPerDice: int value of how many sides per dice
-    public void setSidesPerDice(int newSidesPerDice) {
-        sidesPerDice = newSidesPerDice;
-    }
+
     // @return the attribute diceInGame
     public int getDiceInGame(){
         return diceInGame;
     }
-    // @param newSidesPerDice: int value of how many dice in game
-    public void setDiceInGame(int newDiceInGame) {
-        diceInGame = newDiceInGame;
-    }
+
     // @return the attribute rollsPerTurn
     public int getRollsPerTurn(){
         return rollsPerTurn;
     }
-    // @param newSidesPerDice: int value of how many rolls per turn
-    public void setRollsPerTurn(int newRollsPerTurn) {
-        rollsPerTurn = newRollsPerTurn;
-    }
+
 }

@@ -41,13 +41,16 @@ public class ScoreCard {
 		boolean fourOfKindPrinted = false;
 		boolean yahtzeePrinted = false;
 
-		
+		System.out.println("=============================================");
 		System.out.println("Upper Section");
+		System.out.println("=============================================");
 		for (int i = 0; i < sidesPerDice; i++) {
 			line[i].print(totalOfNum(i+1, hand));
 		}
-		
+
+		System.out.println("=============================================");
 		System.out.println("Lower Section");
+		System.out.println("=============================================");
 		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isThreeOfKind(i, hand)){
 				line[sidesPerDice + 0].print(hand.sum());
@@ -98,7 +101,7 @@ public class ScoreCard {
 		}
 		line[sidesPerDice + 6].print(hand.sum());
 
-
+		System.out.println("=============================================");
 	}
 	
 	/* @param num: int value of what number to check total of

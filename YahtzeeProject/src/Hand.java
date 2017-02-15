@@ -80,10 +80,7 @@ public class Hand {
         diceRange = newDiceRange;
     }
 
-
-
-
-    // prints each die
+    // @print displays every dice
 	public void displayHand(){
 		System.out.print("Hand: ");
 		for (int i = 0; i < diceNumber; i++) {
@@ -95,7 +92,7 @@ public class Hand {
 		System.out.println();
 	}
 	
-	// prompts user for which die to roll
+	// @post prompts user for which die to keep, sets attributes accordingly
 	public void changeHand() {
 		
 		String newHand;
@@ -115,7 +112,7 @@ public class Hand {
 
 	}
 	
-	// sorts hand from lowest -> highest 
+	// @post the hand has been sorted from low to high
 	public void sortHand() {
 		Dice temp;
 		for (int i = 0; i < diceNumber - 1; i++) {
@@ -129,7 +126,7 @@ public class Hand {
 		}
 	}
 	
-	// returns sum of die's value
+	// @return the sum of the entire hand's value
 	public int sum() {
 		int sum = 0;
 		for (int i = 0; i < diceNumber; i++) {
@@ -138,6 +135,8 @@ public class Hand {
 		return sum;
 	}
 
+	// @param str: a string value
+    // @return boolean value if str contains just a valid string
     private boolean validStringCheck(String str) {
 	    str = str + "t";
         String[] characters = str.split("[YyNn]", 2);
@@ -147,15 +146,5 @@ public class Hand {
         return true;
     }
 
-    public boolean doesValueExist(int valueCheck) {
-		for (int i = 0; i < diceNumber; i++) {
-			if (die[i].getValue() == valueCheck) {
-			    return true;
-            }
-		}
-        return false;
-	}
-
-	
 	
 }
