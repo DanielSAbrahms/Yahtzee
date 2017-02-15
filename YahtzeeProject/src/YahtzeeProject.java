@@ -52,7 +52,9 @@ public class YahtzeeProject {
 		
 		for (int i = 1; i < rollsPerTurn; i++) {
 			
-			playerOneHand.changeHand();
+			if (!playerOneHand.changeHand()) {
+			    break;
+            }
 			playerOneHand.displayHand();
 		}
 		

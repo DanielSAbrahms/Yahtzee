@@ -93,8 +93,12 @@ public class Hand {
 	}
 	
 	// @post prompts user for which die to keep, sets attributes accordingly
-	public void changeHand() {
-		
+	// @return boolean value of whether or not hand has been changed
+	public boolean changeHand() {
+		String escapeString = "";
+		for (int i = 0; i < diceNumber; i++) {
+			escapeString+="y";
+		}
 		String newHand;
 		
 		do {
@@ -102,13 +106,17 @@ public class Hand {
 			newHand = scan.next();
 		} while ((newHand.length() != diceNumber) || (validStringCheck(newHand)));
 
-		
+		if (newHand.toLowerCase().equals(escapeString)){
+			return false;
+		}
+
 		for (int i = 0; i < diceNumber; i++){
 			if (toLowerCase(newHand.charAt(i)) == 'y'){
 				die[i].setKept(true);
 			}
 		}
 		rollHand();
+		return true;
 
 	}
 	
