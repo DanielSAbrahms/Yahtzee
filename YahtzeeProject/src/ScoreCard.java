@@ -189,7 +189,26 @@ public class ScoreCard {
      @return boolean value on whether hand contains a Full House
      @see isFullHouse
      */
-	private boolean isFullHouse(Hand hand) {
-		return false;
-	}
+     private boolean isFullHouse(Hand hand) {
+         boolean fullHouseFound = false;
+         boolean threeFound = false;
+         boolean twoFound = false;
+         int counter ;
+         for (int i = 1; i <=hand.getDiceRange(); i++) {
+             counter = 0;
+             for (int j = 0; j < hand.getDiceNumber(); j++)
+             {
+                 if (hand.getDice(j).getValue() == i)
+                     counter++;
+             }
+             if (counter == 2)
+                 twoFound = true;
+             if (counter == 3)
+                 threeFound = true;
+         }
+         if (twoFound && threeFound) {
+             fullHouseFound = true;
+         }
+         return fullHouseFound;
+     }
 }

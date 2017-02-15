@@ -14,44 +14,47 @@ public class ScoreCardLine {
 	// whether or not the SscoreCardLine has been used this game. 
 	boolean used;
 	
-	// Constructor for ScoreCardLine, sets name, points, and used attributes
+	/* @param newName: String value of name attribute
+	   @param newPoints: int value of points attribute
+	   @param newUsed: boolean value of used attribute
+	 */
 	public ScoreCardLine(String newName, int newPoints, boolean newUsed) {
 		name = newName;
 		points = newPoints;
 		used = newUsed;
 	}
-	
-	// sets the Name attribute
+
+    // @param newName: String value of the name attribute
 	public void setName(String newName) {
 		name = newName;
 	}
-	
-	// returns the name attribute
+
+    // @return the attribute name
 	public String getName() {
 		return name;
 	}
 	
-	// sets the points attribute
+	// @param newPoints: int value of points attribute
 	public void setPoints(int newPoints) {
 		points = newPoints;
 	}
-	
-	// returns the points attribute
+
+    // @return the attribute points
 	public int getPoints() {
 		return points;
 	}
 	
-	// sets the used attribute
+	// @param newUsed: boolean value of used attribute
 	public void setUsed(boolean newUsed) {
 		used = newUsed;
 	}
-	
-	// gets the used attribute
+
+    // @return the attribute used
 	public boolean getUsed() {
 		return used;
 	}
 	
-	// prints the points possible for the multiplier given to the scorecardline
+	// @print the points possible for the multiplier given to the scorecardline
 	// @param: multiplier should be 0 for failed check of scorecardline qualification (i.e. scorecardline is fullhouse, hand failed this qualification) 
 	public void print(int multiplier) {
 		if (used) {
