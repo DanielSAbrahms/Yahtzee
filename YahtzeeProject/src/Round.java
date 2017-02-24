@@ -14,7 +14,7 @@ public class Round {
         Scanner scan = new Scanner(System.in);
         for (int i = 1; i < rollsPerTurn; i++) {
 
-
+            System.out.println("Enter S to display ScoreCard");
             if (!playerHand.changeHand()) {
                 break;
             }
@@ -22,36 +22,75 @@ public class Round {
         }
 
         playerScoreCard.checkScore(playerHand);
-        System.out.println("What line would you like to use?");
-        String lineUsed = scan.next();
-        switch (lineUsed.toLowerCase()) {
-            case "3k":
-                playerScoreCard.getLine(diceRange + 0).setUsed(true);
-                break;
-            case "4k":
-                playerScoreCard.getLine(diceRange + 1).setUsed(true);
-                break;
-            case "fh":
-                playerScoreCard.getLine(diceRange + 2).setUsed(true);
-                break;
-            case "ss":
-                playerScoreCard.getLine(diceRange + 3).setUsed(true);
-                break;
-            case "ls":
-                playerScoreCard.getLine(diceRange + 4).setUsed(true);
-                break;
-            case "ya":
-                playerScoreCard.getLine(diceRange + 5).setUsed(true);
-                break;
-            case "ch":
-                playerScoreCard.getLine(diceRange + 6).setUsed(true);
-                break;
+        while (true) {
+            System.out.println("What line would you like to use?");
+            String lineUsed = scan.next();
+            System.out.println(lineUsed.toLowerCase());
+            switch (lineUsed.toLowerCase()) {
+                case "3k":
+                    if (playerScoreCard.getLine(diceRange + 0).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 0).setUsed(true);
+                    return;
+                case "4k":
+                    if (playerScoreCard.getLine(diceRange + 1).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 1).setUsed(true);
+                    return;
+                case "fh":
+                    if (playerScoreCard.getLine(diceRange + 2).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 2).setUsed(true);
+                    return;
+                case "ss":
+                    if (playerScoreCard.getLine(diceRange + 3).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 3).setUsed(true);
+                    return;
+                case "ls":
+                    if (playerScoreCard.getLine(diceRange + 4).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 4).setUsed(true);
+                    return;
+                case "ya":
+                    if (playerScoreCard.getLine(diceRange + 5).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 5).setUsed(true);
+                    return;
+                case "ch":
+                    if (playerScoreCard.getLine(diceRange + 6).getUsed() == true) {
+                        System.out.println("Line has already been used, please choose another.");
+                        continue;
+                    }
+                    playerScoreCard.getLine(diceRange + 6).setUsed(true);
+                    return;
+            }
+            try {
+                Integer.valueOf(lineUsed);
+            } catch (java.lang.NumberFormatException m) {
+                System.out.println("Incorrect input data, please try again.");
+                continue;
+            }
+                    for (int i = 0; i < diceRange; i++) {
+                        if (Integer.valueOf(lineUsed) == i + 1) {
+                            playerScoreCard.getLine(i).setUsed(true);
+                            return;
+                        }
 
-        }
-        for (int i = 0; i < diceRange; i++) {
-            if ( == 1)
-
-        }
+                    }
+            }
 
     }
 }

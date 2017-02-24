@@ -48,13 +48,16 @@ public class YahtzeeProject {
         ScoreCard playerOneScoreCard = new ScoreCard(sidesPerDice);
 
 
-		while (!playerOneScoreCard.finished()) {
+		while (playerOneScoreCard.howManyLeft() != 0) {
             Hand playerOneHand = new Hand(diceInGame, rollsPerTurn, sidesPerDice);
             playerOneHand.displayHand();
 
             Round r = new Round("Player 1", playerOneScoreCard, playerOneHand);
             r.playRound(rollsPerTurn, sidesPerDice);
+            System.out.println("You have " + playerOneScoreCard.howManyLeft() + " lines left");
         }
+
+        playerOneScoreCard.showScoreCard(sidesPerDice);
 
 		System.out.println("Game Over");
 	}

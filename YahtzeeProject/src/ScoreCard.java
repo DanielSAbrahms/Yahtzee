@@ -41,83 +41,112 @@ public class ScoreCard {
 		boolean fourOfKindPrinted = false;
 		boolean yahtzeePrinted = false;
 
-		System.out.println("=============================================");
+		System.out.println("====================");
 		System.out.println("Upper Section");
-		System.out.println("=============================================");
+		System.out.println("====================");
 		for (int i = 0; i < sidesPerDice; i++) {
-			line[i].print(totalOfNum(i+1, hand));
+			line[i].printUnused(totalOfNum(i+1, hand));
 		}
 
-		System.out.println("=============================================");
+		System.out.println("====================");
 		System.out.println("Lower Section");
-		System.out.println("=============================================");
+		System.out.println("====================");
 		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isThreeOfKind(i, hand)){
-				line[sidesPerDice + 0].print(hand.sum());
+				line[sidesPerDice + 0].printUnused(hand.sum());
 				threeOfKindPrinted = true;
 				break;
 			}
 		}
 		
 		if (!threeOfKindPrinted) {
-			line[sidesPerDice + 0].print(0);
+			line[sidesPerDice + 0].printUnused(0);
 		}
 		
 		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isFourOfKind(i, hand)){
-				line[sidesPerDice + 1].print(hand.sum());
+				line[sidesPerDice + 1].printUnused(hand.sum());
 				fourOfKindPrinted = true;
 				break;
 			}
 		}
 		
 		if (!fourOfKindPrinted) {
-			line[sidesPerDice + 1].print(0);
+			line[sidesPerDice + 1].printUnused(0);
 		}
 		if (isFullHouse(hand)) {
-			line[sidesPerDice + 2].print(1);
+			line[sidesPerDice + 2].printUnused(1);
 		} else {
-			line[sidesPerDice + 2].print(0);
+			line[sidesPerDice + 2].printUnused(0);
 		}
 		if (isSmallStraight(hand)) {
-			line[sidesPerDice + 3].print(1);
+			line[sidesPerDice + 3].printUnused(1);
 		} else {
-			line[sidesPerDice + 3].print(0);
+			line[sidesPerDice + 3].printUnused(0);
 		}
 		if (isLargeStraight(hand)) {
-			line[sidesPerDice + 4].print(1);
+			line[sidesPerDice + 4].printUnused(1);
 		} else {
-			line[sidesPerDice + 4].print(0);
+			line[sidesPerDice + 4].printUnused(0);
 		}
 		for (int i = 1; i <= sidesPerDice; i++) {
 			if (isYahtzee(i, hand)){
-				line[sidesPerDice + 5].print(1);
+				line[sidesPerDice + 5].printUnused(1);
 				yahtzeePrinted = true;
 				break;
 			}
 		}
 		if (!yahtzeePrinted) {
-			line[sidesPerDice + 5].print(0);
+			line[sidesPerDice + 5].printUnused(0);
 		}
-		line[sidesPerDice + 6].print(hand.sum());
+		line[sidesPerDice + 6].printUnused(hand.sum());
 
-		System.out.println("=============================================");
+		System.out.println("====================");
 	}
 
-	public boolean finished() {
-		boolean isFinished = true;
+	public int howManyLeft() {
+		int count = 0;
 		for (int i = 0; i < line.length; i++) {
 			if (!line[i].getUsed()) {
-			    isFinished = false;
+			    count++;
             }
 		}
-		return isFinished;
+		return count;
 	}
 
 	public ScoreCardLine getLine(int index) {
 	    return line[index];
     }
-	
+
+    public void showScoreCard(int diceRange) {
+	    int subTotal = 0;
+	    int lowerTotal = 0;
+	    int bonus = 0;
+	    System.out.println("========================");
+	    System.out.println("Line            Score    ");
+        for (int i = 0; i < diceRange + 7; i++) {
+            if (i < diceRange) subTotal+=line[i].getPointsEarned();
+            if (i == diceRange) {
+                System.out.println("=======================");
+                System.out.println("Sub Total:            " + subTotal);
+                System.out.print("Bonus:                ");
+                if (calculateBonus(diceRange)){
+                    bonus = 35;
+                    System.out.print(bonus);
+                }
+                System.out.println();
+            }
+            if (i >= diceRange) lowerTotal+=line[i].getPointsEarned();
+            line[i].printUsed();
+            if (i == diceRange+6) {
+                System.out.println("=======================");
+                System.out.println("Lower Total:          " + lowerTotal);
+                System.out.println("=======================");
+                System.out.println("Grand Total:          " + (lowerTotal+subTotal+bonus));
+            }
+
+        }
+    }
 	/* @param num: int value of what number to check total of
 	   @param hand: hand object that has been initiated
 	   @return int value of total number of times that num exists in hand
@@ -227,6 +256,15 @@ public class ScoreCard {
              fullHouseFound = true;
          }
          return fullHouseFound;
+     }
+
+     private boolean calculateBonus(int diceRange) {
+         int sum = 0;
+         for (int i = 0; i < diceRange+7; i++) {
+             sum += line[i].getPointsEarned();
+         }
+         if (sum >= 63) return true;
+         return false;
      }
 
 }
