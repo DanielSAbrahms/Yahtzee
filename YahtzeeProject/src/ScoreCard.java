@@ -104,6 +104,9 @@ public class ScoreCard {
 		System.out.println("====================");
 	}
 
+	/*
+	@return int of how many score card lines havent been used
+	 */
 	public int howManyLeft() {
 		int count = 0;
 		for (int i = 0; i < line.length; i++) {
@@ -114,10 +117,18 @@ public class ScoreCard {
 		return count;
 	}
 
+	/*
+	@return scoreCardLine at the index
+	@param the index you want the scorecardline at
+	 */
 	public ScoreCardLine getLine(int index) {
 	    return line[index];
     }
 
+    /*
+    @param diceRange: the int of how many sides are per dice
+    @print The scorecard with titles, uses - for those unused
+     */
     public void showScoreCard(int diceRange) {
 	    int subTotal = 0;
 	    int lowerTotal = 0;
@@ -258,6 +269,11 @@ public class ScoreCard {
          return fullHouseFound;
      }
 
+
+     /*
+     @param diceRange: the number of sides per dice
+     @return whether or not the 63 grand total has been reached
+      */
      private boolean calculateBonus(int diceRange) {
          int sum = 0;
          for (int i = 0; i < diceRange+7; i++) {

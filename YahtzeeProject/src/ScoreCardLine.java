@@ -83,11 +83,18 @@ public class ScoreCardLine {
 
 	}
 
+	/*
+
+	 */
 	public void printUsed() {
         System.out.print(name + ": ");
         for (int i = 0 ; i < 20 - name.length(); i++) {
             System.out.print(" ");
         }
-        System.out.println(pointsEarned);
+        if (used && points==0) {
+			System.out.println("-");
+		} else {
+			System.out.println(pointsEarned);
+		}
     }
 }
