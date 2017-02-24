@@ -12,13 +12,12 @@ public class Round {
     private ScoreCard playerScoreCard;
     private Hand playerHand;
 
-    /*
-	@pre round object is null
-	@post round object has been created and ready to run
-	@param newPlayerName: String of whatever the name of the player will be
-	@param newPlayerScoreCard: the scorecard of the player
-	@param newPlayerHand: the hand of the player
-	@see Round
+    /**
+	 * round object has been created and ready to run
+	 * @param newPlayerName- String of whatever the name of the player will be
+     * @param newPlayerScoreCard- the scorecard of the player
+     * @param newPlayerHand- the hand of the player
+     * @see Round
 	 */
     public Round(String newPlayerName, ScoreCard newPlayerScoreCard, Hand newPlayerHand) {
         playerHand = newPlayerHand;
@@ -26,10 +25,9 @@ public class Round {
         playerName = newPlayerName;
     }
 
-    /*
-        @param rollsPerTurn: the number of rolls in a given turn
-        @param diceRange: the number of sides per dice
-        @see playRound
+    /**
+        @param rollsPerTurn- the number of rolls in a given turn
+        @param diceRange- the number of sides per dice
      */
     public void playRound(int rollsPerTurn, int diceRange) {
         Scanner scan = new Scanner(System.in);

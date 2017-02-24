@@ -1,5 +1,5 @@
 import java.util.*;
-/* 
+/**
  * @author: Daniel Abrahms
  * Last Edited: 2/14/17
  * Class: CPSC 224-02
@@ -12,7 +12,7 @@ public class Dice {
 	boolean kept;
 	
 
-	// @param sides: The number of sides for the Dice
+	// @param sides- The number of sides for the Dice
 	// @pre Dice object is Null
 	// @post Dice object has been created with random value within range
 	// @see Dice
@@ -29,39 +29,47 @@ public class Dice {
 		Random rand = new Random();
 		value = rand.nextInt((range - 1) + 1) + 1;
 	}
-	
-	// @param newRange: the int for range attribute to be set to
-	// @see setRange
+
+	/**
+	 * @param newRange- the int for range attribute to be set to
+	 */
+
 	public void setRange(int newRange) {
 		range = newRange;
 	}
-	
-	// @return returns the range attribute
-	// @see getRange
+
+	/**
+	 * @return returns the range attribute
+
+	 */
 	public int getRange() {
 		return range;
 	}
 
-	// @param newValue: the int for value attribute to be set to
-	// @see setValue
+	/**
+	 * @param newValue- the int for value attribute to be set to
+	 */
 	public void setValue(int newValue) {
 		value = newValue;
 	}
 
-	// @return returns the value attribute
-	// @see getValue
+	/**
+	 * @return returns the value attribute
+	*/
 	public int getValue() {
 		return value;
 	}
-	
-	// @param newKept: the boolean for kept attribute to be set to
-	// @see setKept
+
+	/**
+	 * @param newKept- the boolean for kept attribute to be set to
+ 	 */
 	public void setKept(boolean newKept) {
 		kept = newKept;
 	}
-	
-	// @return returns the kept attribute
-	// @see getKept
+
+	/**
+	 * @return @return returns the kept attribute
+	 */
 	public boolean getKept() {
 		return kept;
 	}

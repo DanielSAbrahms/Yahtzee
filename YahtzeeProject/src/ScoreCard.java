@@ -1,19 +1,18 @@
 /* 
  * @author Daniel Abrahms
- * Last Edited: 2/14/17
- * Class: CPSC 224-02
- * Class: ScoreCard
- * Description: This is the ScoreCard Class. It has an array of ScoreCardLines. 
+ * Last Edited- 2/14/17
+ * Class- CPSC 224-02
+ * Class- ScoreCard
+ * Description- This is the ScoreCard Class. It has an array of ScoreCardLines. 
  * 				It allows the main file to check the score of a given hand, and prints the possible plays. 
  */
 public class ScoreCard {
 
 	ScoreCardLine line[];
-	
 	/*
 	@pre ScoreCard object is null
 	@post ScoreCard object has been created
-	@param sidesPerDice: the number of sides per dice
+	@param sidesPerDice- the number of sides per dice
 	@see ScoreCard
 	 */
 	public ScoreCard(int sidesPerDice) {
@@ -23,17 +22,16 @@ public class ScoreCard {
             line[i] = new ScoreCardLine(String.valueOf(i+1), i+1, false);
         }
 
-		line[sidesPerDice + 0] = new ScoreCardLine("(3K): 3 of a Kind", 1, false);
-		line[sidesPerDice + 1] = new ScoreCardLine("(4K): 4 of a Kind", 1, false);
-		line[sidesPerDice + 2] = new ScoreCardLine("(FH): Full House", 25, false);
-		line[sidesPerDice + 3] = new ScoreCardLine("(SS): Small Straight", 30, false);
-		line[sidesPerDice + 4] = new ScoreCardLine("(LS): Large Straight", 40, false);
-		line[sidesPerDice + 5] = new ScoreCardLine("(YA): Yahtzee", 50, false);
-		line[sidesPerDice + 6] = new ScoreCardLine("(CH): Chance", 1, false);
+		line[sidesPerDice + 0] = new ScoreCardLine("(3K)- 3 of a Kind", 1, false);
+		line[sidesPerDice + 1] = new ScoreCardLine("(4K)- 4 of a Kind", 1, false);
+		line[sidesPerDice + 2] = new ScoreCardLine("(FH)- Full House", 25, false);
+		line[sidesPerDice + 3] = new ScoreCardLine("(SS)- Small Straight", 30, false);
+		line[sidesPerDice + 4] = new ScoreCardLine("(LS)- Large Straight", 40, false);
+		line[sidesPerDice + 5] = new ScoreCardLine("(YA)- Yahtzee", 50, false);
+		line[sidesPerDice + 6] = new ScoreCardLine("(CH)- Chance", 1, false);
 	}
-	
-	// @print: Every possible score has been printed
-    // @param hand: hand object that has been initiated
+	// @print- Every possible score has been printed
+    // @param hand- hand object that has been initiated
 	// @see checkScore
 	public void checkScore(Hand hand) {
 		hand.sortHand();
@@ -105,7 +103,6 @@ public class ScoreCard {
 
 		System.out.println("====================");
 	}
-
 	/*
 	@return int of how many score card lines havent been used
 	@see howManyLeft
@@ -119,20 +116,16 @@ public class ScoreCard {
 		}
 		return count;
 	}
-
-	/*
+	/**
 	@return scoreCardLine at the index
-	@param the index you want the scorecardline at
-	@see ScoreCardLine
+	@param index- the index you want the scorecardline at
 	 */
 	public ScoreCardLine getLine(int index) {
 	    return line[index];
     }
-
-    /*
-    @param diceRange: the int of how many sides are per dice
-    @print The scorecard with titles, uses - for those unused
-    @see showScoreCard
+    /**
+    @param diceRange- the int of how many sides are per dice
+     Prints the scorecard with titles, uses - for those unused
      */
     public void showScoreCard(int diceRange) {
 	    int subTotal = 0;
@@ -144,8 +137,8 @@ public class ScoreCard {
             if (i < diceRange) subTotal+=line[i].getPointsEarned();
             if (i == diceRange) {
                 System.out.println("=======================");
-                System.out.println("Sub Total:            " + subTotal);
-                System.out.print("Bonus:                ");
+                System.out.println("Sub Total-            " + subTotal);
+                System.out.print("Bonus-                ");
                 if (calculateBonus(diceRange)){
                     bonus = 35;
                     System.out.print(bonus);
@@ -157,17 +150,17 @@ public class ScoreCard {
             line[i].printUsed();
             if (i == diceRange+6) {
                 System.out.println("=======================");
-                System.out.println("Lower Total:          " + lowerTotal);
+                System.out.println("Lower Total-          " + lowerTotal);
                 System.out.println("=======================");
-                System.out.println("Grand Total:          " + (lowerTotal+subTotal+bonus));
+                System.out.println("Grand Total-          " + (lowerTotal+subTotal+bonus));
             }
 
         }
     }
-	/* @param num: int value of what number to check total of
-	   @param hand: hand object that has been initiated
-	   @return int value of total number of times that num exists in hand
-	   @see totalOfNum
+	/**
+	 *  @param num- int value of what number to check total of
+	 *  @param hand- hand object that has been initiated
+	 *  @return int value of total number of times that num exists in hand
 	 */
 	private int totalOfNum(int num, Hand hand) {
 		int sum = 0;
@@ -178,11 +171,9 @@ public class ScoreCard {
 		}
 		return sum;
 	}
-
-    /*
-       @param hand: hand object that has been initiated
+    /**
+       @param hand- hand object that has been initiated
        @return int the longest straight that exists within hand
-       @see maxStraight
      */
 	private int maxStraight(Hand hand) {
         int maxFound = 1;
@@ -198,11 +189,10 @@ public class ScoreCard {
         }
         return maxFound;
 	}
-
-    /* @param num: int value of what number to check
-       @param hand: hand object that has been initiated
-       @return boolean value of whether a three of num exists in hand
-       @see isThreeOfKind
+    /**
+	 *  @param num- int value of what number to check
+	 *  @param hand- hand object that has been initiated
+	 *  @return boolean value of whether a three of num exists in hand
      */
 	private boolean isThreeOfKind(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 3) {
@@ -210,10 +200,10 @@ public class ScoreCard {
 		} 
 		return false;
 	}
-	/* @param num: int value of what number to check
-       @param hand: hand object that has been initiated
-       @return boolean value of whether a four of num exists in hand
-       @see isFourOfKind
+	/**
+	 *  @param num- int value of what number to check
+	 *  @param hand- hand object that has been initiated
+	 *  @return boolean value of whether a four of num exists in hand
      */
 	private boolean isFourOfKind(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 4) {
@@ -221,11 +211,10 @@ public class ScoreCard {
 		}
 		return false;
 	}
-
-    /* @param num: int value of what number to check
-       @param hand: hand object that has been initiated
-       @return boolean value of whether a five of num exists in hand
-       @see isYahtzee
+    /**
+	 *  @param num- int value of what number to check
+	 *  @param hand- hand object that has been initiated
+	 *  @return boolean value of whether a five of num exists in hand
      */
 	private boolean isYahtzee(int num, Hand hand) {
 		if (totalOfNum(num, hand) >= 5) {
@@ -233,31 +222,25 @@ public class ScoreCard {
 		}
 		return false;
 	}
-	// @return boolean value if given hand contains a small straight
-	// @pre: hand is sorted lowest->highest
-	// @see isSmallStraight
+	/** @return boolean value if given hand contains a small straight
+	 */
 	private boolean isSmallStraight(Hand hand) {
 		if (maxStraight(hand) > 3) {
 		    return true;
         }
         return false;
 	}
-    // @return boolean value if given hand contains a large straight
-    // @pre: hand is sorted lowest->highest
-	// @see isLargeStraight
+    /** @return boolean value if given hand contains a large straight
+	*/
 	private boolean isLargeStraight(Hand hand) {
 		if (maxStraight(hand) > 4) {
 		    return true;
         }
         return false;
 	}
-
-	 /*
-	 @pre Hand is sorted
-     @post Hand is unchanged
-     @param hand, a custom Hand class object
-     @return boolean value on whether hand contains a Full House
-     @see isFullHouse
+	 /**
+	  * @param hand- a custom Hand class object
+	  * @return boolean value on whether hand contains a Full House
      */
      private boolean isFullHouse(Hand hand) {
          boolean fullHouseFound = false;
@@ -281,12 +264,9 @@ public class ScoreCard {
          }
          return fullHouseFound;
      }
-
-
-     /*
-     @param diceRange: the number of sides per dice
-     @return whether or not the 63 grand total has been reached
-     @see calculateBonus
+     /**
+	  * @param diceRange- the number of sides per dice
+	  * @return whether or not the 63 grand total has been reached
       */
      private boolean calculateBonus(int diceRange) {
          int sum = 0;

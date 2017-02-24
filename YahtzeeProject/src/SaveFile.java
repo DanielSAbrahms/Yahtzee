@@ -2,23 +2,22 @@ import java.io.*;
 
 /*
  * @author Daniel Abrahms
- * Last Edited: 2/14/17
- * Class: CPSC 224-02
- * Class: SaveFile
- * Description: This class allows the user to save current setting about the game
+ * Last Edited- 2/14/17
+ * Class- CPSC 224-02
+ * Class- SaveFile
+ * Description- This class allows the user to save current setting about the game
  */
 public class SaveFile {
     private int sidesPerDice;
     private int diceInGame;
     private int rollsPerTurn;
 
-    /*
+    /**
         @see SaveFile
-        @pre SaveFile object is null
-        @post SaveFile object is created
-        @param newSidesPerDice: int value for how many sides per dice
-        @param newDiceInGame: int value for how many dice in gme
-        @param newRollsPerTurn: int value for how many rolls the user gets per turn
+        SaveFile object is created
+        @param newSidesPerDice- int value for how many sides per dice
+        @param newDiceInGame- int value for how many dice in gme
+        @param newRollsPerTurn- int value for how many rolls the user gets per turn
      */
     public SaveFile(int newSidesPerDice, int newDiceInGame, int newRollsPerTurn) {
         sidesPerDice = newSidesPerDice;
@@ -26,8 +25,9 @@ public class SaveFile {
         rollsPerTurn = newRollsPerTurn;
     }
 
-    // @post The attributes are changed to the specified data in file
-    // @see read
+    /**
+     * The attributes are changed to the specified data in file
+     */
     public void read() {
 
         String saveFile = "saveFile.txt";
@@ -62,8 +62,9 @@ public class SaveFile {
         }
     }
 
-    // @post the data file is changed according to the attributes
-    // @see write
+    /**
+     * the data file is changed according to the attributes
+      */
     public void write(int newSidesPerDice, int newDiceInGame, int newRollsPerTurn) {
         String saveFile = "saveFile.txt";
 
@@ -85,21 +86,21 @@ public class SaveFile {
             System.out.println("Error Writing to File");
         }
     }
-
-    // @return the attribute sidesPerDice
-    // @see getSidesPerDice
+    /**
+     * @return the attribute sidesPerDice
+      */
     public int getSidesPerDice(){
         return sidesPerDice;
     }
-
-    // @return the attribute diceInGame
-    // @see getDiceInGame
+    /**
+     *  @return the attribute diceInGame
+     */
     public int getDiceInGame(){
         return diceInGame;
     }
-
-    // @return the attribute rollsPerTurn
-    // @see getRollsPerTurn
+    /**
+     * @return the attribute rollsPerTurn
+      */
     public int getRollsPerTurn(){
         return rollsPerTurn;
     }
