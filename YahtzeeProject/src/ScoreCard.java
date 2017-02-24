@@ -103,6 +103,16 @@ public class ScoreCard {
 
 		System.out.println("=============================================");
 	}
+
+	public boolean finished() {
+		boolean isFinished = true;
+		for (int i = 0; i < line.length; i++) {
+			if (!line[i].getUsed()) {
+			    isFinished = false;
+            }
+		}
+		return isFinished;
+	}
 	
 	/* @param num: int value of what number to check total of
 	   @param hand: hand object that has been initiated
@@ -214,4 +224,5 @@ public class ScoreCard {
          }
          return fullHouseFound;
      }
+
 }

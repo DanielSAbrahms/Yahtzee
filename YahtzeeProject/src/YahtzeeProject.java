@@ -49,16 +49,11 @@ public class YahtzeeProject {
 		Hand playerOneHand = new Hand(diceInGame, rollsPerTurn, sidesPerDice);
 		playerOneHand.displayHand();
 		ScoreCard playerOneScoreCard = new ScoreCard(sidesPerDice);
-		
-		for (int i = 1; i < rollsPerTurn; i++) {
-			
-			if (!playerOneHand.changeHand()) {
-			    break;
-            }
-			playerOneHand.displayHand();
-		}
-		
-		playerOneScoreCard.checkScore(playerOneHand);
+
+		while (!playerOneScoreCard.finished()) {
+            Round r = new Round("Player 1", playerOneScoreCard, playerOneHand);
+            r.playRound(rollsPerTurn);
+        }
 		
 		System.out.println("Game Over");
 	}
