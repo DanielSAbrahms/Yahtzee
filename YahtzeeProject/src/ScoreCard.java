@@ -22,13 +22,13 @@ public class ScoreCard {
             line[i] = new ScoreCardLine(String.valueOf(i+1), i+1, false);
         }
 
-		line[sidesPerDice + 0] = new ScoreCardLine("3 of a Kind", 1, false);
-		line[sidesPerDice + 1] = new ScoreCardLine("4 of a Kind", 1, false);
-		line[sidesPerDice + 2] = new ScoreCardLine("Full House", 25, false);
-		line[sidesPerDice + 3] = new ScoreCardLine("Small Straight", 30, false);
-		line[sidesPerDice + 4] = new ScoreCardLine("Large Straight", 40, false);
-		line[sidesPerDice + 5] = new ScoreCardLine("Yahtzee", 50, false);
-		line[sidesPerDice + 6] = new ScoreCardLine("Chance", 1, false);
+		line[sidesPerDice + 0] = new ScoreCardLine("(3K): 3 of a Kind", 1, false);
+		line[sidesPerDice + 1] = new ScoreCardLine("(4K): 4 of a Kind", 1, false);
+		line[sidesPerDice + 2] = new ScoreCardLine("(FH): Full House", 25, false);
+		line[sidesPerDice + 3] = new ScoreCardLine("(SS): Small Straight", 30, false);
+		line[sidesPerDice + 4] = new ScoreCardLine("(LS): Large Straight", 40, false);
+		line[sidesPerDice + 5] = new ScoreCardLine("(YA): Yahtzee", 50, false);
+		line[sidesPerDice + 6] = new ScoreCardLine("(CH): Chance", 1, false);
 	}
 	
 	// @print: Every possible score has been printed
@@ -113,6 +113,10 @@ public class ScoreCard {
 		}
 		return isFinished;
 	}
+
+	public ScoreCardLine getLine(int index) {
+	    return line[index];
+    }
 	
 	/* @param num: int value of what number to check total of
 	   @param hand: hand object that has been initiated
