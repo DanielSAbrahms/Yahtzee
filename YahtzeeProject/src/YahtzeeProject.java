@@ -1,6 +1,6 @@
 /* 
  * Author: Daniel Abrahms
- * Last Edited: 2/14/17
+ * Last Edited: 2/24/17
  * Class: CPSC 224-02
  * Class: YahtzeeProject
  * Description: This is the main file. It plays one round of the game using the included function. It will eventually be migrated into another class. 
@@ -26,9 +26,9 @@ public class YahtzeeProject {
         rollsPerTurn = file.getRollsPerTurn();
 
         System.out.println("Current Settings: ");
-        System.out.println("-Sides per Dice: " + sidesPerDice);
-        System.out.println("-Dice in Game: " + diceInGame);
-        System.out.println("-rollsPerTurn: " + rollsPerTurn);
+        System.out.println("-Sides per Dice:  " + sidesPerDice);
+        System.out.println("-Dice in Game:    " + diceInGame);
+        System.out.println("-rollsPerTurn:    " + rollsPerTurn);
 
 
 

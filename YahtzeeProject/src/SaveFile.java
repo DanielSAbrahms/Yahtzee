@@ -27,6 +27,7 @@ public class SaveFile {
     }
 
     // @post The attributes are changed to the specified data in file
+    // @see read
     public void read() {
 
         String saveFile = "saveFile.txt";
@@ -62,6 +63,7 @@ public class SaveFile {
     }
 
     // @post the data file is changed according to the attributes
+    // @see write
     public void write(int newSidesPerDice, int newDiceInGame, int newRollsPerTurn) {
         String saveFile = "saveFile.txt";
 
@@ -85,16 +87,19 @@ public class SaveFile {
     }
 
     // @return the attribute sidesPerDice
+    // @see getSidesPerDice
     public int getSidesPerDice(){
         return sidesPerDice;
     }
 
     // @return the attribute diceInGame
+    // @see getDiceInGame
     public int getDiceInGame(){
         return diceInGame;
     }
 
     // @return the attribute rollsPerTurn
+    // @see getRollsPerTurn
     public int getRollsPerTurn(){
         return rollsPerTurn;
     }

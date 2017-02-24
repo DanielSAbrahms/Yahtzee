@@ -23,6 +23,7 @@ public class Hand {
 	@param initialDiceNumber: the number of dice in the game
 	@param initialRollsLeft: the number of rolls left in the game
 	@param newDiceRange: the number of sides per dice
+	@see Hand
 	 */
 	public Hand(int initialDiceNumber, int initialRollsLeft, int newDiceRange) {
 		diceNumber = initialDiceNumber;
@@ -36,6 +37,7 @@ public class Hand {
 	
 	// @pre: hand has been initialized and kept values fot each dice are set
     // @post: each dice in hand is rolled if their kept attribute is false
+	// @see rollHand
 	public void rollHand() {
 		for (int i = 0; i < diceNumber; i++) {
 			if (!die[i].getKept()) {
@@ -46,41 +48,49 @@ public class Hand {
 	
 	// @return the Dice at a given index
     // @param index: value between 0-(diceNumber-1)
+	// @see getDice
 	public Dice getDice(int index) {
 		return die[index];
 	}
 
 	// @return the rollsLeft attribute
+	// @see getRollsLeft
 	public int getRollsLeft() {
 		return rollsLeft;
 	}
 	
 	// @param newRollsLeft: the value of how many rolls are left in the lane
+	// @see setsRollsLeft
 	public void setRollsLeft(int newRollsLeft) {
 		rollsLeft = newRollsLeft;
 	}
 
     // @return the diceNumber attribute
+	// @see getDiceNumber
 	public int getDiceNumber() {
 		return diceNumber;
 	}
 
     // @param newDiceNumber: the value of how many dice are in play
+	// @see setDiceNumber
 	public void setDiceNumber(int newDiceNumber) {
 		diceNumber = newDiceNumber;
 	}
 
     // @return the diceRange attribute
+	// @see diceRange
    public int getDiceRange(){
 	    return diceRange;
    }
 
     // @param newDiceRange: the value of how many sides per dice
+	// @see newDiceRange
     public void setDiceRange(int newDiceRange) {
         diceRange = newDiceRange;
     }
 
     // @print displays every dice
+	// @see displayHand
 	public void displayHand(){
 		System.out.print("Hand: ");
 		for (int i = 0; i < diceNumber; i++) {
@@ -94,7 +104,8 @@ public class Hand {
 	
 	// @post prompts user for which die to keep, sets attributes accordingly
 	// @return boolean value of whether or not hand has been changed
-	public boolean changeHand() {
+	// @see changeHand
+	public boolean changeHand(ScoreCard scoreCard) {
 		String escapeString = "";
 		for (int i = 0; i < diceNumber; i++) {
 			escapeString+="y";
@@ -102,9 +113,15 @@ public class Hand {
 		String newHand;
 		
 		do {
-			System.out.print("Y/N for keep: ");
+			System.out.print("Y/N for keep (S for Scorecard): ");
 			newHand = scan.next();
+            if (newHand.equalsIgnoreCase("s")) {
+                scoreCard.showScoreCard(diceRange);
+                displayHand();
+                continue;
+            }
 		} while ((newHand.length() != diceNumber) || (validStringCheck(newHand)));
+
 
 		if (newHand.toLowerCase().equals(escapeString)){
 			return false;
@@ -121,6 +138,7 @@ public class Hand {
 	}
 	
 	// @post the hand has been sorted from low to high
+	// @see sortHand
 	public void sortHand() {
 		Dice temp;
 		for (int i = 0; i < diceNumber - 1; i++) {
@@ -135,6 +153,7 @@ public class Hand {
 	}
 	
 	// @return the sum of the entire hand's value
+	// @see sum
 	public int sum() {
 		int sum = 0;
 		for (int i = 0; i < diceNumber; i++) {
@@ -145,9 +164,10 @@ public class Hand {
 
 	// @param str: a string value
     // @return boolean value if str contains just a valid string
+	// @see validStringCheck
     private boolean validStringCheck(String str) {
 	    str = str + "t";
-        String[] characters = str.split("[YyNn]", 2);
+        String[] characters = str.split("[YyNnSs]", 2);
         if (characters.length > 1) {
             return false;
         }
