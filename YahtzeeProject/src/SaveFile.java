@@ -105,4 +105,26 @@ public class SaveFile {
         return rollsPerTurn;
     }
 
+    public void writeScoreCard(ScoreCard sc, Hand hand){
+        String saveFile = "ScoreCardSaveFile.txt";
+
+        try {
+            FileWriter  fileWriter = new FileWriter(saveFile);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            for (int i = 0; i < hand.getDiceRange()+7; i++) {
+                bufferedWriter.write(sc.getLine(i).getName() + ";" + sc.getLine(i).getPoints() + ";"+ sc.getLine(i).getMultiplier() + ";" + sc.getLine(i).getPointsEarned() + ";" + sc.getLine(i).getUsed() + ";");
+                bufferedWriter.newLine();
+            }
+
+            bufferedWriter.close();
+
+        }
+        catch (IOException ex) {
+            System.out.println("Error Writing to File");
+        }
+    }
+
+
+
 }

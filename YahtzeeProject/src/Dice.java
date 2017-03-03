@@ -10,21 +10,23 @@ public class Dice {
 	int range;
 	int value;
 	boolean kept;
-	
 
-	// @param sides- The number of sides for the Dice
-	// @pre Dice object is Null
-	// @post Dice object has been created with random value within range
-	// @see Dice
+
+	/**
+	 * Dice object has been created with random value within range
+	 * @param sides- The number of sides for the Dice
+ 	 */
 	public Dice(int sides){
 		range = sides;
 		kept = false;
 		Random rand = new Random();
 		value = rand.nextInt((range - 1) + 1) + 1;
 	}
-	
-	// @post value attribute is assigned a random value within range
-	// @see roll
+
+	/**
+	 * Value attribute is assigned a random value within range
+ 	 */
+
 	public void roll(){
 		Random rand = new Random();
 		value = rand.nextInt((range - 1) + 1) + 1;

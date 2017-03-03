@@ -55,6 +55,7 @@ public class YahtzeeProject {
             Round r = new Round("Player 1", playerOneScoreCard, playerOneHand);
             r.playRound(rollsPerTurn, sidesPerDice);
             System.out.println("You have " + playerOneScoreCard.howManyLeft() + " lines left");
+            file.writeScoreCard(playerOneScoreCard, playerOneHand);
         }
 
         playerOneScoreCard.showScoreCard(sidesPerDice);
