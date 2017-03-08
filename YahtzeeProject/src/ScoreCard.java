@@ -123,6 +123,7 @@ public class ScoreCard {
 	public ScoreCardLine getLine(int index) {
 	    return line[index];
     }
+
     /**
     @param diceRange- the int of how many sides are per dice
      Prints the scorecard with titles, uses - for those unused

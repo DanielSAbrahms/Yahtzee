@@ -30,26 +30,32 @@ public class YahtzeeProject {
         System.out.println("-Dice in Game:    " + diceInGame);
         System.out.println("-rollsPerTurn:    " + rollsPerTurn);
 
+        ScoreCard playerOneScoreCard = new ScoreCard(sidesPerDice);
 
-
-		System.out.print("Would you like to change settings? (Y/N): ");
-        changeSettings = scan.next();
-        if (changeSettings.toLowerCase().equals("y")) {
-            System.out.println("How many sides per dice? (1-100): ");
-            sidesPerDice = scan.nextInt();
-            System.out.println("How many dice in game? (1-100): ");
-            diceInGame = scan.nextInt();
-            System.out.println("How many rolls per turn? (1-100): ");
-            rollsPerTurn = scan.nextInt();
-            file.write(sidesPerDice, diceInGame, rollsPerTurn);
+		System.out.print("Load Game (Y/N)? ");
+		String loadGame = scan.nextLine();
+		if (loadGame.equalsIgnoreCase("y")) {
+		    file.readScoreCard(playerOneScoreCard);
+        } else {
+            System.out.print("Would you like to change settings? (Y/N): ");
+            changeSettings = scan.next();
+            if (changeSettings.toLowerCase().equals("y")) {
+                System.out.println("How many sides per dice? (1-100): ");
+                sidesPerDice = scan.nextInt();
+                System.out.println("How many dice in game? (1-100): ");
+                diceInGame = scan.nextInt();
+                System.out.println("How many rolls per turn? (1-100): ");
+                rollsPerTurn = scan.nextInt();
+                file.write(sidesPerDice, diceInGame, rollsPerTurn);
+            }
         }
 
 
-        ScoreCard playerOneScoreCard = new ScoreCard(sidesPerDice);
 
 
 		while (playerOneScoreCard.howManyLeft() != 0) {
             Hand playerOneHand = new Hand(diceInGame, rollsPerTurn, sidesPerDice);
+            file.writeScoreCard(playerOneScoreCard, playerOneHand);
             playerOneHand.displayHand();
 
             Round r = new Round("Player 1", playerOneScoreCard, playerOneHand);

@@ -125,6 +125,83 @@ public class SaveFile {
         }
     }
 
+    public void readScoreCard(ScoreCard sc) {
+        String saveFile = "saveFile.txt";
+        String line = null;
+
+        try {
+            FileReader fileReader = new FileReader(saveFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            for (int i = 0; i < diceInGame + 7; i++) {
+                line = bufferedReader.readLine();
+                if (line == null) {
+                    bufferedReader.close();
+                    return;
+                }
+                String name = "";
+                int points = 0;
+                int multiplier = 0;
+                int pointsEarned = 0;
+                boolean used = true;
+
+                int stopperCount = 0;
+
+                for (int l = 0; l < line.length(); l++) {
+                    char letter = ((char) l);
+                    if (stopperCount == 0) {
+                        if (letter == ';') {
+                            stopperCount++;
+                            continue;
+                        }
+                        name+=letter;
+                    } else if (stopperCount == 1) {
+                        String sum = "";
+                        if (letter == ';') {
+                            points = Integer.valueOf(sum);
+                            stopperCount++;
+                            continue;
+                        }
+                        sum+=letter;
+                    } else if (stopperCount == 2) {
+                        String sum = "";
+                        if (letter == ';') {
+                            multiplier = Integer.valueOf(sum);
+                            stopperCount++;
+                            continue;
+                        }
+                        sum+=letter;
+                    } else if (stopperCount == 3) {
+                        String sum = "";
+                        if (letter == ';') {
+                            pointsEarned = Integer.valueOf(sum);
+                            stopperCount++;
+                            continue;
+                        }
+                        sum+=letter;
+                    } else if (stopperCount == 4) {
+                        if (letter == 't') {
+                            used = true;
+                        } else {
+                            used = false;
+                        }
+                    }
+                    sc.getLine(i).setName(name);
+                    sc.getLine(i).setPoints(points);
+                    sc.getLine(i).setMultiplier(multiplier);
+                    sc.getLine(i).setPointsEarned(pointsEarned);
+                    sc.getLine(i).setUsed(used);
+                }
+            }
+            fileReader.close();
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("Unable to Open ScoreCard Save File");
+        } catch (IOException ex) {
+            System.out.println("Unable to Read ScoreCard Save File");
+        }
+    }
+
 
 
 }

@@ -62,6 +62,10 @@ public class ScoreCardLine {
         pointsEarned = points * multiplier;
     }
 
+	public void setPointsEarned(int newPointsEarned) {
+		pointsEarned = newPointsEarned;
+	}
+
 	/**
 	 * @return the attribute pointsEarned
 	*/
