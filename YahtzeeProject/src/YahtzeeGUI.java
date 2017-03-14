@@ -5,11 +5,4 @@ import javax.swing.*;
  */
 public class YahtzeeGUI {
 
-    private JTable table1;
-    private JButton rollButton;
-    private JCheckBox checkBox1;
-    private JCheckBox checkBox2;
-    private JCheckBox checkBox3;
-    private JCheckBox checkBox4;
-    private JCheckBox checkBox5;
 }
