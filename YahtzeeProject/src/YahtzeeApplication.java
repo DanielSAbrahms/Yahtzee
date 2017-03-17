@@ -3,10 +3,10 @@ import javax.swing.JFrame;
 
 public class YahtzeeApplication {
     public static void main (String [] args) {
-        JFrame frame = new JFrame("Yahtzee");
+        YahtzeeGUI frame = new YahtzeeGUI("Yahtzee");
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.setSize(1280, 720);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
-
     }
 }
