@@ -148,6 +148,19 @@ public class Hand {
 
 	}
 
+	public boolean changeHand(ScoreCard scoreCard, String newHand) {
+
+		for (int i = 0; i < diceNumber; i++){
+			if (toLowerCase(newHand.charAt(i)) == 'y'){
+				die[i].setKept(true);
+			}
+		}
+		rollHand();
+		return true;
+
+	}
+
+
 	/**
 	 * the hand has been sorted from low to high
 	 */

@@ -6,8 +6,7 @@
  * Description: Plays a round of yahtzee given player's name, scorecard, and hand
  */
 
-import java.util.Scanner;
-public class Round {
+public class GUIRound {
     private int dicePerGame = 5;
     private int sidesPerDice = 6;
     private int dice1Value;
@@ -21,33 +20,26 @@ public class Round {
     private ScoreCard playerScoreCard;
     private Hand playerHand;
 
+
     /**
-	 * round object has been created and ready to run
-	 * @param newPlayerName- String of whatever the name of the player will be
+     * round object has been created and ready to run
+     * @param newPlayerName- String of whatever the name of the player will be
      * @param newPlayerScoreCard- the scorecard of the player
      * @param newPlayerHand- the hand of the player
      * @see Round
-	 */
-    public Round(String newPlayerName, ScoreCard newPlayerScoreCard, Hand newPlayerHand) {
+     */
+    public GUIRound(String newPlayerName, ScoreCard newPlayerScoreCard, Hand newPlayerHand) {
         playerHand = newPlayerHand;
         playerScoreCard = newPlayerScoreCard;
         playerName = newPlayerName;
     }
 
     /**
-        @param rollsPerTurn- the number of rolls in a given turn
-        @param diceRange- the number of sides per dice
+     @param rollsPerTurn- the number of rolls in a given turn
+     @param diceRange- the number of sides per dice
      */
-    public void playRound(int rollsPerTurn, int diceRange) {
-        Scanner scan = new Scanner(System.in);
-        for (int i = 1; i < rollsPerTurn; i++) {
+    public void playRound(int rollsPerTurn, int diceRange, String lineUsed) {
 
-            System.out.println("Enter S to display ScoreCard");
-            if (!playerHand.changeHand(playerScoreCard)) {
-                break;
-            }
-            playerHand.displayHand();
-        }
         dice1Value = playerHand.getDice(0).getValue();
         dice2Value = playerHand.getDice(1).getValue();
         dice3Value = playerHand.getDice(2).getValue();
@@ -59,11 +51,7 @@ public class Round {
             dice7Value = playerHand.getDice(6).getValue();
         }
 
-        playerScoreCard.checkScore(playerHand);
         while (true) {
-            System.out.println("What line would you like to use?");
-            String lineUsed = scan.next();
-            System.out.println(lineUsed.toLowerCase());
             switch (lineUsed.toLowerCase()) {
                 case "3k":
                     if (playerScoreCard.getLine(diceRange + 0).getUsed() == true) {
@@ -128,15 +116,15 @@ public class Round {
                 System.out.println("Incorrect input data, please try again.");
                 continue;
             }
-                    for (int i = 0; i < diceRange; i++) {
-                        if (Integer.valueOf(lineUsed) == i + 1) {
-                            playerScoreCard.getLine(i).setUsed(true);
-                            playerScoreCard.getLine(i).setPointsEarned();
-                            return;
-                        }
+            for (int i = 0; i < diceRange; i++) {
+                if (Integer.valueOf(lineUsed) == i + 1) {
+                    playerScoreCard.getLine(i).setUsed(true);
+                    playerScoreCard.getLine(i).setPointsEarned();
+                    return;
+                }
 
-                    }
             }
+        }
     }
 
     public int getDicePerGame() {
