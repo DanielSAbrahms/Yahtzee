@@ -64,7 +64,7 @@ public class SaveFile {
 
     /**
      * the data file is changed according to the attributes
-      */
+      */  
     public void write(int newSidesPerDice, int newDiceInGame, int newRollsPerTurn) {
         String saveFile = "saveFile.txt";
 

@@ -1,10 +1,12 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+
 
 
 /**
@@ -55,7 +57,8 @@ public class YahtzeeGUI extends JFrame{
     private int dice7Value;
     private int selectedLine;
     private String[] scoreCardNames;
-    private Object[][] scoreCardValues;
+    private String[][] scoreCardValues;
+    private boolean pause = false;
 
     //</editor-fold>
 
@@ -100,7 +103,9 @@ public class YahtzeeGUI extends JFrame{
     //</editor-fold>
 
     // User Directory to Locate Source Images
-    private static final String USER_DIR = "C:/Users/irish/Desktop/Yahtzee/YahtzeeProject/src";
+    private static final String USER_DIR = "C:/Users/Daniel/Desktop/Yahtzee/YahtzeeProject/src";
+
+
 
     public YahtzeeGUI(String title) {
         super(title);
@@ -141,7 +146,6 @@ public class YahtzeeGUI extends JFrame{
         diceSide6 = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         //</editor-fold>
 
-        setLayout(null);
 
         this.setContentPane(new JLabel(new ImageIcon(background)));
         Container c = getContentPane();
@@ -283,7 +287,7 @@ public class YahtzeeGUI extends JFrame{
         pickSidesPerDice.setSize(LABEL_WIDTH, LABEL_HEIGHT);
         pickSidesPerDice.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 130);
         c.add(pickSidesPerDice);
-        //</editor-fold>4
+        //</editor-fold>
 
         //<editor-fold desc="Game Buttons">
         saveGame = new JButton();
@@ -323,8 +327,9 @@ public class YahtzeeGUI extends JFrame{
         rollButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (rollsLeft <= 0){
+                if (rollsLeft <= 0 || pause){
                     checkScorePotential();
+                    pause = true;
                     rollsLeft = 3;
                 } else {
                     dice1.getD().roll();
@@ -414,7 +419,7 @@ public class YahtzeeGUI extends JFrame{
         confirmSelectionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                pause = false;
             }
         });
 
@@ -494,6 +499,8 @@ public class YahtzeeGUI extends JFrame{
                 }
             }
         });
+
+
 
     }
 
