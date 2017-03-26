@@ -29,7 +29,9 @@ public class Dice {
 
 	public void roll(){
 		Random rand = new Random();
-		value = rand.nextInt((range - 1) + 1) + 1;
+		if (!kept) {
+			value = rand.nextInt((range - 1) + 1) + 1;
+		}
 	}
 
 	/**

@@ -16,14 +16,14 @@ public class YahtzeeGUI extends JFrame{
     //<editor-fold desc = "Private Variables">
 
     private JPanel panel;
-    private JTable scTable;
-    private JLabel dice1;
-    private JLabel dice2;
-    private JLabel dice3;
-    private JLabel dice4;
-    private JLabel dice5;
-    private JLabel dice6;
-    private JLabel dice7;
+    private SCTable scTable;
+    private DiceLabel dice1;
+    private DiceLabel dice2;
+    private DiceLabel dice3;
+    private DiceLabel dice4;
+    private DiceLabel dice5;
+    private DiceLabel dice6;
+    private DiceLabel dice7;
     private JLabel dicePerGame;
     private JLabel sidesPerDice;
     private JButton rollButton;
@@ -89,11 +89,24 @@ public class YahtzeeGUI extends JFrame{
     private static final int LABEL_Y_COOR = 44;
     //</editor-fold>
 
+    //<editor-fold desc = "Image Constants">
+    private final Image unknownDice;
+    private final Image diceSide1;
+    private final Image diceSide2;
+    private final Image diceSide3;
+    private final Image diceSide4;
+    private final Image diceSide5;
+    private final Image diceSide6;
+    //</editor-fold>
+
     // User Directory to Locate Source Images
     private static final String USER_DIR = "C:/Users/irish/Desktop/Yahtzee/YahtzeeProject/src";
 
     public YahtzeeGUI(String title) {
-        super(title); // Assigns JFrame title
+        super(title);
+        roundsLeft = sidesOnADice + 7;
+        rollsLeft = 3;
+         // Assigns JFrame title
 
         //<editor-fold desc="Initializes Images">
         BufferedImage diceSide1_raw = null;
@@ -119,13 +132,13 @@ public class YahtzeeGUI extends JFrame{
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        final Image unknownDice = unknownDice_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide1 = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide2 = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide3 = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide4 = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide5 = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        final Image diceSide6 = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        unknownDice = unknownDice_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide1 = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide2 = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide3 = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide4 = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide5 = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide6 = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         //</editor-fold>
 
         setLayout(null);
@@ -150,36 +163,38 @@ public class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc="Dice Label Creation">
-        dice1 = new JLabel(new ImageIcon(unknownDice));
+        Image[] images = {unknownDice, diceSide1, diceSide2, diceSide3, diceSide4, diceSide5, diceSide6};
+
+        dice1 = new DiceLabel(images);
         dice1.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice1.setLocation(DICE_X_COOR + (0*225), DICE_Y_COOR);
         c.add(dice1);
 
-        dice2 = new JLabel(new ImageIcon(unknownDice));
+        dice2 = new DiceLabel(images);
         dice2.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice2.setLocation(DICE_X_COOR + (1*225), DICE_Y_COOR);
         c.add(dice2);
 
-        dice3 = new JLabel(new ImageIcon(unknownDice));
+        dice3 = new DiceLabel(images);
         dice3.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice3.setLocation(DICE_X_COOR + (2*225), DICE_Y_COOR);
         c.add(dice3);
 
-        dice4 = new JLabel(new ImageIcon(unknownDice));
+        dice4 = new DiceLabel(images);
         dice4.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice4.setLocation(DICE_X_COOR + (3*225), DICE_Y_COOR);
         c.add(dice4);
 
-        dice5 = new JLabel(new ImageIcon(unknownDice));
+        dice5 = new DiceLabel(images);
         dice5.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice5.setLocation(DICE_X_COOR + (4*225), DICE_Y_COOR);
         c.add(dice5);
 
-        dice6 = new JLabel(new ImageIcon(unknownDice));
+        dice6 = new DiceLabel(images);
         dice6.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice6.setLocation(DICE_X_COOR + (5*225), DICE_Y_COOR);
 
-        dice7 = new JLabel(new ImageIcon(unknownDice));
+        dice7 = new DiceLabel(images);
         dice7.setSize(DICE_WIDTH, DICE_HEIGHT);
         dice7.setLocation(DICE_X_COOR + (6*225), DICE_Y_COOR);
 
@@ -222,27 +237,7 @@ public class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc="Scorecard Table Creation">
-        String[] scoreCardNames = new String[]{"Name",
-                "Possible Points",
-                "Earned Points"
-        };
-        Object[][] scoreCardValues = new Object[][]{
-                {"Name", "Possible Points", "Earned Points"},
-                {"1", new Integer(0), new Integer(0)},
-                {"2", new Integer(0), new Integer(0)},
-                {"3", new Integer(0), new Integer(0)},
-                {"4", new Integer(0), new Integer(0)},
-                {"5", new Integer(0), new Integer(0)},
-                {"6", new Integer(0), new Integer(0)},
-                {"3 of a Kind", new Integer(0), new Integer(0)},
-                {"4 of a Kind ", new Integer(0), new Integer(0)},
-                {"Small Straight", new Integer(0), new Integer(0)},
-                {"Large Straight", new Integer(0), new Integer(0)},
-                {"Full House", new Integer(0), new Integer(0)},
-                {"Yahtzee", new Integer(0), new Integer(0)},
-                {"Chance", new Integer(0), new Integer(0)},
-        };
-        scTable = new JTable(scoreCardValues, scoreCardNames) {
+        scTable = new SCTable() {
             private static final long serialVersionUID = 1L;
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -310,80 +305,46 @@ public class YahtzeeGUI extends JFrame{
         c.add(loadGame);
         //</editor-fold>
 
+        SaveFile file = new SaveFile(sidesOnADice, diceInPlay, 3);
+
+        file.read();
+        sidesOnADice = file.getSidesPerDice();
+        diceInPlay = file.getDiceInGame();
+        
+
         newGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                communicate();
-                JLabel[] diceArray = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
-                int[] diceValueArray = {dice1Value, dice2Value, dice3Value, dice4Value, dice5Value, dice6Value, dice7Value};
-                for (int i = 0; i < diceArray.length; i++){
-                    JLabel thisDice = diceArray[i];
-                    int thisDiceValue = diceValueArray[i];
-                    switch (thisDiceValue) {
-                        case(1):
-                            changeImage(thisDice, diceSide1);
-                            break;
-                        case(2):
-                            changeImage(thisDice, diceSide2);
-                            break;
-                        case(3):
-                            changeImage(thisDice, diceSide3);
-                            break;
-                        case(4):
-                            changeImage(thisDice, diceSide4);
-                            break;
-                        case(5):
-                            changeImage(thisDice, diceSide5);
-                            break;
-                        case(6):
-                            changeImage(thisDice, diceSide6);
-                            break;
-                    }
-                }
+                resetDice();
+                syncDice();
             }
         });
 
         rollButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resetDice(unknownDice);
-                communicate();
-
-                //<editor-fold desc="Assigning Dice Labels based on diceValue variables">
-                JLabel[] diceArray = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
-                int[] diceValueArray = {dice1Value, dice2Value, dice3Value, dice4Value, dice5Value, dice6Value, dice7Value};
-                for (int i = 0; i < diceArray.length; i++){
-                    JLabel thisDice = diceArray[i];
-                    int thisDiceValue = diceValueArray[i];
-                    switch (thisDiceValue) {
-                        case(1):
-                            changeImage(thisDice, diceSide1);
-                            break;
-                        case(2):
-                            changeImage(thisDice, diceSide2);
-                            break;
-                        case(3):
-                            changeImage(thisDice, diceSide3);
-                            break;
-                        case(4):
-                            changeImage(thisDice, diceSide4);
-                            break;
-                        case(5):
-                            changeImage(thisDice, diceSide5);
-                            break;
-                        case(6):
-                            changeImage(thisDice, diceSide6);
-                            break;
-                    }
+                if (rollsLeft <= 0){
+                    checkScorePotential();
+                    rollsLeft = 3;
+                } else {
+                    dice1.getD().roll();
+                    dice2.getD().roll();
+                    dice3.getD().roll();
+                    dice4.getD().roll();
+                    dice5.getD().roll();
+                    dice6.getD().roll();
+                    dice7.getD().roll();
+                    syncDice();
+                    rollsLeft--;
                 }
-                //</editor-fold>
+
             }
         });
 
         pickDicePerGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                resetDice(unknownDice);
+                resetDice();
                 int LABEL_SPACER;
                 if (pickDicePerGame.getSelectedItem().equals("5")){
                     diceInPlay = 5;
@@ -453,8 +414,84 @@ public class YahtzeeGUI extends JFrame{
         confirmSelectionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                selectedLine = scTable.getSelectedRow();
-                System.out.println(selectedLine);
+
+            }
+        });
+
+        keepDice1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice1.isSelected()) {
+                    dice1.getD().setKept(true);
+                } else {
+                    dice1.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice2.isSelected()) {
+                    dice2.getD().setKept(true);
+                } else {
+                    dice2.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice3.isSelected()) {
+                    dice3.getD().setKept(true);
+                } else {
+                    dice3.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice4.isSelected()) {
+                    dice4.getD().setKept(true);
+                } else {
+                    dice4.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice5.isSelected()) {
+                    dice5.getD().setKept(true);
+                } else {
+                    dice5.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice6.isSelected()) {
+                    dice6.getD().setKept(true);
+                } else {
+                    dice6.getD().setKept(false);
+                }
+            }
+        });
+
+        keepDice7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (keepDice7.isSelected()) {
+                    dice7.getD().setKept(true);
+                } else {
+                    dice7.getD().setKept(false);
+                }
             }
         });
 
@@ -468,41 +505,17 @@ public class YahtzeeGUI extends JFrame{
         toBeChanged.setIcon(new ImageIcon(newImage));
     }
 
-    private void resetDice(Image unknownDice){
+    private void resetDice(){
         JLabel[] dice = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
         for (int i = 0; i < dice.length; i++){
             changeImage(dice[i], unknownDice);
         }
     }
-    private void communicate() {
-        diceInPlay = thisRound.getDicePerGame();
-        sidesOnADice = thisRound.getSidesPerDice();
-        dice1Value = thisRound.getDice1Value();
-        dice2Value = thisRound.getDice2Value();
-        dice3Value = thisRound.getDice3Value();
-        dice4Value = thisRound.getDice4Value();
-        dice5Value = thisRound.getDice5Value();
-        dice6Value = thisRound.getDice6Value();
-        dice7Value = thisRound.getDice7Value();
-        Object[][] scoreCardValues = {
-                {"Name", "Possible Points", "Earned Points"},
-                {"1", thisRound.getPlayerScoreCard().getLine(0).getPoints(), thisRound.getPlayerScoreCard().getLine(0).getPointsEarned()},
-                {"2", thisRound.getPlayerScoreCard().getLine(1).getPoints(), thisRound.getPlayerScoreCard().getLine(1).getPointsEarned()},
-                {"3", thisRound.getPlayerScoreCard().getLine(2).getPoints(), thisRound.getPlayerScoreCard().getLine(2).getPointsEarned()},
-                {"4", thisRound.getPlayerScoreCard().getLine(3).getPoints(), thisRound.getPlayerScoreCard().getLine(3).getPointsEarned()},
-                {"5", thisRound.getPlayerScoreCard().getLine(4).getPoints(), thisRound.getPlayerScoreCard().getLine(4).getPointsEarned()},
-                {"6", thisRound.getPlayerScoreCard().getLine(5).getPoints(), thisRound.getPlayerScoreCard().getLine(5).getPointsEarned()},
-                {"3 of a Kind", thisRound.getPlayerScoreCard().getLine(6).getPoints(), thisRound.getPlayerScoreCard().getLine(6).getPointsEarned()},
-                {"4 of a Kind ", thisRound.getPlayerScoreCard().getLine(7).getPoints(), thisRound.getPlayerScoreCard().getLine(7).getPointsEarned()},
-                {"Small Straight", thisRound.getPlayerScoreCard().getLine(8).getPoints(), thisRound.getPlayerScoreCard().getLine(8).getPointsEarned()},
-                {"Large Straight", thisRound.getPlayerScoreCard().getLine(9).getPoints(), thisRound.getPlayerScoreCard().getLine(9).getPointsEarned()},
-                {"Full House", thisRound.getPlayerScoreCard().getLine(10).getPoints(), thisRound.getPlayerScoreCard().getLine(10).getPointsEarned()},
-                {"Yahtzee", thisRound.getPlayerScoreCard().getLine(11).getPoints(), thisRound.getPlayerScoreCard().getLine(11).getPointsEarned()},
-                {"Chance", thisRound.getPlayerScoreCard().getLine(12).getPoints(), thisRound.getPlayerScoreCard().getLine(12).getPointsEarned()},
-        };
-        repaint();
 
+    private void checkScorePotential(){
+        scTable.refresh();
     }
+
     public void setRound(GUIRound newRound){
         thisRound = newRound;
     }
@@ -520,6 +533,17 @@ public class YahtzeeGUI extends JFrame{
         }
         return s;
     }
+
+    public void syncDice(){
+        dice1.refresh();
+        dice2.refresh();
+        dice3.refresh();
+        dice4.refresh();
+        dice5.refresh();
+        dice6.refresh();
+        dice7.refresh();
+    }
+
 }
  class ForcedListSelectionModel extends DefaultListSelectionModel {
     public ForcedListSelectionModel() {
