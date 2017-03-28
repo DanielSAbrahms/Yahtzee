@@ -35,6 +35,16 @@ public class Hand {
 		}
 	}
 
+	public Hand(DiceLabel[] hand, int initialDiceNumber, int newDiceRange) {
+		diceNumber = initialDiceNumber;
+		rollsLeft = 3;
+		diceRange = newDiceRange;
+		die = new Dice[diceNumber];
+		for (int i = 0; i < diceNumber; i++) {
+			die[i] = hand[i].getD();
+		}
+	}
+
 	/**
 	 * @pre: hand has been initialized and kept values fot each dice are set
 	 * @post: each dice in hand is rolled if their kept attribute is false

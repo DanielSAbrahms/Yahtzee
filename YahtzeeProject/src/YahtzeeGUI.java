@@ -59,6 +59,7 @@ public class YahtzeeGUI extends JFrame{
     private String[] scoreCardNames;
     private String[][] scoreCardValues;
     private boolean pause = false;
+    private Hand h;
 
     //</editor-fold>
 
@@ -103,7 +104,7 @@ public class YahtzeeGUI extends JFrame{
     //</editor-fold>
 
     // User Directory to Locate Source Images
-    private static final String USER_DIR = "C:/Users/Daniel/Desktop/Yahtzee/YahtzeeProject/src";
+    private static final String USER_DIR = System.getProperty("user.home") + "/Desktop/Yahtzee/YahtzeeProject/src";
 
 
 
@@ -111,6 +112,7 @@ public class YahtzeeGUI extends JFrame{
         super(title);
         roundsLeft = sidesOnADice + 7;
         rollsLeft = 3;
+
          // Assigns JFrame title
 
         //<editor-fold desc="Initializes Images">
@@ -314,6 +316,8 @@ public class YahtzeeGUI extends JFrame{
         file.read();
         sidesOnADice = file.getSidesPerDice();
         diceInPlay = file.getDiceInGame();
+        DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6};
+        h = new Hand(hand, diceInPlay, sidesOnADice);
         
 
         newGame.addActionListener(new ActionListener() {
@@ -420,9 +424,11 @@ public class YahtzeeGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 pause = false;
+                scTable.getSc().getLine(getSelectedLine()).setUsed(true);
             }
         });
 
+        //<editor-fold desc = "Dice Checkboxes Listeners">
         keepDice1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -499,6 +505,7 @@ public class YahtzeeGUI extends JFrame{
                 }
             }
         });
+        //</editor-fold>
 
 
 
@@ -513,6 +520,7 @@ public class YahtzeeGUI extends JFrame{
     }
 
     private void resetDice(){
+        pause = false;
         JLabel[] dice = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
         for (int i = 0; i < dice.length; i++){
             changeImage(dice[i], unknownDice);
@@ -520,6 +528,7 @@ public class YahtzeeGUI extends JFrame{
     }
 
     private void checkScorePotential(){
+        scTable.getSc().checkScore(h);
         scTable.refresh();
     }
 
@@ -549,6 +558,8 @@ public class YahtzeeGUI extends JFrame{
         dice5.refresh();
         dice6.refresh();
         dice7.refresh();
+        DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6};
+        h = new Hand(hand, diceInPlay, sidesOnADice);
     }
 
 }

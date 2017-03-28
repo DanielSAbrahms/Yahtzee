@@ -9,7 +9,7 @@
 public class ScoreCard {
 
 	ScoreCardLine line[];
-	/*
+	/**
 	@pre ScoreCard object is null
 	@post ScoreCard object has been created
 	@param sidesPerDice- the number of sides per dice
@@ -30,9 +30,9 @@ public class ScoreCard {
 		line[sidesPerDice + 5] = new ScoreCardLine("(YA)- Yahtzee", 50, false);
 		line[sidesPerDice + 6] = new ScoreCardLine("(CH)- Chance", 1, false);
 	}
-	// @print- Every possible score has been printed
+	/** @print- Every possible score has been printed
     // @param hand- hand object that has been initiated
-	// @see checkScore
+	**/
 	public void checkScore(Hand hand) {
 		hand.sortHand();
 		int sidesPerDice = hand.getDiceRange();
