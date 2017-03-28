@@ -9,6 +9,27 @@
 public class ScoreCard {
 
 	ScoreCardLine line[];
+	private int totalScore = 0;
+	private int lowerTotal = 0;
+	private int upperTotal = 0;
+	private int bonus = 0;
+
+	public int getTotalScore() {
+		return totalScore;
+	}
+
+	public int getLowerTotal() {
+		return lowerTotal;
+	}
+
+	public int getUpperTotal() {
+		return upperTotal;
+	}
+
+	public int getBonus() {
+		return bonus;
+	}
+
 	/**
 	@pre ScoreCard object is null
 	@post ScoreCard object has been created
@@ -16,6 +37,7 @@ public class ScoreCard {
 	@see ScoreCard
 	 */
 	public ScoreCard(int sidesPerDice) {
+
 		line = new ScoreCardLine[7+sidesPerDice];
 
         for (int i = 0; i < sidesPerDice; i++) {
@@ -103,7 +125,7 @@ public class ScoreCard {
 
 		System.out.println("====================");
 	}
-	/*
+	/**
 	@return int of how many score card lines havent been used
 	@see howManyLeft
 	 */
@@ -129,16 +151,13 @@ public class ScoreCard {
      Prints the scorecard with titles, uses - for those unused
      */
     public void showScoreCard(int diceRange) {
-	    int subTotal = 0;
-	    int lowerTotal = 0;
-	    int bonus = 0;
 	    System.out.println("========================");
 	    System.out.println("Line            Score    ");
         for (int i = 0; i < diceRange + 7; i++) {
-            if (i < diceRange) subTotal+=line[i].getPointsEarned();
+            if (i < diceRange) upperTotal+=line[i].getPointsEarned();
             if (i == diceRange) {
                 System.out.println("=======================");
-                System.out.println("Sub Total-            " + subTotal);
+                System.out.println("Sub Total-            " + upperTotal);
                 System.out.print("Bonus-                ");
                 if (calculateBonus(diceRange)){
                     bonus = 35;
@@ -153,7 +172,8 @@ public class ScoreCard {
                 System.out.println("=======================");
                 System.out.println("Lower Total-          " + lowerTotal);
                 System.out.println("=======================");
-                System.out.println("Grand Total-          " + (lowerTotal+subTotal+bonus));
+                totalScore = lowerTotal+upperTotal+bonus;
+                System.out.println("Grand Total-          " + (totalScore));
             }
 
         }
@@ -271,7 +291,7 @@ public class ScoreCard {
       */
      private boolean calculateBonus(int diceRange) {
          int sum = 0;
-         for (int i = 0; i < diceRange+7; i++) {
+         for (int i = 0; i < diceRange; i++) {
              sum += line[i].getPointsEarned();
          }
          if (sum >= 63) return true;

@@ -17,7 +17,6 @@ import java.io.File;
 public class YahtzeeGUI extends JFrame{
     //<editor-fold desc = "Private Variables">
 
-    private JPanel panel;
     private SCTable scTable;
     private DiceLabel dice1;
     private DiceLabel dice2;
@@ -28,6 +27,10 @@ public class YahtzeeGUI extends JFrame{
     private DiceLabel dice7;
     private JLabel dicePerGame;
     private JLabel sidesPerDice;
+    private JLabel totalScore;
+    private JLabel upperTotal;
+    private JLabel lowerTotal;
+    private JLabel bonus;
     private JButton rollButton;
     private JButton confirmSelectionButton;
     private JCheckBox keepDice1;
@@ -43,14 +46,14 @@ public class YahtzeeGUI extends JFrame{
     private JButton newGame;
     private JButton loadGame;
 
-    private GUIRound thisRound;
     private int diceInPlay = 5;
     private int sidesOnADice = 6;
+    private int totalScoreValue = 0;
+    private int upperScoreValue = 0;
+    private int lowerScoreValue = 0;
+    private int bonusValue = 0;
     private int roundsLeft;
     private int rollsLeft;
-    private int selectedLine;
-    private String[] scoreCardNames;
-    private String[][] scoreCardValues;
     private boolean pause = false;
     private Hand h;
 
@@ -84,6 +87,8 @@ public class YahtzeeGUI extends JFrame{
     private static final int TABLE_Y_COOR = 258;
     private static final int LABEL_X_COOR = 1105;
     private static final int LABEL_Y_COOR = 44;
+    private static final int SCORE_LABEL_X_COOR = 1095;
+    private static final int SCORE_LABEL_Y_COOR = 530;
     //</editor-fold>
 
     //<editor-fold desc = "Image Constants">
@@ -294,14 +299,45 @@ public class YahtzeeGUI extends JFrame{
         newGame = new JButton();
         newGame.setText("New Game");
         newGame.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
-        newGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+100);
+        newGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+60);
         c.add(newGame);
 
         loadGame = new JButton();
         loadGame.setText("Load Game");
         loadGame.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
-        loadGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+200);
+        loadGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+120);
         c.add(loadGame);
+        //</editor-fold>
+
+        //<editor-fold desc = "Score Labels">
+        lowerTotal = new JLabel();
+        lowerTotal.setFont(new Font ("Garamond", Font.BOLD , 20));
+        lowerTotal.setText("Lower Total: " + String.valueOf(lowerScoreValue));
+        lowerTotal.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        lowerTotal.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR);
+        c.add(lowerTotal);
+
+        upperTotal = new JLabel();
+        upperTotal.setFont(new Font ("Garamond", Font.BOLD , 20));
+        upperTotal.setText("Upper Total: " + String.valueOf(upperScoreValue));
+        upperTotal.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        upperTotal.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+40);
+        c.add(upperTotal);
+
+        bonus = new JLabel();
+        bonus.setFont(new Font ("Garamond", Font.BOLD , 20));
+        bonus.setText("Bonus: " + String.valueOf(bonusValue));
+        bonus.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        bonus.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+80);
+        c.add(bonus);
+
+        totalScore = new JLabel();
+        totalScore.setFont(new Font ("Garamond", Font.BOLD , 20));
+        totalScore.setText("Total: " + String.valueOf(totalScoreValue));
+        totalScore.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        totalScore.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+120);
+        c.add(totalScore);
+
         //</editor-fold>
 
         SaveFile file = new SaveFile(sidesOnADice, diceInPlay, 3);
@@ -429,9 +465,14 @@ public class YahtzeeGUI extends JFrame{
                 }
                 scTable.getSc().getLine(getSelectedLine()).setPointsEarned();
                 scTable.refresh();
+                totalScoreValue = scTable.getSc().getTotalScore();
+                lowerScoreValue = scTable.getSc().getLowerTotal();
+                upperScoreValue = scTable.getSc().getUpperTotal();
+                bonusValue = scTable.getSc().getBonus();
                 resetCheckBoxes();
                 resetDice();
                 resetColumn1();
+                refreshLabels();
             }
         });
 
@@ -514,8 +555,6 @@ public class YahtzeeGUI extends JFrame{
         });
         //</editor-fold>
 
-
-
     }
 
     /**
@@ -547,23 +586,11 @@ public class YahtzeeGUI extends JFrame{
         scTable.refresh();
     }
 
-    public void setRound(GUIRound newRound){
-        thisRound = newRound;
-    }
 
     public int getSelectedLine() {
         return scTable.getSelectedRow();
     }
 
-    public String getKeepString() {
-        String s = "";
-        JCheckBox[] a = {keepDice1, keepDice2, keepDice3, keepDice4, keepDice5, keepDice6, keepDice7};
-        for (int i = 0; i < diceInPlay; i++){
-            if (a[i].isSelected()) s+='y';
-            else s+='n';
-        }
-        return s;
-    }
 
     public void syncDice(){
         dice1.refresh();
@@ -591,6 +618,13 @@ public class YahtzeeGUI extends JFrame{
       scTable.resetColumn1();
     }
 
+    public void refreshLabels() {
+        lowerTotal.setText("Lower Total: " + String.valueOf(lowerScoreValue));
+        upperTotal.setText("Upper Total: " + String.valueOf(upperScoreValue));
+        totalScore.setText("Total: " + String.valueOf(totalScoreValue));
+        bonus.setText("Bonus: " + String.valueOf(bonusValue));
+        repaint();
+    }
 }
  class ForcedListSelectionModel extends DefaultListSelectionModel {
     public ForcedListSelectionModel() {
