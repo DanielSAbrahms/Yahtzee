@@ -59,7 +59,15 @@ public class ScoreCardLine {
 	}
 
     public void setPointsEarned() {
-        pointsEarned = points * multiplier;
+		if (
+				getName().equalsIgnoreCase("(FH)- Full House") ||
+				getName().equalsIgnoreCase("(SS)- Small Straight") ||
+				getName().equalsIgnoreCase("(LS)- Large Straight") ||
+				getName().equalsIgnoreCase("(YA)- Yahtzee")) {
+			multiplier = 1;
+		}
+
+		pointsEarned = points * multiplier;
     }
 
 	public void setPointsEarned(int newPointsEarned) {
@@ -92,6 +100,13 @@ public class ScoreCardLine {
  	 */
 	public void setMultiplier(int newMult) {
 		multiplier = newMult;
+		if (
+				getName().equalsIgnoreCase("(FH)- Full House") ||
+						getName().equalsIgnoreCase("(SS)- Small Straight") ||
+						getName().equalsIgnoreCase("(LS)- Large Straight") ||
+						getName().equalsIgnoreCase("(YA)- Yahtzee")) {
+			multiplier = 1;
+		}
 	}
 
 	/**

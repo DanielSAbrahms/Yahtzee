@@ -163,7 +163,7 @@ public class ScoreCard {
 	 *  @param hand- hand object that has been initiated
 	 *  @return int value of total number of times that num exists in hand
 	 */
-	private int totalOfNum(int num, Hand hand) {
+	public int totalOfNum(int num, Hand hand) {
 		int sum = 0;
 		for (int i = 0; i < hand.getDiceNumber(); i++) {
 			if (hand.getDice(i).getValue() == num) {

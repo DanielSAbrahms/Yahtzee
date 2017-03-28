@@ -33,7 +33,41 @@ class SCTable extends JTable {
         DefaultTableModel model = new DefaultTableModel(values, names);
         model.setColumnCount(3);
         this.setModel(model);
+    }
 
+    void resetColumn1() {
+        String[][] values = new String[6+7][3];
+        for (int i = 0; i < 6+7; i++){
+            ScoreCardLine line = sc.getLine(i);
+            String[] a = {line.getName(), String.valueOf(0), String.valueOf(line.getPointsEarned())};
+            values[i] = a;
+        }
+        String[] names = new String[6+7];
+        for (int i = 0; i < 6+7; i++){
+            names[i] = String.valueOf(i);
+        }
+        DefaultTableModel model = new DefaultTableModel(values, names);
+        model.setColumnCount(3);
+        this.setModel(model);
+    }
 
+    void reset() {
+        String[][] values = new String[6+7][3];
+        for (int i = 0; i < 6+7; i++){
+            ScoreCardLine line = sc.getLine(i);
+            String[] a = {line.getName(), String.valueOf(0), String.valueOf(0) };
+            values[i] = a;
+        }
+        String[] names = new String[6+7];
+        for (int i = 0; i < 6+7; i++){
+            names[i] = String.valueOf(i);
+        }
+        DefaultTableModel model = new DefaultTableModel(values, names);
+        model.setColumnCount(3);
+        this.setModel(model);
+        for (int i = 0; i < 6+7; i++){
+            ScoreCardLine line = sc.getLine(i);
+            line.setPointsEarned(0);
+        }
     }
 }

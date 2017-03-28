@@ -48,13 +48,6 @@ public class YahtzeeGUI extends JFrame{
     private int sidesOnADice = 6;
     private int roundsLeft;
     private int rollsLeft;
-    private int dice1Value;
-    private int dice2Value;
-    private int dice3Value;
-    private int dice4Value;
-    private int dice5Value;
-    private int dice6Value;
-    private int dice7Value;
     private int selectedLine;
     private String[] scoreCardNames;
     private String[][] scoreCardValues;
@@ -324,7 +317,10 @@ public class YahtzeeGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 resetDice();
-                syncDice();
+                resetCheckBoxes();
+                rollButton.doClick();
+                rollsLeft = 3;
+                scTable.reset();
             }
         });
 
@@ -425,6 +421,17 @@ public class YahtzeeGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 pause = false;
                 scTable.getSc().getLine(getSelectedLine()).setUsed(true);
+                scTable.getSc().getLine(getSelectedLine()).setMultiplier(h.sum());
+                for (int i = 0; i < 12; i++) {
+                    if (scTable.getSc().getLine(getSelectedLine()).getName().equalsIgnoreCase(String.valueOf(i))) {
+                        scTable.getSc().getLine(getSelectedLine()).setMultiplier(scTable.getSc().totalOfNum(i, h));
+                    }
+                }
+                scTable.getSc().getLine(getSelectedLine()).setPointsEarned();
+                scTable.refresh();
+                resetCheckBoxes();
+                resetDice();
+                resetColumn1();
             }
         });
 
@@ -521,6 +528,14 @@ public class YahtzeeGUI extends JFrame{
 
     private void resetDice(){
         pause = false;
+        dice1.getD().setKept(false);
+        dice2.getD().setKept(false);
+        dice3.getD().setKept(false);
+        dice4.getD().setKept(false);
+        dice5.getD().setKept(false);
+        dice6.getD().setKept(false);
+        dice7.getD().setKept(false);
+        rollButton.doClick();
         JLabel[] dice = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
         for (int i = 0; i < dice.length; i++){
             changeImage(dice[i], unknownDice);
@@ -537,7 +552,7 @@ public class YahtzeeGUI extends JFrame{
     }
 
     public int getSelectedLine() {
-        return selectedLine;
+        return scTable.getSelectedRow();
     }
 
     public String getKeepString() {
@@ -560,6 +575,20 @@ public class YahtzeeGUI extends JFrame{
         dice7.refresh();
         DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6};
         h = new Hand(hand, diceInPlay, sidesOnADice);
+    }
+
+    public void resetCheckBoxes() {
+        keepDice1.setSelected(false);
+        keepDice2.setSelected(false);
+        keepDice3.setSelected(false);
+        keepDice4.setSelected(false);
+        keepDice5.setSelected(false);
+        keepDice6.setSelected(false);
+        keepDice7.setSelected(false);
+    }
+
+    public void resetColumn1(){
+      scTable.resetColumn1();
     }
 
 }
