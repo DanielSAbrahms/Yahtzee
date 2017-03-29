@@ -49,7 +49,7 @@ public class SCTable extends JTable {
         for (int i = 0; i < sidesPerDice+7; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
-            if (line.getPointsEarned() == 0) {
+            if (line.getPointsEarned() == 0 && line.getUsed() == false) {
                 pe = "-";
             } else {
                 pe = String.valueOf(line.getPointsEarned());

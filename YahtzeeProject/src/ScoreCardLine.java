@@ -162,4 +162,7 @@ public class ScoreCardLine {
     }
 
 
+	public void setPotentialPoints(int potentialPoints) {
+		this.potentialPoints = potentialPoints;
+	}
 }
