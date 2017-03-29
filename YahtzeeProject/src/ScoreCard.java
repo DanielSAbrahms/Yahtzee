@@ -288,7 +288,7 @@ public class ScoreCard {
 	  * @param diceRange- the number of sides per dice
 	  * @return whether or not the 63 grand total has been reached
       */
-     private boolean calculateBonus(int diceRange) {
+     boolean calculateBonus(int diceRange) {
          int sum = 0;
          for (int i = 0; i < diceRange; i++) {
              sum += line[i].getPointsEarned();

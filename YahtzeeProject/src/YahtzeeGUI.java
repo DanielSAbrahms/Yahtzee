@@ -1,12 +1,10 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -81,7 +79,7 @@ class YahtzeeGUI extends JFrame{
     private static final int DICE_Y_COOR = 44;
     private static final int BUTTON_X_COOR = 190;
     private static final int BUTTON_Y_COOR = 656;
-    private static final int GAME_BUTTON_X_COOR = 1115;
+    private static final int GAME_BUTTON_X_COOR = 1135;
     private static final int GAME_BUTTON_Y_COOR = 330;
     private static final int CHECKBOX_X_COOR = 116;
     private static final int CHECKBOX_Y_COOR = 216;
@@ -91,8 +89,8 @@ class YahtzeeGUI extends JFrame{
     private static final int LABEL_Y_COOR = 44;
     private static final int SCORE_LABEL_X_COOR = 1095;
     private static final int SCORE_LABEL_Y_COOR = 530;
-    private static final int ROLLS_LEFT_LABEL_X_COOR = 300;
-    private static final int ROLLS_LEFT_LABEL_Y_COOR = 656;
+    private static final int ROLLS_LEFT_LABEL_X_COOR = 308;
+    private static final int ROLLS_LEFT_LABEL_Y_COOR = 663;
     //</editor-fold>
 
     //<editor-fold desc = "Image Constants">
@@ -137,7 +135,7 @@ class YahtzeeGUI extends JFrame{
             diceSide5_raw = ImageIO.read(new File(USER_DIR + "/diceSide5.png"));
             diceSide6_raw = ImageIO.read(new File(USER_DIR + "/diceSide6.png"));
             unknownDice_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
-            background = ImageIO.read(new File(USER_DIR + "/background.png"));
+            background = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -154,7 +152,6 @@ class YahtzeeGUI extends JFrame{
         this.setContentPane(new JLabel(new ImageIcon(background)));
         Container c = getContentPane();
 
-        c.setBackground(Color.GREEN);
 
         //<editor-fold desc="Bottom Buttons Creation">
         rollButton = new JButton();
@@ -349,6 +346,7 @@ class YahtzeeGUI extends JFrame{
         //<editor-fold desc = "Rolls Left Label Creation>
         rollsLeftLabel = new JLabel();
         rollsLeftLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        rollsLeftLabel.setForeground(Color.BLACK);
         rollsLeftLabel.setText("Rolls Left: " + String.valueOf(rollsLeft));
         rollsLeftLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT);
         rollsLeftLabel.setLocation(ROLLS_LEFT_LABEL_X_COOR+200, ROLLS_LEFT_LABEL_Y_COOR);
@@ -531,10 +529,7 @@ class YahtzeeGUI extends JFrame{
                 scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
                 scTable.refresh();
                 scTable.getSc().showScoreCard(sidesOnADice);
-                totalScoreValue = scTable.getSc().getTotalScore();
-                lowerScoreValue = scTable.getSc().getLowerTotal();
-                upperScoreValue = scTable.getSc().getUpperTotal();
-                bonusValue = scTable.getSc().getBonus();
+                refreshScores();
                 resetCheckBoxes();
                 resetDice();
                 resetColumn1();
@@ -624,6 +619,7 @@ class YahtzeeGUI extends JFrame{
                 }
             }
         });
+
         //</editor-fold>
 
     }
@@ -657,7 +653,9 @@ class YahtzeeGUI extends JFrame{
     }
 
     private int getSelectedLine() {
-        return scTable.getSelectedRow();
+        int selected = scTable.getSelectedRow();
+        assert(selected > -1 && selected < (sidesOnADice + 7));
+        return selected;
     }
 
     private void syncDice(){
@@ -701,6 +699,26 @@ class YahtzeeGUI extends JFrame{
         totalScore.setText("Total: " + String.valueOf(totalScoreValue));
         bonus.setText("Bonus: " + String.valueOf(bonusValue));
         repaint();
+    }
+    
+    private void refreshScores() {
+        upperScoreValue = 0;
+        lowerScoreValue = 0;
+        totalScoreValue = 0;
+        bonusValue = 0;
+        for (int i = 0; i < sidesOnADice + 7; i++) {
+            if (i < sidesOnADice) upperScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
+            if (i == sidesOnADice) {
+                if (scTable.getSc().calculateBonus(sidesOnADice)){
+                    bonusValue = 35;
+                }
+            }
+            if (i >= sidesOnADice) lowerScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
+            scTable.getSc().getLine(i).printUsed();
+            if (i == sidesOnADice+6) {
+                totalScoreValue = lowerScoreValue+upperScoreValue+bonusValue;
+            }
+        }
     }
 }
  class ForcedListSelectionModel extends DefaultListSelectionModel {
