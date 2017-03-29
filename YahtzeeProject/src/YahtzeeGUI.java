@@ -10,44 +10,46 @@ import java.io.File;
 /**
  * @author Daniel Abrahms
  * @version 1.0
+ * Creates a custom JFrame with Yahtzee functionality.
  */
 
 class YahtzeeGUI extends JFrame{
     //<editor-fold desc = "Private Variables">
-
     private SCTable scTable;
-    private DiceLabel dice1;
-    private DiceLabel dice2;
-    private DiceLabel dice3;
-    private DiceLabel dice4;
-    private DiceLabel dice5;
-    private DiceLabel dice6;
-    private DiceLabel dice7;
-    private JLabel dicePerGame;
-    private JLabel sidesPerDice;
-    private JLabel totalScore;
-    private JLabel upperTotal;
-    private JLabel lowerTotal;
-    private JLabel bonus;
+    private DiceLabel dice1Label;
+    private DiceLabel dice2Label;
+    private DiceLabel dice3Label;
+    private DiceLabel dice4Label;
+    private DiceLabel dice5Label;
+    private DiceLabel dice6Label;
+    private DiceLabel dice7Label;
+    private JLabel dicePerGameLabel;
+    private JLabel sidesPerDiceLabel;
+    private JLabel totalScoreLabel;
+    private JLabel upperTotalLabel;
+    private JLabel lowerTotalLabel;
+    private JLabel bonusLabel;
     private JLabel rollsLeftLabel;
     private JButton rollButton;
     private JButton confirmSelectionButton;
-    private JCheckBox keepDice1;
-    private JCheckBox keepDice2;
-    private JCheckBox keepDice3;
-    private JCheckBox keepDice4;
-    private JCheckBox keepDice5;
-    private JCheckBox keepDice6;
-    private JCheckBox keepDice7;
-    private JComboBox pickDicePerGame;
-    private JComboBox pickSidesPerDice;
-    private JButton saveGame;
-    private JButton newGame;
-    private JButton loadGame;
-    private JOptionPane gameOver;
+    /*
+    private JCheckBox dice1Label;
+    private JCheckBox dice2Label;
+    private JCheckBox dice3Label;
+    private JCheckBox dice4Label;
+    private JCheckBox dice5Label;
+    private JCheckBox dice6Label;
+    private JCheckBox dice7Label;
+    */
+    private JComboBox dicePerGameBox;
+    private JComboBox sidesPerDiceBox;
+    private JButton saveGameButton;
+    private JButton newGameButton;
+    private JButton loadGameButton;
+    private JOptionPane gameOverPopup;
 
-    private int diceInPlay = 5;
-    private int sidesOnADice = 6;
+    private int dicePerGameValue = 5;
+    private int sidesPerDiceValue = 6;
     private int totalScoreValue = 0;
     private int upperScoreValue = 0;
     private int lowerScoreValue = 0;
@@ -95,12 +97,18 @@ class YahtzeeGUI extends JFrame{
 
     //<editor-fold desc = "Image Constants">
     private final Image unknownDice;
-    private final Image diceSide1;
-    private final Image diceSide2;
-    private final Image diceSide3;
-    private final Image diceSide4;
-    private final Image diceSide5;
-    private final Image diceSide6;
+    private final Image diceSide1Image;
+    private final Image diceSide2Image;
+    private final Image diceSide3Image;
+    private final Image diceSide4Image;
+    private final Image diceSide5Image;
+    private final Image diceSide6Image;
+    private final Image diceSide1LockedImage;
+    private final Image diceSide2LockedImage;
+    private final Image diceSide3LockedImage;
+    private final Image diceSide4LockedImage;
+    private final Image diceSide5LockedImage;
+    private final Image diceSide6LockedImage;
     //</editor-fold>
 
     // User Directory to Locate Source Images
@@ -110,7 +118,7 @@ class YahtzeeGUI extends JFrame{
 
     YahtzeeGUI(String title) {
         super(title);
-        roundsLeft = sidesOnADice + 7;
+        roundsLeft = sidesPerDiceValue + 7;
         rollsLeft = 3;
 
          // Assigns JFrame title
@@ -122,6 +130,12 @@ class YahtzeeGUI extends JFrame{
         BufferedImage diceSide4_raw = null;
         BufferedImage diceSide5_raw = null;
         BufferedImage diceSide6_raw = null;
+        BufferedImage diceSide1_Locked_raw = null;
+        BufferedImage diceSide2_Locked_raw = null;
+        BufferedImage diceSide3_Locked_raw = null;
+        BufferedImage diceSide4_Locked_raw = null;
+        BufferedImage diceSide5_Locked_raw = null;
+        BufferedImage diceSide6_Locked_raw = null;
         BufferedImage unknownDice_raw = null;
         BufferedImage background = null;
         //</editor-fold>
@@ -134,25 +148,37 @@ class YahtzeeGUI extends JFrame{
             diceSide4_raw = ImageIO.read(new File(USER_DIR + "/diceSide4.png"));
             diceSide5_raw = ImageIO.read(new File(USER_DIR + "/diceSide5.png"));
             diceSide6_raw = ImageIO.read(new File(USER_DIR + "/diceSide6.png"));
+            diceSide1_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide1_Locked.png"));
+            diceSide2_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide2_Locked.png"));
+            diceSide3_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide3_Locked.png"));
+            diceSide4_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide4_Locked.png"));
+            diceSide5_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide5_Locked.png"));
+            diceSide6_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide6_Locked.png"));
             unknownDice_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
-            background = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
+            background = ImageIO.read(new File(USER_DIR + "/background.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         unknownDice = unknownDice_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide1 = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide2 = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide3 = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide4 = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide5 = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        diceSide6 = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide1Image = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide2Image = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide3Image = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide4Image = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide5Image = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide6Image = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide1LockedImage = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide2LockedImage = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide3LockedImage = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide4LockedImage = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide5LockedImage = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide6LockedImage = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         //</editor-fold>
 
 
         this.setContentPane(new JLabel(new ImageIcon(background)));
         Container c = getContentPane();
 
-
+        //<editor-fold desc = "Component Creation">
         //<editor-fold desc="Bottom Buttons Creation">
         rollButton = new JButton();
         rollButton.setText("Roll Hand");
@@ -168,81 +194,47 @@ class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc="Dice Label Creation">
-        Image[] images = {unknownDice, diceSide1, diceSide2, diceSide3, diceSide4, diceSide5, diceSide6};
+        Image[] images = {unknownDice, diceSide1Image, diceSide2Image, diceSide3Image, diceSide4Image, diceSide5Image, diceSide6Image,
+        diceSide1LockedImage, diceSide2LockedImage, diceSide3LockedImage, diceSide4LockedImage, diceSide5LockedImage, diceSide6LockedImage, };
 
-        dice1 = new DiceLabel(images);
-        dice1.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice1.setLocation(DICE_X_COOR + (0*225), DICE_Y_COOR);
-        c.add(dice1);
+        dice1Label = new DiceLabel(images, sidesPerDiceValue);
+        dice1Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice1Label.setLocation(DICE_X_COOR + (0*225), DICE_Y_COOR);
+        c.add(dice1Label);
 
-        dice2 = new DiceLabel(images);
-        dice2.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice2.setLocation(DICE_X_COOR + (1*225), DICE_Y_COOR);
-        c.add(dice2);
+        dice2Label = new DiceLabel(images, sidesPerDiceValue);
+        dice2Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice2Label.setLocation(DICE_X_COOR + (1*225), DICE_Y_COOR);
+        c.add(dice2Label);
 
-        dice3 = new DiceLabel(images);
-        dice3.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice3.setLocation(DICE_X_COOR + (2*225), DICE_Y_COOR);
-        c.add(dice3);
+        dice3Label = new DiceLabel(images, sidesPerDiceValue);
+        dice3Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice3Label.setLocation(DICE_X_COOR + (2*225), DICE_Y_COOR);
+        c.add(dice3Label);
 
-        dice4 = new DiceLabel(images);
-        dice4.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice4.setLocation(DICE_X_COOR + (3*225), DICE_Y_COOR);
-        c.add(dice4);
+        dice4Label = new DiceLabel(images, sidesPerDiceValue);
+        dice4Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice4Label.setLocation(DICE_X_COOR + (3*225), DICE_Y_COOR);
+        c.add(dice4Label);
 
-        dice5 = new DiceLabel(images);
-        dice5.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice5.setLocation(DICE_X_COOR + (4*225), DICE_Y_COOR);
-        c.add(dice5);
+        dice5Label = new DiceLabel(images, sidesPerDiceValue);
+        dice5Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice5Label.setLocation(DICE_X_COOR + (4*225), DICE_Y_COOR);
+        c.add(dice5Label);
 
-        dice6 = new DiceLabel(images);
-        dice6.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice6.setLocation(DICE_X_COOR + (5*225), DICE_Y_COOR);
+        dice6Label = new DiceLabel(images, sidesPerDiceValue);
+        dice6Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice6Label.setLocation(DICE_X_COOR + (5*225), DICE_Y_COOR);
 
-        dice7 = new DiceLabel(images);
-        dice7.setSize(DICE_WIDTH, DICE_HEIGHT);
-        dice7.setLocation(DICE_X_COOR + (6*225), DICE_Y_COOR);
+        dice7Label = new DiceLabel(images, sidesPerDiceValue);
+        dice7Label.setSize(DICE_WIDTH, DICE_HEIGHT);
+        dice7Label.setLocation(DICE_X_COOR + (6*225), DICE_Y_COOR);
 
         //</editor-fold>
 
-        //<editor-fold desc="Keep Dice Checkbox Creation">
-        keepDice1 = new JCheckBox();
-        keepDice1.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice1.setLocation(CHECKBOX_X_COOR + (0*225), CHECKBOX_Y_COOR);
-        c.add(keepDice1);
-
-        keepDice2 = new JCheckBox();
-        keepDice2.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice2.setLocation(CHECKBOX_X_COOR + (1*225), CHECKBOX_Y_COOR);
-        c.add(keepDice2);
-
-        keepDice3 = new JCheckBox();
-        keepDice3.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice3.setLocation(CHECKBOX_X_COOR + (2*225), CHECKBOX_Y_COOR);
-        c.add(keepDice3);
-
-        keepDice4 = new JCheckBox();
-        keepDice4.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice4.setLocation(CHECKBOX_X_COOR + (3*225), CHECKBOX_Y_COOR);
-        c.add(keepDice4);
-
-        keepDice5 = new JCheckBox();
-        keepDice5.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice5.setLocation(CHECKBOX_X_COOR + (4*225), CHECKBOX_Y_COOR);
-        c.add(keepDice5);
-
-        keepDice6 = new JCheckBox();
-        keepDice6.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice6.setLocation(CHECKBOX_X_COOR + (5*225), CHECKBOX_Y_COOR);
-
-
-        keepDice7 = new JCheckBox();
-        keepDice7.setSize(CHECKBOX_WIDTH, CHECKBOX_HEIGHT);
-        keepDice7.setLocation(CHECKBOX_X_COOR + (6*225), CHECKBOX_Y_COOR);
-        //</editor-fold>
 
         //<editor-fold desc="Scorecard Table Creation">
-        scTable = new SCTable(sidesOnADice) {
+        scTable = new SCTable(sidesPerDiceValue) {
             private static final long serialVersionUID = 1L;
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -258,92 +250,92 @@ class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc="Dice Per Game Menu Creation">
-        dicePerGame = new JLabel();
-        dicePerGame.setFont(new Font ("Garamond", Font.PLAIN , 20));
-        dicePerGame.setText("Dice Per Game");
-        dicePerGame.setSize(LABEL_WIDTH, LABEL_HEIGHT);
-        dicePerGame.setLocation(LABEL_X_COOR, LABEL_Y_COOR);
-        c.add(dicePerGame);
+        dicePerGameLabel = new JLabel();
+        dicePerGameLabel.setFont(new Font ("Garamond", Font.PLAIN , 20));
+        dicePerGameLabel.setText("Dice Per Game");
+        dicePerGameLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT);
+        dicePerGameLabel.setLocation(LABEL_X_COOR, LABEL_Y_COOR);
+        c.add(dicePerGameLabel);
 
 
         String[] dicePerGameOptions = {"5", "6", "7"};
-        pickDicePerGame = new JComboBox(dicePerGameOptions);
-        pickDicePerGame.setSelectedIndex(0);
-        pickDicePerGame.setSize(LABEL_WIDTH, LABEL_HEIGHT);
-        pickDicePerGame.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 30);
-        c.add(pickDicePerGame);
+        dicePerGameBox = new JComboBox(dicePerGameOptions);
+        dicePerGameBox.setSelectedIndex(0);
+        dicePerGameBox.setSize(LABEL_WIDTH, LABEL_HEIGHT);
+        dicePerGameBox.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 30);
+        c.add(dicePerGameBox);
         //</editor-fold>
 
         //<editor-fold desc="Sides Per Dice Menu Creation">
-        sidesPerDice = new JLabel();
-        sidesPerDice.setFont(new Font ("Garamond", Font.PLAIN , 20));
-        sidesPerDice.setText("Sides Per Dice");
-        sidesPerDice.setSize(LABEL_WIDTH, LABEL_HEIGHT);
-        sidesPerDice.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 100);
-        c.add(sidesPerDice);
+        sidesPerDiceLabel = new JLabel();
+        sidesPerDiceLabel.setFont(new Font ("Garamond", Font.PLAIN , 20));
+        sidesPerDiceLabel.setText("Sides Per Dice");
+        sidesPerDiceLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT);
+        sidesPerDiceLabel.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 100);
+        c.add(sidesPerDiceLabel);
 
         String[] sidesPerDiceOptions = {"6", "8", "12"};
-        pickSidesPerDice = new JComboBox(sidesPerDiceOptions);
-        pickSidesPerDice.setSelectedIndex(0);
-        pickSidesPerDice.setSize(LABEL_WIDTH, LABEL_HEIGHT);
-        pickSidesPerDice.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 130);
-        c.add(pickSidesPerDice);
+        sidesPerDiceBox = new JComboBox(sidesPerDiceOptions);
+        sidesPerDiceBox.setSelectedIndex(0);
+        sidesPerDiceBox.setSize(LABEL_WIDTH, LABEL_HEIGHT);
+        sidesPerDiceBox.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 130);
+        c.add(sidesPerDiceBox);
         //</editor-fold>
 
         //<editor-fold desc="Game Buttons">
-        saveGame = new JButton();
-        saveGame.setText("Save Game");
-        saveGame.setBackground(Color.RED);
-        saveGame.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
-        saveGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR);
-        c.add(saveGame);
+        saveGameButton = new JButton();
+        saveGameButton.setText("Save Game");
+        saveGameButton.setBackground(Color.RED);
+        saveGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
+        saveGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR);
+        c.add(saveGameButton);
 
-        newGame = new JButton();
-        newGame.setText("New Game");
-        newGame.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
-        newGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+60);
-        c.add(newGame);
+        newGameButton = new JButton();
+        newGameButton.setText("New Game");
+        newGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
+        newGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+60);
+        c.add(newGameButton);
 
-        loadGame = new JButton();
-        loadGame.setText("Load Game");
-        loadGame.setBackground(Color.RED);
-        loadGame.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
-        loadGame.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+120);
-        c.add(loadGame);
+        loadGameButton = new JButton();
+        loadGameButton.setText("Load Game");
+        loadGameButton.setBackground(Color.RED);
+        loadGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
+        loadGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+120);
+        c.add(loadGameButton);
         //</editor-fold>
 
         //<editor-fold desc = "Score Labels">
-        lowerTotal = new JLabel();
-        lowerTotal.setFont(new Font ("Garamond", Font.BOLD , 20));
-        lowerTotal.setText("Lower Total: " + String.valueOf(lowerScoreValue));
-        lowerTotal.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
-        lowerTotal.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR);
-        c.add(lowerTotal);
+        lowerTotalLabel = new JLabel();
+        lowerTotalLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        lowerTotalLabel.setText("Lower Total: " + String.valueOf(lowerScoreValue));
+        lowerTotalLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        lowerTotalLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR);
+        c.add(lowerTotalLabel);
 
-        upperTotal = new JLabel();
-        upperTotal.setFont(new Font ("Garamond", Font.BOLD , 20));
-        upperTotal.setText("Upper Total: " + String.valueOf(upperScoreValue));
-        upperTotal.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
-        upperTotal.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+40);
-        c.add(upperTotal);
+        upperTotalLabel = new JLabel();
+        upperTotalLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        upperTotalLabel.setText("Upper Total: " + String.valueOf(upperScoreValue));
+        upperTotalLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        upperTotalLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+40);
+        c.add(upperTotalLabel);
 
-        bonus = new JLabel();
-        bonus.setFont(new Font ("Garamond", Font.BOLD , 20));
-        bonus.setText("Bonus: " + String.valueOf(bonusValue));
-        bonus.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
-        bonus.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+80);
-        c.add(bonus);
+        bonusLabel = new JLabel();
+        bonusLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        bonusLabel.setText("Bonus: " + String.valueOf(bonusValue));
+        bonusLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        bonusLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+80);
+        c.add(bonusLabel);
 
-        totalScore = new JLabel();
-        totalScore.setFont(new Font ("Garamond", Font.BOLD , 20));
-        totalScore.setText("Total: " + String.valueOf(totalScoreValue));
-        totalScore.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
-        totalScore.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+120);
-        c.add(totalScore);
+        totalScoreLabel = new JLabel();
+        totalScoreLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        totalScoreLabel.setText("Total: " + String.valueOf(totalScoreValue));
+        totalScoreLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        totalScoreLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+120);
+        c.add(totalScoreLabel);
 
         //</editor-fold>
 
-        //<editor-fold desc = "Rolls Left Label Creation>
+        //<editor-fold desc = "Rolls Left Label Creation">
         rollsLeftLabel = new JLabel();
         rollsLeftLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
         rollsLeftLabel.setForeground(Color.BLACK);
@@ -353,48 +345,39 @@ class YahtzeeGUI extends JFrame{
         c.add(rollsLeftLabel);
         //</editor-fold>
 
-        SaveFile file = new SaveFile(sidesOnADice, diceInPlay, 3);
+        //</editor-fold>
+
+        SaveFile file = new SaveFile(sidesPerDiceValue, dicePerGameValue, 3);
 
         file.read();
-        sidesOnADice = file.getSidesPerDice();
-        diceInPlay = file.getDiceInGame();
-        DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6};
-        h = new Hand(hand, diceInPlay, sidesOnADice);
+        sidesPerDiceValue = file.getSidesPerDice();
+        dicePerGameValue = file.getDiceInGame();
+        DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label};
+        h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
         
 
-        newGame.addActionListener(new ActionListener() {
+        //<editor-fold desc = "Action Listeners">
+        newGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                rollsLeft = 3;
-                totalScoreValue = 0;
-                lowerScoreValue = 0;
-                upperScoreValue = 0;
-                bonusValue = 0;
-                refreshLabels();
-                resetDice();
-                resetCheckBoxes();
-                rollButton.doClick();
-                scTable.reset();
+                reset();
             }
         });
 
-        saveGame.addActionListener(new ActionListener() {
+        saveGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                file.write(sidesOnADice, diceInPlay, 3);
+                file.write(sidesPerDiceValue, dicePerGameValue, 3);
                 file.writeScoreCard(scTable.getSc(), h);
             }
         });
 
-        loadGame.addActionListener(new ActionListener() {
+        loadGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 file.read();
                 file.readScoreCard(scTable.getSc());
-                resetCheckBoxes();
-                resetDice();
-                scTable.reset();
-                repaint();
+                reset();
             }
         });
 
@@ -407,14 +390,14 @@ class YahtzeeGUI extends JFrame{
                     pause = true;
                     rollsLeft = 3;
                 } else {
-                    dice1.getD().roll();
-                    dice2.getD().roll();
-                    dice3.getD().roll();
-                    dice4.getD().roll();
-                    dice5.getD().roll();
-                    dice6.getD().roll();
-                    dice7.getD().roll();
-                    syncDice();
+                    dice1Label.getD().roll();
+                    dice2Label.getD().roll();
+                    dice3Label.getD().roll();
+                    dice4Label.getD().roll();
+                    dice5Label.getD().roll();
+                    dice6Label.getD().roll();
+                    dice7Label.getD().roll();
+                    refreshDice();
                     rollsLeft--;
                     rollsLeftLabel.setText("Rolls Left: " + String.valueOf(rollsLeft));
                 }
@@ -422,92 +405,68 @@ class YahtzeeGUI extends JFrame{
             }
         });
 
-        pickDicePerGame.addActionListener(new ActionListener() {
+        dicePerGameBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                newGame.doClick();
+                newGameButton.doClick();
                 int LABEL_SPACER;
-                if (pickDicePerGame.getSelectedItem().equals("5")){
-                    diceInPlay = 5;
+                if (dicePerGameBox.getSelectedItem().equals("5")){
+                    dicePerGameValue = 5;
                     LABEL_SPACER = 225;
-                    c.remove(dice7);
-                    c.remove(keepDice7);
-                    c.remove(dice6);
-                    c.remove(keepDice6);
-                    dice5.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
-                    dice4.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
-                    dice3.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
-                    dice2.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
-                    dice1.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
-                    keepDice1.setLocation(CHECKBOX_X_COOR + (0*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice2.setLocation(CHECKBOX_X_COOR + (1*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice3.setLocation(CHECKBOX_X_COOR + (2*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice4.setLocation(CHECKBOX_X_COOR + (3*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice5.setLocation(CHECKBOX_X_COOR + (4*LABEL_SPACER), CHECKBOX_Y_COOR);
+                    c.remove(dice7Label);
+                    c.remove(dice6Label);
+                    dice5Label.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
+                    dice4Label.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
+                    dice3Label.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
+                    dice2Label.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
+                    dice1Label.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
                     repaint();
                 }
-                else if (pickDicePerGame.getSelectedItem().equals("6")){
-                    diceInPlay = 6;
+                else if (dicePerGameBox.getSelectedItem().equals("6")){
+                    dicePerGameValue = 6;
                     LABEL_SPACER = 180;
-                    c.remove(dice7);
-                    c.remove(keepDice7);
-                    c.add(dice6);
-                    c.add(keepDice6);
-                    dice6.setLocation(DICE_X_COOR + (5*LABEL_SPACER), DICE_Y_COOR);
-                    dice5.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
-                    dice4.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
-                    dice3.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
-                    dice2.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
-                    dice1.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
-                    keepDice1.setLocation(CHECKBOX_X_COOR + (0*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice2.setLocation(CHECKBOX_X_COOR + (1*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice3.setLocation(CHECKBOX_X_COOR + (2*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice4.setLocation(CHECKBOX_X_COOR + (3*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice5.setLocation(CHECKBOX_X_COOR + (4*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice6.setLocation(CHECKBOX_X_COOR + (5*LABEL_SPACER), CHECKBOX_Y_COOR);
+                    c.remove(dice7Label);
+                    c.add(dice6Label);
+                    dice6Label.setLocation(DICE_X_COOR + (5*LABEL_SPACER), DICE_Y_COOR);
+                    dice5Label.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
+                    dice4Label.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
+                    dice3Label.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
+                    dice2Label.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
+                    dice1Label.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
                     repaint();
-                } else if (pickDicePerGame.getSelectedItem().equals("7")){
-                    diceInPlay = 7;
+                } else if (dicePerGameBox.getSelectedItem().equals("7")){
+                    dicePerGameValue = 7;
                     LABEL_SPACER = 150;
-                    c.add(dice7);
-                    c.add(keepDice7);
-                    c.add(dice6);
-                    c.add(keepDice6);
-                    dice7.setLocation(DICE_X_COOR + (6*LABEL_SPACER), DICE_Y_COOR);
-                    dice6.setLocation(DICE_X_COOR + (5*LABEL_SPACER), DICE_Y_COOR);
-                    dice5.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
-                    dice4.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
-                    dice3.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
-                    dice2.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
-                    dice1.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
-                    keepDice1.setLocation(CHECKBOX_X_COOR + (0*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice2.setLocation(CHECKBOX_X_COOR + (1*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice3.setLocation(CHECKBOX_X_COOR + (2*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice4.setLocation(CHECKBOX_X_COOR + (3*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice5.setLocation(CHECKBOX_X_COOR + (4*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice6.setLocation(CHECKBOX_X_COOR + (5*LABEL_SPACER), CHECKBOX_Y_COOR);
-                    keepDice7.setLocation(CHECKBOX_X_COOR + (6*LABEL_SPACER), CHECKBOX_Y_COOR);
+                    c.add(dice7Label);
+                    c.add(dice6Label);
+                    dice7Label.setLocation(DICE_X_COOR + (6*LABEL_SPACER), DICE_Y_COOR);
+                    dice6Label.setLocation(DICE_X_COOR + (5*LABEL_SPACER), DICE_Y_COOR);
+                    dice5Label.setLocation(DICE_X_COOR + (4*LABEL_SPACER), DICE_Y_COOR);
+                    dice4Label.setLocation(DICE_X_COOR + (3*LABEL_SPACER), DICE_Y_COOR);
+                    dice3Label.setLocation(DICE_X_COOR + (2*LABEL_SPACER), DICE_Y_COOR);
+                    dice2Label.setLocation(DICE_X_COOR + (1*LABEL_SPACER), DICE_Y_COOR);
+                    dice1Label.setLocation(DICE_X_COOR + (0*LABEL_SPACER), DICE_Y_COOR);
                     repaint();
                 }
             }
         });
 
-        pickSidesPerDice.addActionListener(new ActionListener() {
+        sidesPerDiceBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                newGame.doClick();
-                if (pickSidesPerDice.getSelectedItem().equals("6")) {
-                    sidesOnADice = 6;
+                newGameButton.doClick();
+                if (sidesPerDiceBox.getSelectedItem().equals("6")) {
+                    sidesPerDiceValue = 6;
                     scTable.setRowHeight(29);
-                } else if ((pickSidesPerDice.getSelectedItem().equals("8"))) {
-                    sidesOnADice = 8;
+                } else if ((sidesPerDiceBox.getSelectedItem().equals("8"))) {
+                    sidesPerDiceValue = 8;
                     scTable.setRowHeight(25);
-                } else if ((pickSidesPerDice.getSelectedItem().equals("12"))) {
-                    sidesOnADice = 12;
+                } else if ((sidesPerDiceBox.getSelectedItem().equals("12"))) {
+                    sidesPerDiceValue = 12;
                     scTable.setRowHeight(20);
                 }
-                scTable.setSc(new ScoreCard(sidesOnADice));
-                scTable.setSidesPerDice(sidesOnADice);
+                scTable.setSc(new ScoreCard(sidesPerDiceValue));
+                scTable.setSidesPerDice(sidesPerDiceValue);
                 scTable.refresh();
             }
         });
@@ -528,199 +487,242 @@ class YahtzeeGUI extends JFrame{
                 }
                 scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
                 scTable.refresh();
-                scTable.getSc().showScoreCard(sidesOnADice);
-                refreshScores();
-                resetCheckBoxes();
-                resetDice();
-                resetColumn1();
-                refreshLabels();
+                scTable.getSc().showScoreCard(sidesPerDiceValue);
+                refresh();
                 if (scTable.getSc().howManyLeft() <= 0) {
-                    gameOver = new JOptionPane();
-                    gameOver.showMessageDialog(null, "Game Over \n Final Score: " + String.valueOf(totalScoreValue));
+                    gameOverPopup = new JOptionPane();
+                    gameOverPopup.showMessageDialog(null, "Game Over \n Final Score: " + String.valueOf(totalScoreValue));
                     System.exit(0);
                 }
             }
         });
 
         //<editor-fold desc = "Dice Checkboxes Listeners">
-        keepDice1.addActionListener(new ActionListener() {
+        dice1Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice1.isSelected()) {
-                    dice1.getD().setKept(true);
+                if (dice1Label.isSelected()) {
+                    dice1Label.getD().setKept(true);
                 } else {
-                    dice1.getD().setKept(false);
+                    dice1Label.getD().setKept(false);
                 }
+                dice1Label.refresh();
             }
         });
 
-        keepDice2.addActionListener(new ActionListener() {
+        dice2Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice2.isSelected()) {
-                    dice2.getD().setKept(true);
+                if (dice2Label.isSelected()) {
+                    dice2Label.getD().setKept(true);
                 } else {
-                    dice2.getD().setKept(false);
+                    dice2Label.getD().setKept(false);
                 }
+                dice2Label.refresh();
             }
         });
 
-        keepDice3.addActionListener(new ActionListener() {
+        dice3Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice3.isSelected()) {
-                    dice3.getD().setKept(true);
+                if (dice3Label.isSelected()) {
+                    dice3Label.getD().setKept(true);
                 } else {
-                    dice3.getD().setKept(false);
+                    dice3Label.getD().setKept(false);
                 }
+                dice3Label.refresh();
             }
         });
 
-        keepDice4.addActionListener(new ActionListener() {
+        dice4Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice4.isSelected()) {
-                    dice4.getD().setKept(true);
+                if (dice4Label.isSelected()) {
+                    dice4Label.getD().setKept(true);
                 } else {
-                    dice4.getD().setKept(false);
+                    dice4Label.getD().setKept(false);
                 }
+                dice4Label.refresh();
             }
         });
 
-        keepDice5.addActionListener(new ActionListener() {
+        dice5Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice5.isSelected()) {
-                    dice5.getD().setKept(true);
+                if (dice5Label.isSelected()) {
+                    dice5Label.getD().setKept(true);
                 } else {
-                    dice5.getD().setKept(false);
+                    dice5Label.getD().setKept(false);
                 }
+                dice5Label.refresh();
             }
         });
 
-        keepDice6.addActionListener(new ActionListener() {
+        dice6Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice6.isSelected()) {
-                    dice6.getD().setKept(true);
+                if (dice6Label.isSelected()) {
+                    dice6Label.getD().setKept(true);
                 } else {
-                    dice6.getD().setKept(false);
+                    dice6Label.getD().setKept(false);
                 }
+                dice6Label.refresh();
             }
         });
 
-        keepDice7.addActionListener(new ActionListener() {
+        dice7Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (keepDice7.isSelected()) {
-                    dice7.getD().setKept(true);
+                if (dice7Label.isSelected()) {
+                    dice7Label.getD().setKept(true);
                 } else {
-                    dice7.getD().setKept(false);
+                    dice7Label.getD().setKept(false);
                 }
+                dice7Label.refresh();
             }
         });
 
         //</editor-fold>
 
+        //</editor-fold>
     }
 
     /**
      * @param toBeChanged The JLabel that the image will change
      * @param newImage The Image that JLabel will change to
      */
-    private void changeImage(JLabel toBeChanged, Image newImage) {
+    private void changeImage(JToggleButton toBeChanged, Image newImage) {
         toBeChanged.setIcon(new ImageIcon(newImage));
     }
 
+    /**
+     * Rests DiceLabels back to unknown Image
+     */
     private void resetDice(){
         pause = false;
-        dice1.getD().setKept(false);
-        dice2.getD().setKept(false);
-        dice3.getD().setKept(false);
-        dice4.getD().setKept(false);
-        dice5.getD().setKept(false);
-        dice6.getD().setKept(false);
-        dice7.getD().setKept(false);
-        JLabel[] dice = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
+        dice1Label.getD().setKept(false);
+        dice2Label.getD().setKept(false);
+        dice3Label.getD().setKept(false);
+        dice4Label.getD().setKept(false);
+        dice5Label.getD().setKept(false);
+        dice6Label.getD().setKept(false);
+        dice7Label.getD().setKept(false);
+        JToggleButton[] dice = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label, dice7Label};
         for (int i = 0; i < dice.length; i++){
             changeImage(dice[i], unknownDice);
         }
     }
 
+    /**
+     * Calls of the ScoreCards method and refreshes Table
+     */
     private void checkScorePotential(){
         scTable.getSc().checkScore(h);
         scTable.refresh();
     }
 
+    /**
+     * @return Integer value of which row in the scTable is selected
+     */
     private int getSelectedLine() {
         int selected = scTable.getSelectedRow();
-        assert(selected > -1 && selected < (sidesOnADice + 7));
+        assert(selected > -1 && selected < (sidesPerDiceValue + 7));
         return selected;
     }
 
-    private void syncDice(){
-        dice1.refresh();
-        dice2.refresh();
-        dice3.refresh();
-        dice4.refresh();
-        dice5.refresh();
-        dice6.refresh();
-        dice7.refresh();
-        if (diceInPlay == 5) {
-            DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5};
-            h = new Hand(hand, diceInPlay, sidesOnADice);
-        } else if (diceInPlay == 6) {
-            DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6};
-            h = new Hand(hand, diceInPlay, sidesOnADice);
+    /**
+     * Assigns image to each DiceLabel based on their value
+     */
+    private void refreshDice(){
+        dice1Label.refresh();
+        dice2Label.refresh();
+        dice3Label.refresh();
+        dice4Label.refresh();
+        dice5Label.refresh();
+        dice6Label.refresh();
+        dice7Label.refresh();
+        if (dicePerGameValue == 5) {
+            DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label};
+            h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
+        } else if (dicePerGameValue == 6) {
+            DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label};
+            h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
         } else {
-            DiceLabel[] hand = {dice1, dice2, dice3, dice4, dice5, dice6, dice7};
-            h = new Hand(hand, diceInPlay, sidesOnADice);
+            DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label, dice7Label};
+            h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
         }
 
     }
 
+    /**
+     * Sets all checkboxes to un-selected
+     */
     private void resetCheckBoxes() {
-        keepDice1.setSelected(false);
-        keepDice2.setSelected(false);
-        keepDice3.setSelected(false);
-        keepDice4.setSelected(false);
-        keepDice5.setSelected(false);
-        keepDice6.setSelected(false);
-        keepDice7.setSelected(false);
+        dice1Label.setSelected(false);
+        dice2Label.setSelected(false);
+        dice3Label.setSelected(false);
+        dice4Label.setSelected(false);
+        dice5Label.setSelected(false);
+        dice6Label.setSelected(false);
+        dice7Label.setSelected(false);
     }
 
-    private void resetColumn1(){
-      scTable.resetColumn1();
-    }
-
+    /**
+     * Sets all the Score Labels to the score Values
+     */
     private void refreshLabels() {
-        lowerTotal.setText("Lower Total: " + String.valueOf(lowerScoreValue));
-        upperTotal.setText("Upper Total: " + String.valueOf(upperScoreValue));
-        totalScore.setText("Total: " + String.valueOf(totalScoreValue));
-        bonus.setText("Bonus: " + String.valueOf(bonusValue));
+        lowerTotalLabel.setText("Lower Total: " + String.valueOf(lowerScoreValue));
+        upperTotalLabel.setText("Upper Total: " + String.valueOf(upperScoreValue));
+        totalScoreLabel.setText("Total: " + String.valueOf(totalScoreValue));
+        bonusLabel.setText("Bonus: " + String.valueOf(bonusValue));
         repaint();
     }
-    
+
+    /**
+     * Assigns the values of the scores based on ScoreCard
+     */
     private void refreshScores() {
         upperScoreValue = 0;
         lowerScoreValue = 0;
         totalScoreValue = 0;
         bonusValue = 0;
-        for (int i = 0; i < sidesOnADice + 7; i++) {
-            if (i < sidesOnADice) upperScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
-            if (i == sidesOnADice) {
-                if (scTable.getSc().calculateBonus(sidesOnADice)){
+        for (int i = 0; i < sidesPerDiceValue + 7; i++) {
+            if (i < sidesPerDiceValue) upperScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
+            if (i == sidesPerDiceValue) {
+                if (scTable.getSc().calculateBonus(sidesPerDiceValue)){
                     bonusValue = 35;
                 }
             }
-            if (i >= sidesOnADice) lowerScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
+            if (i >= sidesPerDiceValue) lowerScoreValue+=scTable.getSc().getLine(i).getPointsEarned();
             scTable.getSc().getLine(i).printUsed();
-            if (i == sidesOnADice+6) {
+            if (i == sidesPerDiceValue +6) {
                 totalScoreValue = lowerScoreValue+upperScoreValue+bonusValue;
             }
         }
     }
+
+    private void refresh() {
+        refreshLabels();
+        resetCheckBoxes();
+        refreshScores();
+        scTable.refresh();
+        refreshDice();
+        repaint();
+    }
+
+    private void reset() {
+        rollsLeft = 3;
+        totalScoreValue = 0;
+        lowerScoreValue = 0;
+        upperScoreValue = 0;
+        bonusValue = 0;
+        refresh();
+        resetDice();
+        scTable.reset();
+        repaint();
+    }
 }
+
  class ForcedListSelectionModel extends DefaultListSelectionModel {
     public ForcedListSelectionModel() {
         setSelectionMode(ListSelectionModel.SINGLE_SELECTION);

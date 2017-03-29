@@ -64,7 +64,10 @@ public class SaveFile {
 
     /**
      * the data file is changed according to the attributes
-      */  
+     * @param newSidesPerDice The number of sides per dice
+     * @param newDiceInGame The number of dice per game
+     * @param newRollsPerTurn The number of rolls per turn
+     */
     public void write(int newSidesPerDice, int newDiceInGame, int newRollsPerTurn) {
         String saveFile = "saveFile.txt";
 

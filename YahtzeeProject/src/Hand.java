@@ -18,8 +18,6 @@ public class Hand {
 	private Scanner scan = new Scanner(System.in);
 
 	/**
-	 * @pre Hand object is null
-	 * @post Hand object is created and die attribute is initialized
 	 * @param initialDiceNumber- the number of dice in the game
 	 * @param initialRollsLeft- the number of rolls left in the game
 	 * @param newDiceRange- the number of sides per dice
@@ -35,6 +33,11 @@ public class Hand {
 		}
 	}
 
+	/**
+	 * @param hand Hand object
+	 * @param initialDiceNumber Number of Dice for the Hand
+	 * @param newDiceRange Number of sides per Dice
+	 */
 	public Hand(DiceLabel[] hand, int initialDiceNumber, int newDiceRange) {
 		diceNumber = initialDiceNumber;
 		rollsLeft = 3;
@@ -46,8 +49,7 @@ public class Hand {
 	}
 
 	/**
-	 * @pre: hand has been initialized and kept values fot each dice are set
-	 * @post: each dice in hand is rolled if their kept attribute is false
+	 * Each dice in hand is rolled if their kept attribute is false
 	*/
 	public void rollHand() {
 		for (int i = 0; i < diceNumber; i++) {
@@ -108,7 +110,7 @@ public class Hand {
     }
 
 	/**
-	 * displays every dice
+	 * Displays every dice
 	 */
 	public void displayHand(){
 		System.out.print("Hand: ");
@@ -122,7 +124,7 @@ public class Hand {
 	}
 
 	/**
-	 * prompts user for which die to keep, sets attributes accordingly
+	 * Prompts user for which die to keep, sets attributes accordingly
 	 * @param scoreCard- scoreHand to recieve data from
 	 * @return boolean value of whether or not hand has been changed
 	 */
@@ -158,7 +160,11 @@ public class Hand {
 
 	}
 
-	public boolean changeHand(ScoreCard scoreCard, String newHand) {
+	/**
+	 * @param newHand The string of 'y's and 'n's to corresponding to which Dice in hand should be rolled
+	 * @return Whether of not the hand is changed
+	 */
+	public boolean changeHand(String newHand) {
 
 		for (int i = 0; i < diceNumber; i++){
 			if (toLowerCase(newHand.charAt(i)) == 'y'){
@@ -172,7 +178,7 @@ public class Hand {
 
 
 	/**
-	 * the hand has been sorted from low to high
+	 * The hand has been sorted from low to high
 	 */
 	public void sortHand() {
 		Dice temp;

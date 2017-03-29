@@ -1,5 +1,6 @@
-/*
- * Author- Daniel Abrahms
+/**
+ * @author - Daniel Abrahms
+ * @version 1.0
  * Last Edited- 2/14/17
  * Class- CPSC 224-02
  * Class- ScoreCardLine
@@ -126,8 +127,8 @@ public class ScoreCardLine {
 
 	/**
 	 * Prints the points possible for the multiplier given to the scorecardline
-	 * @param- multiplier should be 0 for failed check of scorecardline qualification (i.e. scorecardline is fullhouse, hand failed this qualification)
-	 * @param nowUsed- boolean on whether or not the line is used on this turn
+	 * @param newMult should be 0 for failed check of scorecardline qualification (i.e. scorecardline is fullhouse, hand failed this qualification)
+	 * @param nowUsed boolean on whether or not the line is used on this turn
  	 */
 	public void printUnused(int newMult, boolean nowUsed) {
 		multiplier = newMult;

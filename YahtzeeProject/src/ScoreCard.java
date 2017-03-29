@@ -1,9 +1,10 @@
-/* 
+/**
  * @author Daniel Abrahms
+ * @version 1.0
  * Last Edited- 2/14/17
  * Class- CPSC 224-02
  * Class- ScoreCard
- * Description- This is the ScoreCard Class. It has an array of ScoreCardLines. 
+ * This is the ScoreCard Class. It has an array of ScoreCardLines.
  * 				It allows the main file to check the score of a given hand, and prints the possible plays. 
  */
 public class ScoreCard {
@@ -14,25 +15,35 @@ public class ScoreCard {
 	private int upperTotal = 0;
 	private int bonus = 0;
 
+	/**
+	 * @return totalScore value
+	 */
 	public int getTotalScore() {
 		return totalScore;
 	}
 
+	/**
+	 * @return lowerTotalValue
+	 */
 	public int getLowerTotal() {
 		return lowerTotal;
 	}
 
+	/**
+	 * @return upperTotal
+	 */
 	public int getUpperTotal() {
 		return upperTotal;
 	}
 
+	/**
+	 * @return bonus Value
+	 */
 	public int getBonus() {
 		return bonus;
 	}
 
 	/**
-	@pre ScoreCard object is null
-	@post ScoreCard object has been created
 	@param sidesPerDice- the number of sides per dice
 	@see ScoreCard
 	 */
@@ -52,8 +63,9 @@ public class ScoreCard {
 		line[sidesPerDice + 5] = new ScoreCardLine("(YA)- Yahtzee", 50, false);
 		line[sidesPerDice + 6] = new ScoreCardLine("(CH)- Chance", 1, false);
 	}
-	/** @print- Every possible score has been printed
-    // @param hand- hand object that has been initiated
+	/**
+	 * Every possible score has been printed
+     * @param hand- hand object that has been initiated
 	**/
 	public void checkScore(Hand hand) {
 		hand.sortHand();
@@ -143,6 +155,7 @@ public class ScoreCard {
 	@param index- the index you want the scorecardline at
 	 */
 	public ScoreCardLine getLine(int index) {
+		assert(index >= 0 && index < line.length);
 	    return line[index];
     }
 

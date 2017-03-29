@@ -1,31 +1,49 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-
-class SCTable extends JTable {
+/**
+ * @author Daniel Abrahms
+ * @version 1.0
+ */
+public class SCTable extends JTable {
 
     private ScoreCard sc;
     private int sidesPerDice = 6;
 
+    /**
+     * @param newSidesPerDice the number of sides per dice
+     */
     SCTable(int newSidesPerDice) {
         sidesPerDice = newSidesPerDice;
         sc = new ScoreCard(sidesPerDice);
         reset();
     }
 
+    /**
+     * @return sc, the ScoreCard
+     */
     ScoreCard getSc() {
         return sc;
     }
 
+    /**
+     * @param sidesPerDice the number of sides per dice
+     */
     public void setSidesPerDice(int sidesPerDice) {
         this.sidesPerDice = sidesPerDice;
     }
 
+    /**
+     * @param sc The ScoreCard variable
+     */
     void setSc(ScoreCard sc) {
 
         this.sc = sc;
     }
 
+    /**
+     * Refreshes the table, based on the values of the ScoreCard
+     */
     void refresh() {
         String[][] values = new String[sidesPerDice+7][3];
         for (int i = 0; i < sidesPerDice+7; i++){
@@ -49,6 +67,9 @@ class SCTable extends JTable {
         this.setModel(model);
     }
 
+    /**
+     * Keeps the ScoreCard and table in tact, but clears the middle column
+     */
     void resetColumn1() {
         String[][] values = new String[sidesPerDice+7][3];
         for (int i = 0; i < sidesPerDice+7; i++){
@@ -71,6 +92,9 @@ class SCTable extends JTable {
         this.setModel(model);
     }
 
+    /**
+     * Resets all the values of the table
+     */
     void reset() {
         String[][] values = new String[sidesPerDice+7][3];
         for (int i = 0; i < sidesPerDice+7; i++){

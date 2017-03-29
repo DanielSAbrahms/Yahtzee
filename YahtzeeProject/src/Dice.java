@@ -26,7 +26,6 @@ public class Dice {
 	/**
 	 * Value attribute is assigned a random value within range
  	 */
-
 	public void roll(){
 		Random rand = new Random();
 		if (!kept) {
@@ -37,7 +36,6 @@ public class Dice {
 	/**
 	 * @param newRange- the int for range attribute to be set to
 	 */
-
 	public void setRange(int newRange) {
 		range = newRange;
 	}
@@ -72,7 +70,7 @@ public class Dice {
 	}
 
 	/**
-	 * @return @return returns the kept attribute
+	 * @return returns the kept attribute
 	 */
 	public boolean getKept() {
 		return kept;
