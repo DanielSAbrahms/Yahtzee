@@ -48,7 +48,6 @@ class YahtzeeGUI extends JFrame{
     private JButton loadGameButton;
     private JOptionPane gameOverPopup;
     private JOptionPane lineAlreadyUsedPopup;
-    private JOptionPane noRollsLeftPopup;
 
     private int dicePerGameValue = 5;
     private int sidesPerDiceValue = 6;
@@ -101,12 +100,24 @@ class YahtzeeGUI extends JFrame{
     private final Image diceSide4Image;
     private final Image diceSide5Image;
     private final Image diceSide6Image;
+    private final Image diceSide7Image;
+    private final Image diceSide8Image;
+    private final Image diceSide9Image;
+    private final Image diceSide10Image;
+    private final Image diceSide11Image;
+    private final Image diceSide12Image;
     private final Image diceSide1LockedImage;
     private final Image diceSide2LockedImage;
     private final Image diceSide3LockedImage;
     private final Image diceSide4LockedImage;
     private final Image diceSide5LockedImage;
     private final Image diceSide6LockedImage;
+    private final Image diceSide7LockedImage;
+    private final Image diceSide8LockedImage;
+    private final Image diceSide9LockedImage;
+    private final Image diceSide10LockedImage;
+    private final Image diceSide11LockedImage;
+    private final Image diceSide12LockedImage;
     //</editor-fold>
 
     // User Directory to Locate Source Images
@@ -128,12 +139,24 @@ class YahtzeeGUI extends JFrame{
         BufferedImage diceSide4_raw = null;
         BufferedImage diceSide5_raw = null;
         BufferedImage diceSide6_raw = null;
+        BufferedImage diceSide7_raw = null;
+        BufferedImage diceSide8_raw = null;
+        BufferedImage diceSide9_raw = null;
+        BufferedImage diceSide10_raw = null;
+        BufferedImage diceSide11_raw = null;
+        BufferedImage diceSide12_raw = null;
         BufferedImage diceSide1_Locked_raw = null;
         BufferedImage diceSide2_Locked_raw = null;
         BufferedImage diceSide3_Locked_raw = null;
         BufferedImage diceSide4_Locked_raw = null;
         BufferedImage diceSide5_Locked_raw = null;
         BufferedImage diceSide6_Locked_raw = null;
+        BufferedImage diceSide7_Locked_raw = null;
+        BufferedImage diceSide8_Locked_raw = null;
+        BufferedImage diceSide9_Locked_raw = null;
+        BufferedImage diceSide10_Locked_raw = null;
+        BufferedImage diceSide11_Locked_raw = null;
+        BufferedImage diceSide12_Locked_raw = null;
         BufferedImage unknownDice_raw = null;
         BufferedImage background = null;
         //</editor-fold>
@@ -146,12 +169,24 @@ class YahtzeeGUI extends JFrame{
             diceSide4_raw = ImageIO.read(new File(USER_DIR + "/diceSide4.png"));
             diceSide5_raw = ImageIO.read(new File(USER_DIR + "/diceSide5.png"));
             diceSide6_raw = ImageIO.read(new File(USER_DIR + "/diceSide6.png"));
+            diceSide7_raw = ImageIO.read(new File(USER_DIR + "/diceSide7.png"));
+            diceSide8_raw = ImageIO.read(new File(USER_DIR + "/diceSide8.png"));
+            diceSide9_raw = ImageIO.read(new File(USER_DIR + "/diceSide9.png"));
+            diceSide10_raw = ImageIO.read(new File(USER_DIR + "/diceSide10.png"));
+            diceSide11_raw = ImageIO.read(new File(USER_DIR + "/diceSide11.png"));
+            diceSide12_raw = ImageIO.read(new File(USER_DIR + "/diceSide12.png"));
             diceSide1_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide1_Locked.png"));
             diceSide2_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide2_Locked.png"));
             diceSide3_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide3_Locked.png"));
             diceSide4_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide4_Locked.png"));
             diceSide5_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide5_Locked.png"));
             diceSide6_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide6_Locked.png"));
+            diceSide7_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide7_Locked.png"));
+            diceSide8_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide8_Locked.png"));
+            diceSide9_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide9_Locked.png"));
+            diceSide10_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide10_Locked.png"));
+            diceSide11_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide11_Locked.png"));
+            diceSide12_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide12_Locked.png"));
             unknownDice_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
             background = ImageIO.read(new File(USER_DIR + "/background.png"));
         } catch (Exception ex) {
@@ -164,12 +199,24 @@ class YahtzeeGUI extends JFrame{
         diceSide4Image = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide5Image = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide6Image = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide7Image = diceSide7_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide8Image = diceSide8_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide9Image = diceSide9_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide10Image = diceSide10_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide11Image = diceSide11_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide12Image = diceSide12_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide1LockedImage = diceSide1_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide2LockedImage = diceSide2_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide3LockedImage = diceSide3_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide4LockedImage = diceSide4_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide5LockedImage = diceSide5_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         diceSide6LockedImage = diceSide6_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide7LockedImage = diceSide7_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide8LockedImage = diceSide8_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide9LockedImage = diceSide9_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide10LockedImage = diceSide10_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide11LockedImage = diceSide11_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        diceSide12LockedImage = diceSide12_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         //</editor-fold>
 
 
@@ -193,7 +240,10 @@ class YahtzeeGUI extends JFrame{
 
         //<editor-fold desc="Dice Label Creation">
         Image[] images = {unknownDice, diceSide1Image, diceSide2Image, diceSide3Image, diceSide4Image, diceSide5Image, diceSide6Image,
-        diceSide1LockedImage, diceSide2LockedImage, diceSide3LockedImage, diceSide4LockedImage, diceSide5LockedImage, diceSide6LockedImage, };
+                            diceSide7Image, diceSide8Image, diceSide9Image, diceSide10Image, diceSide11Image, diceSide12Image,
+                            diceSide1LockedImage, diceSide2LockedImage, diceSide3LockedImage, diceSide4LockedImage, diceSide5LockedImage, diceSide6LockedImage,
+                            diceSide7LockedImage, diceSide8LockedImage, diceSide9LockedImage, diceSide10LockedImage, diceSide11LockedImage, diceSide12LockedImage
+        };
 
         dice1Label = new DiceLabel(images, sidesPerDiceValue);
         dice1Label.setSize(DICE_WIDTH, DICE_HEIGHT);
@@ -303,19 +353,19 @@ class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc = "Score Labels">
-        lowerTotalLabel = new JLabel();
-        lowerTotalLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
-        lowerTotalLabel.setText("Lower Total: " + String.valueOf(lowerScoreValue));
-        lowerTotalLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
-        lowerTotalLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR);
-        c.add(lowerTotalLabel);
-
         upperTotalLabel = new JLabel();
         upperTotalLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
         upperTotalLabel.setText("Upper Total: " + String.valueOf(upperScoreValue));
         upperTotalLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
         upperTotalLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR+40);
         c.add(upperTotalLabel);
+
+        lowerTotalLabel = new JLabel();
+        lowerTotalLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
+        lowerTotalLabel.setText("Lower Total: " + String.valueOf(lowerScoreValue));
+        lowerTotalLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT*2);
+        lowerTotalLabel.setLocation(SCORE_LABEL_X_COOR, SCORE_LABEL_Y_COOR);
+        c.add(lowerTotalLabel);
 
         bonusLabel = new JLabel();
         bonusLabel.setFont(new Font ("Garamond", Font.BOLD , 20));
@@ -383,6 +433,10 @@ class YahtzeeGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 refreshDice();
+                if (allKept()) {
+                    rollsLeft = 0;
+                    refresh();
+                }
                 if (rollsLeft <= 0 || pause){
                     rollButton.setText("No Rolls Left");
                     checkScorePotential();
@@ -500,7 +554,7 @@ class YahtzeeGUI extends JFrame{
                 reset(false);
                 if (scTable.getSc().howManyLeft() <= 0) {
                     gameOverPopup = new JOptionPane();
-                    gameOverPopup.showMessageDialog(null, "Game Over \n Final Score: " + String.valueOf(totalScoreValue));
+                    gameOverPopup.showMessageDialog(null, "Game Over \n   Final Score: " + String.valueOf(totalScoreValue));
                     System.exit(0);
                 }
             }
@@ -635,6 +689,17 @@ class YahtzeeGUI extends JFrame{
     private void checkScorePotential(){
         scTable.getSc().checkScore(h);
         scTable.refresh();
+    }
+
+    /**
+     * @return Whether or not all dice are kept
+     */
+    private boolean allKept() {
+        DiceLabel[] a = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label, dice7Label};
+        for (int i = 0; i < dicePerGameValue; i++) {
+            if (a[i].getD().getKept() == false) return false;
+        }
+        return true;
     }
 
     /**

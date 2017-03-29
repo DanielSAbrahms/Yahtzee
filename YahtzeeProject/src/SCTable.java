@@ -54,7 +54,13 @@ public class SCTable extends JTable {
             } else {
                 pe = String.valueOf(line.getPointsEarned());
             }
-            String[] a = {line.getName(), String.valueOf(line.getPotentialPoints()), pe};
+            String name;
+            if (line.getUsed()) {
+                name = "-";
+            } else {
+                name = line.getName();
+            }
+            String[] a = {name, String.valueOf(line.getPotentialPoints()), pe};
             values[i] = a;
         }
         String[] names = new String[sidesPerDice+7];
@@ -80,7 +86,13 @@ public class SCTable extends JTable {
             } else {
                 pe = String.valueOf(line.getPointsEarned());
             }
-            String[] a = {line.getName(), String.valueOf(0), pe};
+            String name;
+            if (line.getUsed()) {
+                name = "-";
+            } else {
+                name = line.getName();
+            }
+            String[] a = {name, String.valueOf(0), pe};
             values[i] = a;
         }
         String[] names = new String[sidesPerDice+7];
