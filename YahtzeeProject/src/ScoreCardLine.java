@@ -18,6 +18,13 @@ public class ScoreCardLine {
 	// whether or not the ScoreCardLine has been used this game.
 	boolean used;
 
+	private int potentialPoints;
+
+	public int getPotentialPoints() {
+		return potentialPoints;
+	}
+
+
 	/**
 	 *  @param newName- String value of name attribute
 	 *  @param newPoints- int value of points attribute
@@ -25,6 +32,7 @@ public class ScoreCardLine {
 	 */
 	public ScoreCardLine(String newName, int newPoints, boolean newUsed) {
 	    pointsEarned = 0;
+	    potentialPoints = 0;
 		name = newName;
 		points = newPoints;
 		used = newUsed;
@@ -132,7 +140,8 @@ public class ScoreCardLine {
 		for (int i = 0 ; i < 20 - name.length(); i++) {
 			System.out.print(" ");
 		}
-		System.out.println(points * multiplier);
+		potentialPoints = points * multiplier;
+		System.out.println(potentialPoints);
 	}
 
 	/**

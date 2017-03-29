@@ -175,7 +175,6 @@ public class ScoreCard {
                 totalScore = lowerTotal+upperTotal+bonus;
                 System.out.println("Grand Total-          " + (totalScore));
             }
-
         }
     }
 	/**
@@ -268,7 +267,7 @@ public class ScoreCard {
          boolean threeFound = false;
          boolean twoFound = false;
          int counter ;
-         for (int i = 1; i <=hand.getDiceRange(); i++) {
+         for (int i = 1; i <= hand.getDiceRange(); i++) {
              counter = 0;
              for (int j = 0; j < hand.getDiceNumber(); j++)
              {
