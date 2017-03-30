@@ -46,6 +46,7 @@ public class DiceLabel extends JToggleButton {
     }
 
 
-
-
+    public void setRange(int range) {
+        this.range = range;
+    }
 }

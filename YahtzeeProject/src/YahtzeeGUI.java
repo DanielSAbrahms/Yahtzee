@@ -188,7 +188,7 @@ class YahtzeeGUI extends JFrame{
             diceSide11_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide11_Locked.png"));
             diceSide12_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide12_Locked.png"));
             unknownDice_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
-            background = ImageIO.read(new File(USER_DIR + "/background.png"));
+            background = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -239,6 +239,7 @@ class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
         //<editor-fold desc="Dice Label Creation">
+
         Image[] images = {unknownDice, diceSide1Image, diceSide2Image, diceSide3Image, diceSide4Image, diceSide5Image, diceSide6Image,
                             diceSide7Image, diceSide8Image, diceSide9Image, diceSide10Image, diceSide11Image, diceSide12Image,
                             diceSide1LockedImage, diceSide2LockedImage, diceSide3LockedImage, diceSide4LockedImage, diceSide5LockedImage, diceSide6LockedImage,
@@ -521,7 +522,6 @@ class YahtzeeGUI extends JFrame{
                 } else if ((sidesPerDiceBox.getSelectedItem().equals("20"))) {
                     sidesPerDiceValue = 20;
                     scTable.setRowHeight(15);
-
                 }
                 scTable.setSc(new ScoreCard(sidesPerDiceValue));
                 scTable.setSidesPerDice(sidesPerDiceValue);
@@ -716,12 +716,19 @@ class YahtzeeGUI extends JFrame{
      */
     private void refreshDice(){
         dice1Label.refresh();
+        dice1Label.setRange(sidesPerDiceValue);
         dice2Label.refresh();
+        dice2Label.setRange(sidesPerDiceValue);
         dice3Label.refresh();
+        dice3Label.setRange(sidesPerDiceValue);
         dice4Label.refresh();
+        dice4Label.setRange(sidesPerDiceValue);
         dice5Label.refresh();
+        dice5Label.setRange(sidesPerDiceValue);
         dice6Label.refresh();
+        dice6Label.setRange(sidesPerDiceValue);
         dice7Label.refresh();
+        dice7Label.setRange(sidesPerDiceValue);
         if (dicePerGameValue == 5) {
             DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label};
             h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
