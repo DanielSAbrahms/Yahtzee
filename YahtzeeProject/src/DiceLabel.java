@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -39,9 +40,10 @@ public class DiceLabel extends JToggleButton {
      */
     public void refresh(){
         if (d == null) d = new Dice(range);
-        setIcon(new ImageIcon(images[d.getValue()]));
         if (d.getKept()) {
-            setIcon(new ImageIcon(images[d.getValue()+d.getRange()]));
+            setIcon(new ImageIcon(images[d.getValue()+12]));
+        } else {
+            setIcon(new ImageIcon(images[d.getValue()]));
         }
     }
 
@@ -49,4 +51,6 @@ public class DiceLabel extends JToggleButton {
     public void setRange(int range) {
         this.range = range;
     }
+
+
 }
