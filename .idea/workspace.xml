@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="Functioning GUI, Base Game Functional">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Yahtzee.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/YahtzeeProject/src/META-INF/MANIFEST.MF" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/YahtzeeGame.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/Dice.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/Hand.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/Round.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/SaveFile.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/ScoreCard.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/ScoreCardLine.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/YahtzeeApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/YahtzeeGUI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/YahtzeeProject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/diceSide6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/saveFile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/saveFile.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/YahtzeeProject/unknownDice.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+    <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/YahtzeeProject.iml" afterPath="$PROJECT_DIR$/YahtzeeProject/YahtzeeProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,6 +17,15 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Yahtzee" />
@@ -51,48 +35,22 @@
       <file leaf-file-name="YahtzeeApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#229#230#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YahtzeeGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="YahtzeeGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="520" column="27" lean-forward="true" selection-start-line="520" selection-start-column="27" selection-end-line="520" selection-end-column="27" />
+            <state relative-caret-position="-485">
+              <caret line="698" column="16" lean-forward="false" selection-start-line="698" selection-start-column="16" selection-end-line="698" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-                <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-                <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-                <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-                <element signature="e#3532#3573#0" expanded="true" />
-                <element signature="e#4841#4878#0" expanded="true" />
-                <element signature="e#10293#10336#0" expanded="true" />
-                <element signature="e#10345#10391#0" expanded="true" />
-                <element signature="e#11033#11075#0" expanded="true" />
-                <element signature="e#13138#13185#0" expanded="true" />
-                <element signature="e#13804#13854#0" expanded="true" />
-                <element signature="e#14535#14586#0" expanded="true" />
-                <element signature="e#15288#15323#0" expanded="true" />
-                <element signature="e#16234#16271#0" expanded="true" />
-                <element signature="e#17741#17791#0" expanded="true" />
-                <element signature="e#26648#26698#0" expanded="true" />
-                <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-                <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
                 <element signature="class#ForcedListSelectionModel#0" expanded="false" />
                 <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
                 <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -101,21 +59,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SCTable.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SCTable.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="212">
+              <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="docComment;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#SCTable#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#getSc#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#setSidesPerDice#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#setSc#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#refresh#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#resetColumn1#0;class#SCTable#0" expanded="true" />
-                <element signature="docComment;method#reset#0;class#SCTable#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -124,17 +74,9 @@
       <file leaf-file-name="ScoreCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
+            <state relative-caret-position="2448">
               <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
               <folding>
-                <element signature="e#510#511#0" expanded="false" />
-                <element signature="e#534#535#0" expanded="false" />
-                <element signature="e#603#604#0" expanded="false" />
-                <element signature="e#627#628#0" expanded="false" />
-                <element signature="e#691#692#0" expanded="false" />
-                <element signature="e#715#716#0" expanded="false" />
-                <element signature="e#775#776#0" expanded="false" />
-                <element signature="e#794#795#0" expanded="false" />
                 <element signature="docComment;method#howManyLeft#0;class#ScoreCard#0" expanded="false" />
                 <element signature="docComment;method#getLine#0;class#ScoreCard#0" expanded="false" />
                 <element signature="docComment;method#showScoreCard#0;class#ScoreCard#0" expanded="false" />
@@ -155,44 +97,24 @@
       <file leaf-file-name="ScoreCardLine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
+            <state relative-caret-position="1122">
               <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="38" />
               <folding>
                 <element signature="docComment;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#826#827#0" expanded="false" />
-                <element signature="e#855#856#0" expanded="false" />
                 <element signature="docComment;method#ScoreCardLine#0;class#ScoreCardLine#0" expanded="false" />
                 <element signature="docComment;method#setName#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#1313#1314#0" expanded="false" />
-                <element signature="e#1334#1335#0" expanded="false" />
                 <element signature="docComment;method#getName#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#1402#1403#0" expanded="false" />
-                <element signature="e#1420#1421#0" expanded="false" />
                 <element signature="docComment;method#setPoints#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#1523#1524#0" expanded="false" />
-                <element signature="e#1548#1549#0" expanded="false" />
                 <element signature="docComment;method#getPoints#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#1618#1619#0" expanded="false" />
-                <element signature="e#1638#1639#0" expanded="false" />
-                <element signature="e#2024#2025#0" expanded="false" />
-                <element signature="e#2061#2062#0" expanded="false" />
                 <element signature="docComment;method#getPointsEarned#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#2145#2146#0" expanded="false" />
-                <element signature="e#2180#2181#0" expanded="false" />
                 <element signature="docComment;method#setUsed#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#2285#2286#0" expanded="false" />
-                <element signature="e#2306#2307#0" expanded="false" />
                 <element signature="docComment;method#getUsed#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#2375#2376#0" expanded="false" />
-                <element signature="e#2393#2394#0" expanded="false" />
                 <element signature="docComment;method#setMultiplier#0;class#ScoreCardLine#0" expanded="false" />
                 <element signature="docComment;method#getMultiplier#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#2868#2869#0" expanded="false" />
-                <element signature="e#2892#2893#0" expanded="false" />
                 <element signature="docComment;method#printUnused#0;class#ScoreCardLine#0" expanded="false" />
                 <element signature="docComment;method#printUsed#0;class#ScoreCardLine#0" expanded="false" />
-                <element signature="e#3980#3981#0" expanded="false" />
-                <element signature="e#4025#4026#0" expanded="false" />
+                <element signature="e#3980#3981#0" expanded="true" />
+                <element signature="e#4025#4026#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,15 +123,9 @@
       <file leaf-file-name="DiceLabel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="782">
               <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#DiceLabel#0" expanded="true" />
-                <element signature="docComment;method#DiceLabel#0;class#DiceLabel#0" expanded="true" />
-                <element signature="docComment;method#getD#0;class#DiceLabel#0" expanded="true" />
-                <element signature="docComment;method#setD#0;class#DiceLabel#0" expanded="true" />
-                <element signature="docComment;method#refresh#0;class#DiceLabel#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -293,22 +209,28 @@
         <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="11" />
-    <option name="width" value="1364" />
-    <option name="height" value="719" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -321,7 +243,79 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YahtzeeProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YahtzeeProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yahtzee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YahtzeeProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="YahtzeeApplication.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="terminal" />
@@ -331,6 +325,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -430,6 +426,136 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -444,6 +570,14 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -488,6 +622,22 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -521,6 +671,12 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -547,6 +703,22 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
     <configuration default="false" name="Text " type="Application" factoryName="Application">
@@ -597,6 +769,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489706734143</updated>
+      <workItem from="1490980561998" duration="617000" />
+      <workItem from="1490982407332" duration="2870000" />
     </task>
     <task id="LOCAL-00001" summary="Functioning GUI, no Game yet">
       <created>1489858999570</created>
@@ -647,8 +821,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490821611233</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Functioning GUI, Base Game Functional">
+      <created>1490929138708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1490929138708</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3487000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -660,7 +844,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="11" width="1364" height="719" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -672,19 +856,20 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.454844" sideWeight="0.49707174" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45392492" sideWeight="0.49707174" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2530675" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39747635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39747635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -693,6 +878,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -734,84 +922,9 @@
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8772">
-          <caret line="516" column="45" lean-forward="false" selection-start-line="516" selection-start-column="45" selection-end-line="516" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/GUIRound.java" />
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/GUIRound.java" />
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8772">
           <caret line="516" column="45" lean-forward="true" selection-start-line="516" selection-start-column="45" selection-end-line="516" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -832,8 +945,6 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,30 +955,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -888,8 +975,6 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -900,30 +985,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -944,8 +1005,6 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -956,30 +1015,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1000,8 +1035,6 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1012,30 +1045,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1056,8 +1065,6 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1068,30 +1075,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1112,8 +1095,6 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1124,30 +1105,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1168,8 +1125,6 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1180,30 +1135,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1224,8 +1155,6 @@
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1236,30 +1165,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
             <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
@@ -1315,63 +1220,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/Dice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="38" />
+        <state relative-caret-position="588">
+          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/backgroundFancy.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/YahtzeeGUI" />
+    <entry file="uml://JAVA/NullOutputStream" />
+    <entry file="uml://JAVA/" />
+    <entry file="uml://JAVA/YahtzeeApplication">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>YahtzeeApplication</OriginalElement>
+          <nodes>
+            <node x="" y="">YahtzeeApplication</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="75.0" y="14.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
-            <element signature="docComment;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#826#827#0" expanded="false" />
-            <element signature="e#855#856#0" expanded="false" />
-            <element signature="docComment;method#ScoreCardLine#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="docComment;method#setName#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#1313#1314#0" expanded="false" />
-            <element signature="e#1334#1335#0" expanded="false" />
-            <element signature="docComment;method#getName#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#1402#1403#0" expanded="false" />
-            <element signature="e#1420#1421#0" expanded="false" />
-            <element signature="docComment;method#setPoints#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#1523#1524#0" expanded="false" />
-            <element signature="e#1548#1549#0" expanded="false" />
-            <element signature="docComment;method#getPoints#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#1618#1619#0" expanded="false" />
-            <element signature="e#1638#1639#0" expanded="false" />
-            <element signature="e#2024#2025#0" expanded="false" />
-            <element signature="e#2061#2062#0" expanded="false" />
-            <element signature="docComment;method#getPointsEarned#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#2145#2146#0" expanded="false" />
-            <element signature="e#2180#2181#0" expanded="false" />
-            <element signature="docComment;method#setUsed#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#2285#2286#0" expanded="false" />
-            <element signature="e#2306#2307#0" expanded="false" />
-            <element signature="docComment;method#getUsed#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#2375#2376#0" expanded="false" />
-            <element signature="e#2393#2394#0" expanded="false" />
-            <element signature="docComment;method#setMultiplier#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="docComment;method#getMultiplier#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#2868#2869#0" expanded="false" />
-            <element signature="e#2892#2893#0" expanded="false" />
-            <element signature="docComment;method#printUnused#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="docComment;method#printUsed#0;class#ScoreCardLine#0" expanded="false" />
-            <element signature="e#3980#3981#0" expanded="false" />
-            <element signature="e#4025#4026#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-485">
+          <caret line="698" column="16" lean-forward="false" selection-start-line="698" selection-start-column="16" selection-end-line="698" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
+            <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
+            <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
+        <state relative-caret-position="2448">
           <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding>
-            <element signature="e#510#511#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#603#604#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#691#692#0" expanded="false" />
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#775#776#0" expanded="false" />
-            <element signature="e#794#795#0" expanded="false" />
             <element signature="docComment;method#howManyLeft#0;class#ScoreCard#0" expanded="false" />
             <element signature="docComment;method#getLine#0;class#ScoreCard#0" expanded="false" />
             <element signature="docComment;method#showScoreCard#0;class#ScoreCard#0" expanded="false" />
@@ -1388,95 +1305,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/Dice.java">
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        <state relative-caret-position="1122">
+          <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="38" />
+          <folding>
+            <element signature="docComment;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#ScoreCardLine#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setName#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getPointsEarned#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setMultiplier#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getMultiplier#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#printUnused#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#printUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="e#3980#3981#0" expanded="true" />
+            <element signature="e#4025#4026#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/backgroundFancy.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="212">
+          <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="docComment;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#SCTable#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#getSc#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#setSidesPerDice#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#setSc#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#refresh#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#resetColumn1#0;class#SCTable#0" expanded="true" />
-            <element signature="docComment;method#reset#0;class#SCTable#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#DiceLabel#0" expanded="true" />
-            <element signature="docComment;method#DiceLabel#0;class#DiceLabel#0" expanded="true" />
-            <element signature="docComment;method#getD#0;class#DiceLabel#0" expanded="true" />
-            <element signature="docComment;method#setD#0;class#DiceLabel#0" expanded="true" />
-            <element signature="docComment;method#refresh#0;class#DiceLabel#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="520" column="27" lean-forward="true" selection-start-line="520" selection-start-column="27" selection-end-line="520" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#scTable#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_WIDTH#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#DICE_X_COOR#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="n#!!doc;n#unknownDice#0;n#YahtzeeGUI#0" expanded="true" />
-            <element signature="e#3532#3573#0" expanded="true" />
-            <element signature="e#4841#4878#0" expanded="true" />
-            <element signature="e#10293#10336#0" expanded="true" />
-            <element signature="e#10345#10391#0" expanded="true" />
-            <element signature="e#11033#11075#0" expanded="true" />
-            <element signature="e#13138#13185#0" expanded="true" />
-            <element signature="e#13804#13854#0" expanded="true" />
-            <element signature="e#14535#14586#0" expanded="true" />
-            <element signature="e#15288#15323#0" expanded="true" />
-            <element signature="e#16234#16271#0" expanded="true" />
-            <element signature="e#17741#17791#0" expanded="true" />
-            <element signature="e#26648#26698#0" expanded="true" />
-            <element signature="docComment;method#changeImage#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#resetDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#checkScorePotential#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#allKept#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#getSelectedLine#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshDice#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="docComment;method#refreshScores#0;class#YahtzeeGUI#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
           </folding>
         </state>
       </provider>

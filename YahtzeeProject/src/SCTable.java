@@ -60,7 +60,13 @@ public class SCTable extends JTable {
             } else {
                 name = line.getName();
             }
-            String[] a = {name, String.valueOf(line.getPotentialPoints()), pe};
+            String pp;
+            if (line.getUsed()) {
+                pp = "-";
+            } else {
+                pp = String.valueOf(line.getPotentialPoints());
+            }
+            String[] a = {name, pp, pe};
             values[i] = a;
         }
         String[] names = new String[sidesPerDice+7];
@@ -81,7 +87,7 @@ public class SCTable extends JTable {
         for (int i = 0; i < sidesPerDice+7; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
-            if (line.getPointsEarned() == 0) {
+            if (line.getPointsEarned() == 0 && line.getUsed() == false) {
                 pe = "-";
             } else {
                 pe = String.valueOf(line.getPointsEarned());
