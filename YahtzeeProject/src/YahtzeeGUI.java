@@ -12,7 +12,6 @@ import java.io.File;
  * @version 1.0
  * Creates a custom JFrame with Yahtzee functionality.
  */
-
 class YahtzeeGUI extends JFrame{
     //<editor-fold desc = "Private Variables">
     private SCTable scTable;

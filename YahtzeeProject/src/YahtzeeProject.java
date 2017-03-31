@@ -8,6 +8,9 @@
 
 import java.util.Scanner;
 
+/**
+ * Text Based Launcher
+ */
 public class YahtzeeProject {
 	public static void main(String[] args) {
 
