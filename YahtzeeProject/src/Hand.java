@@ -125,7 +125,7 @@ public class Hand {
 
 	/**
 	 * Prompts user for which die to keep, sets attributes accordingly
-	 * @param scoreCard- scoreHand to recieve data from
+	 * @param scoreCard- scoreHand to receive data from
 	 * @return boolean value of whether or not hand has been changed
 	 */
 	public boolean changeHand(ScoreCard scoreCard) {
@@ -160,21 +160,7 @@ public class Hand {
 
 	}
 
-	/**
-	 * @param newHand The string of 'y's and 'n's to corresponding to which Dice in hand should be rolled
-	 * @return Whether of not the hand is changed
-	 */
-	public boolean changeHand(String newHand) {
 
-		for (int i = 0; i < diceNumber; i++){
-			if (toLowerCase(newHand.charAt(i)) == 'y'){
-				die[i].setKept(true);
-			}
-		}
-		rollHand();
-		return true;
-
-	}
 
 
 	/**

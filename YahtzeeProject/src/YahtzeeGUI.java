@@ -90,7 +90,7 @@ class YahtzeeGUI extends JFrame{
     //</editor-fold>
 
     // User Directory to Locate Source Images
-    private static final String USER_DIR = System.getProperty("user.home") + "/Desktop/Yahtzee/YahtzeeProject/src";
+    private static final String USER_DIR = System.getProperty("user.home") + "/Desktop/Yahtzee/YahtzeeProject/src/Images";
 
 
 
@@ -763,7 +763,9 @@ class YahtzeeGUI extends JFrame{
         repaint();
     }
 
-
+    /**
+     * Calls on all the refresh methods and resets
+     */
     private void refresh() {
         refreshScores();
         scTable.refresh();
@@ -773,6 +775,10 @@ class YahtzeeGUI extends JFrame{
         repaint();
     }
 
+    /**
+     * Resets the screen
+     * @param fullReset boolean if its a newGame, resets everything
+     */
     private void reset(boolean fullReset) {
         rollsLeft = 3;
         refresh();
