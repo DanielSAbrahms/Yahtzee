@@ -1,12 +1,12 @@
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+
 /**
  * @author Daniel Abrahms
  * @version 1.0
- * Launches the GUI for Yahtzee
+ * Overrides the Stream Class to prevent console output
  */
-
 class NullOutputStream extends OutputStream {
     @Override
     public void write(int b){
@@ -23,6 +23,11 @@ class NullOutputStream extends OutputStream {
     public NullOutputStream(){
     }
 }
+/**
+ * @author Daniel Abrahms
+ * @version 1.0
+ * Launches the GUI for Yahtzee
+ */
 public class YahtzeeApplication {
     public static void main (String [] args) {
         System.setOut(new PrintStream(new NullOutputStream()));
