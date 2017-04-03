@@ -129,8 +129,8 @@ public class SaveFile {
     }
 
     public void readScoreCard(ScoreCard sc) {
-        String saveFile = "saveFile.txt";
-        String line = null;
+        String saveFile = "ScoreCardSaveFile.txt";
+        String line;
 
         try {
             FileReader fileReader = new FileReader(saveFile);
@@ -147,41 +147,43 @@ public class SaveFile {
                 int multiplier = 0;
                 int pointsEarned = 0;
                 boolean used = true;
+                String sum = "";
 
                 int stopperCount = 0;
 
                 for (int l = 0; l < line.length(); l++) {
-                    char letter = ((char) l);
+                    char letter = line.charAt(l);
                     if (stopperCount == 0) {
                         if (letter == ';') {
                             stopperCount++;
-                            continue;
+                            sum = "";
+                        } else {
+                            name += letter;
                         }
-                        name+=letter;
                     } else if (stopperCount == 1) {
-                        String sum = "";
                         if (letter == ';') {
                             points = Integer.valueOf(sum);
                             stopperCount++;
-                            continue;
+                            sum = "";
+                        } else {
+                            sum += letter;
                         }
-                        sum+=letter;
                     } else if (stopperCount == 2) {
-                        String sum = "";
                         if (letter == ';') {
                             multiplier = Integer.valueOf(sum);
                             stopperCount++;
-                            continue;
+                            sum = "";
+                        } else {
+                            sum += letter;
                         }
-                        sum+=letter;
                     } else if (stopperCount == 3) {
-                        String sum = "";
                         if (letter == ';') {
                             pointsEarned = Integer.valueOf(sum);
                             stopperCount++;
-                            continue;
+                            sum = "";
+                        } else {
+                            sum += letter;
                         }
-                        sum+=letter;
                     } else if (stopperCount == 4) {
                         if (letter == 't') {
                             used = true;
@@ -189,12 +191,12 @@ public class SaveFile {
                             used = false;
                         }
                     }
-                    sc.getLine(i).setName(name);
-                    sc.getLine(i).setPoints(points);
-                    sc.getLine(i).setMultiplier(multiplier);
-                    sc.getLine(i).setPointsEarned(pointsEarned);
-                    sc.getLine(i).setUsed(used);
                 }
+                sc.getLine(i).setName(name);
+                sc.getLine(i).setPoints(points);
+                sc.getLine(i).setMultiplier(multiplier);
+                sc.getLine(i).setPointsEarned(pointsEarned);
+                sc.getLine(i).setUsed(used);
             }
             fileReader.close();
 

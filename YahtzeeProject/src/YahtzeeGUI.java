@@ -305,7 +305,7 @@ class YahtzeeGUI extends JFrame{
         //<editor-fold desc="Game Buttons">
         saveGameButton = new JButton();
         saveGameButton.setText("Save Game");
-        saveGameButton.setEnabled(false);
+        saveGameButton.setEnabled(true);
         saveGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
         saveGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+60);
         c.add(saveGameButton);
@@ -318,7 +318,7 @@ class YahtzeeGUI extends JFrame{
 
         loadGameButton = new JButton();
         loadGameButton.setText("Load Game");
-        loadGameButton.setEnabled(false);
+        loadGameButton.setEnabled(true);
         loadGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
         loadGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+120);
         c.add(loadGameButton);
@@ -399,7 +399,7 @@ class YahtzeeGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 file.read();
                 file.readScoreCard(scTable.getSc());
-                reset(true);
+                refresh();
             }
         });
 

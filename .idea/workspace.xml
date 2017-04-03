@@ -2,10 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/Yahtzee_jar.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/YahtzeeProject/Manifests/META-INF/MANIFEST.MF" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/YahtzeeGame/YahtzeeGame.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/YahtzeeProject/src/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/ForcedListSelectionModel.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/ForcedListSelectionModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/Hand.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/Hand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$1.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$10.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$11.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$12.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$13.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$14.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$15.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$2.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$3.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$4.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$5.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$6.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$7.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$8.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$9.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.class" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ScoreCardSaveFile.txt" afterPath="$PROJECT_DIR$/ScoreCardSaveFile.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +56,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="YahtzeeApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#431#432#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="YahtzeeGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+            <state relative-caret-position="211">
+              <caret line="400" column="0" lean-forward="false" selection-start-line="400" selection-start-column="0" selection-end-line="400" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#ForcedListSelectionModel#0" expanded="false" />
@@ -48,11 +85,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YahtzeeProject.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java">
+      <file leaf-file-name="SCTable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+            <state relative-caret-position="119">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaveFile.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="148" column="36" lean-forward="true" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Integer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="765" column="0" lean-forward="false" selection-start-line="765" selection-start-column="0" selection-end-line="765" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,13 +195,13 @@
         <option value="$PROJECT_DIR$/YahtzeeProject/src/Hand.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/Dice.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java" />
       </list>
     </option>
   </component>
@@ -152,14 +212,14 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3191" />
-    <option name="y" value="199" />
-    <option name="width" value="2418" />
-    <option name="height" value="1368" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -173,6 +233,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,32 +279,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yahtzee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yahtzee" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YahtzeeProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="YahtzeeApplication.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,7 +289,7 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -524,6 +562,8 @@
       <updated>1489706734143</updated>
       <workItem from="1490980561998" duration="617000" />
       <workItem from="1490982407332" duration="2870000" />
+      <workItem from="1491087291344" duration="1750000" />
+      <workItem from="1491253705509" duration="1942000" />
     </task>
     <task id="LOCAL-00001" summary="Functioning GUI, no Game yet">
       <created>1489858999570</created>
@@ -585,7 +625,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3487000" />
+    <option name="totallyTimeSpent" value="7289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -597,38 +637,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="3191" y="199" width="2418" height="1368" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32512316" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.50292826" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45386535" sideWeight="0.49707174" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4526814" sideWeight="0.49707174" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2530675" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2527754" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25256222" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39747635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3564669" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="16" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32512316" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -663,41 +704,36 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java</url>
+          <line>400</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="30" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="pointsEarned" />
+        <watch expression="fileReader" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8772">
-          <caret line="516" column="45" lean-forward="true" selection-start-line="516" selection-start-column="45" selection-end-line="516" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#clearSelection#0;class#ForcedListSelectionModel#0" expanded="false" />
-            <element signature="method#removeSelectionInterval#0;class#ForcedListSelectionModel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -728,6 +764,8 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -758,6 +796,8 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,6 +828,8 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -818,6 +860,8 @@
           <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -848,6 +892,8 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -878,6 +924,8 @@
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,6 +956,8 @@
           <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,13 +997,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/ActionListener.java" />
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/diceSide5_Locked.png" />
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/Hand.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -974,6 +1017,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -981,19 +1025,40 @@
     <entry file="uml://JAVA/NullOutputStream" />
     <entry file="uml://JAVA/" />
     <entry file="uml://JAVA/YahtzeeApplication" />
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="1836">
+          <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="38" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#ScoreCardLine#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setName#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getName#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setPoints#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getPoints#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getPointsEarned#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#setMultiplier#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#getMultiplier#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#printUnused#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="docComment;method#printUsed#0;class#ScoreCardLine#0" expanded="false" />
+            <element signature="e#3980#3981#0" expanded="true" />
+            <element signature="e#4025#4026#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
+        <state relative-caret-position="1190">
           <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#howManyLeft#0;class#ScoreCard#0" expanded="false" />
@@ -1012,28 +1077,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/saveFile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="765" column="0" lean-forward="false" selection-start-line="765" selection-start-column="0" selection-end-line="765" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="53" column="20" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+        <state relative-caret-position="119">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+        <state relative-caret-position="211">
+          <caret line="400" column="0" lean-forward="false" selection-start-line="400" selection-start-column="0" selection-end-line="400" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#ForcedListSelectionModel#0" expanded="false" />
@@ -1043,10 +1129,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java">
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SaveFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="102">
+          <caret line="148" column="36" lean-forward="true" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1057,11 +1143,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>YahtzeeProject:jar</last-edited>
+          <last-edited>Yahtzee:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
