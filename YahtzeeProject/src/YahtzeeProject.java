@@ -38,7 +38,7 @@ public class YahtzeeProject {
 		System.out.print("Load Game (Y/N)? ");
 		String loadGame = scan.nextLine();
 		if (loadGame.equalsIgnoreCase("y")) {
-		    file.readScoreCard(playerOneScoreCard);
+		    file.readScoreCard(playerOneScoreCard, "test");
         } else {
             System.out.print("Would you like to change settings? (Y/N): ");
             changeSettings = scan.next();

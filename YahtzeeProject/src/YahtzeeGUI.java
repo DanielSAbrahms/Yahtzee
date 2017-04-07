@@ -39,6 +39,8 @@ class YahtzeeGUI extends JFrame{
     private JOptionPane gameOverPopup;
     private JOptionPane lineAlreadyUsedPopup;
     private JOptionPane rollWarningPopup;
+    private JTextField saveFileField;
+    private Image unknownDiceImage;
 
     private int dicePerGameValue = 5;
     private int sidesPerDiceValue = 6;
@@ -84,108 +86,185 @@ class YahtzeeGUI extends JFrame{
     private static final int ROLLS_LEFT_LABEL_Y_COOR = 663;
     //</editor-fold>
 
-    //<editor-fold desc = "Image Constants">
-    private final Image unknownDice;
-    //</editor-fold>
-
     // User Directory to Locate Source Images
     private static final String USER_DIR = System.getProperty("user.home") + "/Desktop/Yahtzee/YahtzeeProject/src/Images";
 
-
-
     YahtzeeGUI(String title) {
-        super(title);
+        super(title);        // Assigns JFrame title
         roundsLeft = sidesPerDiceValue + 7;
         rollWarningValue = 0;
         rollsLeft = 3;
 
-         // Assigns JFrame title
-
         //<editor-fold desc="Initializes Images">
-        BufferedImage diceSide1_raw = null;
-        BufferedImage diceSide2_raw = null;
-        BufferedImage diceSide3_raw = null;
-        BufferedImage diceSide4_raw = null;
-        BufferedImage diceSide5_raw = null;
-        BufferedImage diceSide6_raw = null;
-        BufferedImage diceSide7_raw = null;
-        BufferedImage diceSide8_raw = null;
-        BufferedImage diceSide9_raw = null;
-        BufferedImage diceSide10_raw = null;
-        BufferedImage diceSide11_raw = null;
-        BufferedImage diceSide12_raw = null;
-        BufferedImage diceSide1_Locked_raw = null;
-        BufferedImage diceSide2_Locked_raw = null;
-        BufferedImage diceSide3_Locked_raw = null;
-        BufferedImage diceSide4_Locked_raw = null;
-        BufferedImage diceSide5_Locked_raw = null;
-        BufferedImage diceSide6_Locked_raw = null;
-        BufferedImage diceSide7_Locked_raw = null;
-        BufferedImage diceSide8_Locked_raw = null;
-        BufferedImage diceSide9_Locked_raw = null;
-        BufferedImage diceSide10_Locked_raw = null;
-        BufferedImage diceSide11_Locked_raw = null;
-        BufferedImage diceSide12_Locked_raw = null;
-        BufferedImage unknownDice_raw = null;
+        BufferedImage diceSideA_raw = null;
+        BufferedImage diceSideB_raw = null;
+        BufferedImage diceSideC_raw = null;
+        BufferedImage diceSideD_raw = null;
+        BufferedImage diceSideE_raw = null;
+        BufferedImage diceSideF_raw = null;
+        BufferedImage diceSideG_raw = null;
+        BufferedImage diceSideH_raw = null;
+        BufferedImage diceSideI_raw = null;
+        BufferedImage diceSideJ_raw = null;
+        BufferedImage diceSideK_raw = null;
+        BufferedImage diceSideL_raw = null;
+        BufferedImage diceSideM_raw = null;
+        BufferedImage diceSideN_raw = null;
+        BufferedImage diceSideO_raw = null;
+        BufferedImage diceSideP_raw = null;
+        BufferedImage diceSideQ_raw = null;
+        BufferedImage diceSideR_raw = null;
+        BufferedImage diceSideS_raw = null;
+        BufferedImage diceSideT_raw = null;
+        BufferedImage diceSideU_raw = null;
+        BufferedImage diceSideV_raw = null;
+        BufferedImage diceSideW_raw = null;
+        BufferedImage diceSideX_raw = null;
+        BufferedImage diceSideY_raw = null;
+        BufferedImage diceSideZ_raw = null;
+        BufferedImage diceSideA_Locked_raw = null;
+        BufferedImage diceSideB_Locked_raw = null;
+        BufferedImage diceSideC_Locked_raw = null;
+        BufferedImage diceSideD_Locked_raw = null;
+        BufferedImage diceSideE_Locked_raw = null;
+        BufferedImage diceSideF_Locked_raw = null;
+        BufferedImage diceSideG_Locked_raw = null;
+        BufferedImage diceSideH_Locked_raw = null;
+        BufferedImage diceSideI_Locked_raw = null;
+        BufferedImage diceSideJ_Locked_raw = null;
+        BufferedImage diceSideK_Locked_raw = null;
+        BufferedImage diceSideL_Locked_raw = null;
+        BufferedImage diceSideM_Locked_raw = null;
+        BufferedImage diceSideN_Locked_raw = null;
+        BufferedImage diceSideO_Locked_raw = null;
+        BufferedImage diceSideP_Locked_raw = null;
+        BufferedImage diceSideQ_Locked_raw = null;
+        BufferedImage diceSideR_Locked_raw = null;
+        BufferedImage diceSideS_Locked_raw = null;
+        BufferedImage diceSideT_Locked_raw = null;
+        BufferedImage diceSideU_Locked_raw = null;
+        BufferedImage diceSideV_Locked_raw = null;
+        BufferedImage diceSideW_Locked_raw = null;
+        BufferedImage diceSideX_Locked_raw = null;
+        BufferedImage diceSideY_Locked_raw = null;
+        BufferedImage diceSideZ_Locked_raw = null;
+        BufferedImage unknownDiceImage_raw = null;
         BufferedImage background = null;
         //</editor-fold>
 
         //<editor-fold desc = "Loads Images">
         try {
-            diceSide1_raw = ImageIO.read(new File(USER_DIR + "/diceSide1.png"));
-            diceSide2_raw = ImageIO.read(new File(USER_DIR + "/diceSide2.png"));
-            diceSide3_raw = ImageIO.read(new File(USER_DIR + "/diceSide3.png"));
-            diceSide4_raw = ImageIO.read(new File(USER_DIR + "/diceSide4.png"));
-            diceSide5_raw = ImageIO.read(new File(USER_DIR + "/diceSide5.png"));
-            diceSide6_raw = ImageIO.read(new File(USER_DIR + "/diceSide6.png"));
-            diceSide7_raw = ImageIO.read(new File(USER_DIR + "/diceSide7.png"));
-            diceSide8_raw = ImageIO.read(new File(USER_DIR + "/diceSide8.png"));
-            diceSide9_raw = ImageIO.read(new File(USER_DIR + "/diceSide9.png"));
-            diceSide10_raw = ImageIO.read(new File(USER_DIR + "/diceSide10.png"));
-            diceSide11_raw = ImageIO.read(new File(USER_DIR + "/diceSide11.png"));
-            diceSide12_raw = ImageIO.read(new File(USER_DIR + "/diceSide12.png"));
-            diceSide1_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide1_Locked.png"));
-            diceSide2_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide2_Locked.png"));
-            diceSide3_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide3_Locked.png"));
-            diceSide4_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide4_Locked.png"));
-            diceSide5_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide5_Locked.png"));
-            diceSide6_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide6_Locked.png"));
-            diceSide7_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide7_Locked.png"));
-            diceSide8_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide8_Locked.png"));
-            diceSide9_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide9_Locked.png"));
-            diceSide10_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide10_Locked.png"));
-            diceSide11_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide11_Locked.png"));
-            diceSide12_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSide12_Locked.png"));
-            unknownDice_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
+            diceSideA_raw = ImageIO.read(new File(USER_DIR + "/diceSideA.png"));
+            diceSideB_raw = ImageIO.read(new File(USER_DIR + "/diceSideB.png"));
+            diceSideC_raw = ImageIO.read(new File(USER_DIR + "/diceSideC.png"));
+            diceSideD_raw = ImageIO.read(new File(USER_DIR + "/diceSideD.png"));
+            diceSideE_raw = ImageIO.read(new File(USER_DIR + "/diceSideE.png"));
+            diceSideF_raw = ImageIO.read(new File(USER_DIR + "/diceSideF.png"));
+            diceSideG_raw = ImageIO.read(new File(USER_DIR + "/diceSideG.png"));
+            diceSideH_raw = ImageIO.read(new File(USER_DIR + "/diceSideH.png"));
+            diceSideI_raw = ImageIO.read(new File(USER_DIR + "/diceSideI.png"));
+            diceSideJ_raw = ImageIO.read(new File(USER_DIR + "/diceSideJ.png"));
+            diceSideK_raw = ImageIO.read(new File(USER_DIR + "/diceSideK.png"));
+            diceSideL_raw = ImageIO.read(new File(USER_DIR + "/diceSideL.png"));
+            diceSideM_raw = ImageIO.read(new File(USER_DIR + "/diceSideM.png"));
+            diceSideN_raw = ImageIO.read(new File(USER_DIR + "/diceSideN.png"));
+            diceSideO_raw = ImageIO.read(new File(USER_DIR + "/diceSideO.png"));
+            diceSideP_raw = ImageIO.read(new File(USER_DIR + "/diceSideP.png"));
+            diceSideQ_raw = ImageIO.read(new File(USER_DIR + "/diceSideQ.png"));
+            diceSideR_raw = ImageIO.read(new File(USER_DIR + "/diceSideR.png"));
+            diceSideS_raw = ImageIO.read(new File(USER_DIR + "/diceSideS.png"));
+            diceSideT_raw = ImageIO.read(new File(USER_DIR + "/diceSideT.png"));
+            diceSideU_raw = ImageIO.read(new File(USER_DIR + "/diceSideU.png"));
+            diceSideV_raw = ImageIO.read(new File(USER_DIR + "/diceSideV.png"));
+            diceSideW_raw = ImageIO.read(new File(USER_DIR + "/diceSideW.png"));
+            diceSideX_raw = ImageIO.read(new File(USER_DIR + "/diceSideX.png"));
+            diceSideY_raw = ImageIO.read(new File(USER_DIR + "/diceSideY.png"));
+            diceSideZ_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ.png"));
+            diceSideA_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideA_Locked.png"));
+            diceSideB_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideB_Locked.png"));
+            diceSideC_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideC_Locked.png"));
+            diceSideD_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideD_Locked.png"));
+            diceSideE_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideE_Locked.png"));
+            diceSideF_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideF_Locked.png"));
+            diceSideG_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideG_Locked.png"));
+            diceSideH_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideH_Locked.png"));
+            diceSideI_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideI_Locked.png"));
+            diceSideJ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideJ_Locked.png"));
+            diceSideK_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideK_Locked.png"));
+            diceSideL_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideL_Locked.png"));
+            diceSideM_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideM_Locked.png"));
+            diceSideN_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideN_Locked.png"));
+            diceSideO_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideO_Locked.png"));
+            diceSideP_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideP_Locked.png"));
+            diceSideQ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideQ_Locked.png"));
+            diceSideR_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideR_Locked.png"));
+            diceSideS_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideS_Locked.png"));
+            diceSideT_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideT_Locked.png"));
+            diceSideU_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideU_Locked.png"));
+            diceSideV_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideV_Locked.png"));
+            diceSideW_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideW_Locked.png"));
+            diceSideX_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideX_Locked.png"));
+            diceSideY_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideY_Locked.png"));
+            diceSideZ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            unknownDiceImage_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
             background = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        unknownDice = unknownDice_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide1Image = diceSide1_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide2Image = diceSide2_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide3Image = diceSide3_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide4Image = diceSide4_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide5Image = diceSide5_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide6Image = diceSide6_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide7Image = diceSide7_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide8Image = diceSide8_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide9Image = diceSide9_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide10Image = diceSide10_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide11Image = diceSide11_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide12Image = diceSide12_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide1LockedImage = diceSide1_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide2LockedImage = diceSide2_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide3LockedImage = diceSide3_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide4LockedImage = diceSide4_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide5LockedImage = diceSide5_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide6LockedImage = diceSide6_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide7LockedImage = diceSide7_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide8LockedImage = diceSide8_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide9LockedImage = diceSide9_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide10LockedImage = diceSide10_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide11LockedImage = diceSide11_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
-        Image diceSide12LockedImage = diceSide12_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        unknownDiceImage = unknownDiceImage_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideAImage = diceSideA_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideBImage = diceSideB_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideCImage = diceSideC_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideDImage = diceSideD_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideEImage = diceSideE_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideFImage = diceSideF_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideGImage = diceSideG_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideHImage = diceSideH_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideIImage = diceSideI_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideJImage = diceSideJ_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideKImage = diceSideK_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideLImage = diceSideL_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideMImage = diceSideM_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideNImage = diceSideN_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideOImage = diceSideO_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSidePImage = diceSideP_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideQImage = diceSideQ_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideRImage = diceSideR_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideSImage = diceSideS_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideTImage = diceSideT_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideUImage = diceSideU_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideVImage = diceSideV_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideWImage = diceSideW_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideXImage = diceSideX_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideYImage = diceSideY_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideZImage = diceSideZ_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideA_LockedImage = diceSideA_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideB_LockedImage = diceSideB_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideC_LockedImage = diceSideC_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideD_LockedImage = diceSideD_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideE_LockedImage = diceSideE_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideF_LockedImage = diceSideF_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideG_LockedImage = diceSideG_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideH_LockedImage = diceSideH_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideI_LockedImage = diceSideI_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideJ_LockedImage = diceSideJ_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideK_LockedImage = diceSideK_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideL_LockedImage = diceSideL_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideM_LockedImage = diceSideM_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideN_LockedImage = diceSideN_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideO_LockedImage = diceSideO_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideP_LockedImage = diceSideP_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideQ_LockedImage = diceSideQ_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideR_LockedImage = diceSideR_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideS_LockedImage = diceSideS_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideT_LockedImage = diceSideT_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideU_LockedImage = diceSideU_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideV_LockedImage = diceSideV_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideW_LockedImage = diceSideW_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideX_LockedImage = diceSideX_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideY_LockedImage = diceSideY_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image diceSideZ_LockedImage = diceSideZ_Locked_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+
         //</editor-fold>
 
 
@@ -211,10 +290,16 @@ class YahtzeeGUI extends JFrame{
 
         //<editor-fold desc="Dice Label Creation">
 
-        Image[] images = {unknownDice, diceSide1Image, diceSide2Image, diceSide3Image, diceSide4Image, diceSide5Image, diceSide6Image,
-                            diceSide7Image, diceSide8Image, diceSide9Image, diceSide10Image, diceSide11Image, diceSide12Image,
-                            diceSide1LockedImage, diceSide2LockedImage, diceSide3LockedImage, diceSide4LockedImage, diceSide5LockedImage, diceSide6LockedImage,
-                            diceSide7LockedImage, diceSide8LockedImage, diceSide9LockedImage, diceSide10LockedImage, diceSide11LockedImage, diceSide12LockedImage
+        Image[] images = {
+                unknownDiceImage,
+                diceSideAImage, diceSideBImage, diceSideCImage,diceSideDImage,diceSideEImage,diceSideFImage,diceSideGImage,diceSideHImage,
+                diceSideIImage, diceSideJImage, diceSideKImage,diceSideLImage,diceSideMImage,diceSideNImage,diceSideOImage,
+                diceSidePImage, diceSideQImage, diceSideRImage,diceSideSImage,diceSideTImage,diceSideUImage,diceSideVImage,
+                diceSideWImage, diceSideXImage, diceSideYImage,diceSideZImage,
+                diceSideA_LockedImage, diceSideB_LockedImage, diceSideC_LockedImage,diceSideD_LockedImage,diceSideE_LockedImage,diceSideF_LockedImage,diceSideG_LockedImage,diceSideH_LockedImage,
+                diceSideI_LockedImage, diceSideJ_LockedImage, diceSideK_LockedImage,diceSideL_LockedImage,diceSideM_LockedImage,diceSideN_LockedImage,diceSideO_LockedImage,
+                diceSideP_LockedImage, diceSideQ_LockedImage, diceSideR_LockedImage,diceSideS_LockedImage,diceSideT_LockedImage,diceSideU_LockedImage,diceSideV_LockedImage,
+                diceSideW_LockedImage, diceSideX_LockedImage, diceSideY_LockedImage,diceSideZ_LockedImage
         };
 
         dice1Label = new DiceLabel(images, sidesPerDiceValue);
@@ -322,6 +407,12 @@ class YahtzeeGUI extends JFrame{
         loadGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
         loadGameButton.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR+120);
         c.add(loadGameButton);
+
+        saveFileField = new JTextField("Save File Name");
+        saveFileField.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
+        saveFileField.setLocation(GAME_BUTTON_X_COOR, GAME_BUTTON_Y_COOR +GAME_BUTTON_HEIGHT + 60);
+        saveFileField.setEnabled(false);
+        c.add(saveFileField);
         //</editor-fold>
 
         //<editor-fold desc = "Score Labels">
@@ -374,7 +465,6 @@ class YahtzeeGUI extends JFrame{
         dicePerGameValue = file.getDiceInGame();
         DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label};
         h = new Hand(hand, dicePerGameValue, sidesPerDiceValue);
-        
 
         //<editor-fold desc = "Action Listeners">
         newGameButton.addActionListener(new ActionListener() {
@@ -382,6 +472,7 @@ class YahtzeeGUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 reset(true);
                 rollButton.setEnabled(true);
+                saveFileField.setEnabled(true);
                 newGameButton.setBackground(null);
             }
         });
@@ -398,7 +489,7 @@ class YahtzeeGUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 file.read();
-                file.readScoreCard(scTable.getSc());
+                file.readScoreCard(scTable.getSc(), saveFileField.getText());
                 refresh();
             }
         });
@@ -552,7 +643,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice1Label.getD().setKept(false);
                 }
-                dice1Label.refresh();
+                dice1Label.refresh(true);
             }
         });
 
@@ -565,7 +656,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice2Label.getD().setKept(false);
                 }
-                dice2Label.refresh();
+                dice2Label.refresh(true);
             }
         });
 
@@ -578,7 +669,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice3Label.getD().setKept(false);
                 }
-                dice3Label.refresh();
+                dice3Label.refresh(true);
             }
         });
 
@@ -590,7 +681,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice4Label.getD().setKept(false);
                 }
-                dice4Label.refresh();
+                dice4Label.refresh(false);
             }
         });
 
@@ -603,7 +694,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice5Label.getD().setKept(false);
                 }
-                dice5Label.refresh();
+                dice5Label.refresh(false);
             }
         });
 
@@ -616,7 +707,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice6Label.getD().setKept(false);
                 }
-                dice6Label.refresh();
+                dice6Label.refresh(false);
             }
         });
 
@@ -629,7 +720,7 @@ class YahtzeeGUI extends JFrame{
                 } else {
                     dice7Label.getD().setKept(false);
                 }
-                dice7Label.refresh();
+                dice7Label.refresh(false);
             }
         });
 
@@ -668,7 +759,7 @@ class YahtzeeGUI extends JFrame{
 
         JToggleButton[] dice = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label, dice6Label, dice7Label};
         for (int i = 0; i < dice.length; i++){
-            changeImage(dice[i], unknownDice);
+            changeImage(dice[i], unknownDiceImage);
         }
     }
 
@@ -705,19 +796,19 @@ class YahtzeeGUI extends JFrame{
      * Assigns image to each DiceLabel based on their value
      */
     private void refreshDice(){
-        dice1Label.refresh();
+        dice1Label.refresh(true);
         dice1Label.setRange(sidesPerDiceValue);
-        dice2Label.refresh();
+        dice2Label.refresh(true);
         dice2Label.setRange(sidesPerDiceValue);
-        dice3Label.refresh();
+        dice3Label.refresh(true);
         dice3Label.setRange(sidesPerDiceValue);
-        dice4Label.refresh();
+        dice4Label.refresh(false);
         dice4Label.setRange(sidesPerDiceValue);
-        dice5Label.refresh();
+        dice5Label.refresh(false);
         dice5Label.setRange(sidesPerDiceValue);
-        dice6Label.refresh();
+        dice6Label.refresh(false);
         dice6Label.setRange(sidesPerDiceValue);
-        dice7Label.refresh();
+        dice7Label.refresh(false);
         dice7Label.setRange(sidesPerDiceValue);
         if (dicePerGameValue == 5) {
             DiceLabel[] hand = {dice1Label, dice2Label, dice3Label, dice4Label, dice5Label};

@@ -38,12 +38,12 @@ public class DiceLabel extends JToggleButton {
     /**
      * Sets the icon based on the Dice Value
      */
-    public void refresh(){
-        if (d == null) d = new Dice(range);
+    public void refresh(boolean isVowel){
+        if (d == null) d = new Dice(isVowel);
         if (d.getKept()) {
-            setIcon(new ImageIcon(images[d.getValue()+12]));
+            setIcon(new ImageIcon(images[d.charToInt(d.getValue())+26]));
         } else {
-            setIcon(new ImageIcon(images[d.getValue()]));
+            setIcon(new ImageIcon(images[d.charToInt(d.getValue())]));
         }
     }
 

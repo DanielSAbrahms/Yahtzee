@@ -29,7 +29,7 @@ public class Hand {
 		diceRange = newDiceRange;
 		die = new Dice[diceNumber];
 		for (int i = 0; i < diceNumber; i++) {
-			die[i] = new Dice(diceRange);
+			die[i] = new Dice(false);
 		}
 	}
 

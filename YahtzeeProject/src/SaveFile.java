@@ -1,11 +1,12 @@
 import java.io.*;
 
-/*
- * @author Daniel Abrahms
- * Last Edited- 2/14/17
+/**
+ * Last Edited- 4/3/17
  * Class- CPSC 224-02
  * Class- SaveFile
  * Description- This class allows the user to save current setting about the game
+ * @author Daniel Abrahms
+ * @version 1.0
  */
 public class SaveFile {
     private int sidesPerDice;
@@ -13,7 +14,6 @@ public class SaveFile {
     private int rollsPerTurn;
 
     /**
-        @see SaveFile
         SaveFile object is created
         @param newSidesPerDice- int value for how many sides per dice
         @param newDiceInGame- int value for how many dice in gme
@@ -128,12 +128,16 @@ public class SaveFile {
         }
     }
 
-    public void readScoreCard(ScoreCard sc) {
-        String saveFile = "ScoreCardSaveFile.txt";
+    /**
+     * Reads the Scorecard File and changes the values directly
+     * @param sc the Scorecard to be changed
+     * @param fileName the String of the txt file name
+     */
+    public void readScoreCard(ScoreCard sc, String fileName) {
         String line;
 
         try {
-            FileReader fileReader = new FileReader(saveFile);
+            FileReader fileReader = new FileReader(fileName + ".txt");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
             for (int i = 0; i < diceInGame + 7; i++) {
