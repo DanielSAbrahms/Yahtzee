@@ -35,13 +35,10 @@ public class Hand {
 
 	/**
 	 * @param hand Hand object
-	 * @param initialDiceNumber Number of Dice for the Hand
-	 * @param newDiceRange Number of sides per Dice
 	 */
-	public Hand(DiceLabel[] hand, int initialDiceNumber, int newDiceRange) {
-		diceNumber = initialDiceNumber;
+	public Hand(DiceLabel[] hand) {
+		diceNumber = hand.length;
 		rollsLeft = 3;
-		diceRange = newDiceRange;
 		die = new Dice[diceNumber];
 		for (int i = 0; i < diceNumber; i++) {
 			die[i] = hand[i].getD();

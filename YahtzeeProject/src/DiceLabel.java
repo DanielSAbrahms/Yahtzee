@@ -11,6 +11,7 @@ public class DiceLabel extends JToggleButton {
     private Dice d;
     private int range;
     private Image[] images;
+    boolean isVowel;
 
     /**
      * @param diceImages Array of diceImages, with index 0 corresponding to unknown dice
@@ -18,6 +19,8 @@ public class DiceLabel extends JToggleButton {
     public DiceLabel(Image[] diceImages, int newSidesPerDice ) {
         range = newSidesPerDice;
         images = diceImages;
+        if (newSidesPerDice == 6) isVowel = true;
+        else isVowel = false;
         setIcon(new ImageIcon(images[0]));
     }
 
@@ -38,7 +41,7 @@ public class DiceLabel extends JToggleButton {
     /**
      * Sets the icon based on the Dice Value
      */
-    public void refresh(boolean isVowel){
+    public void refresh(){
         if (d == null) d = new Dice(isVowel);
         if (d.getKept()) {
             setIcon(new ImageIcon(images[d.charToInt(d.getValue())+26]));

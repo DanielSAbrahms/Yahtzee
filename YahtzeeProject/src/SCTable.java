@@ -8,14 +8,9 @@ import javax.swing.table.DefaultTableModel;
 public class SCTable extends JTable {
 
     private ScoreCard sc;
-    private int sidesPerDice = 6;
 
-    /**
-     * @param newSidesPerDice the number of sides per dice
-     */
-    SCTable(int newSidesPerDice) {
-        sidesPerDice = newSidesPerDice;
-        sc = new ScoreCard(sidesPerDice);
+    SCTable() {
+        sc = new ScoreCard(11);
         reset();
     }
 
@@ -24,13 +19,6 @@ public class SCTable extends JTable {
      */
     ScoreCard getSc() {
         return sc;
-    }
-
-    /**
-     * @param sidesPerDice the number of sides per dice
-     */
-    public void setSidesPerDice(int sidesPerDice) {
-        this.sidesPerDice = sidesPerDice;
     }
 
     /**
@@ -45,8 +33,8 @@ public class SCTable extends JTable {
      * Refreshes the table, based on the values of the ScoreCard
      */
     void refresh() {
-        String[][] values = new String[sidesPerDice+7][3];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[][] values = new String[11][3];
+        for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
             if (line.getPointsEarned() == 0 && line.getUsed() == false) {
@@ -69,13 +57,13 @@ public class SCTable extends JTable {
             String[] a = {name, pp, pe};
             values[i] = a;
         }
-        String[] names = new String[sidesPerDice+7];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[] names = new String[11];
+        for (int i = 0; i < 11; i++){
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
         model.setColumnCount(3);
-        model.setRowCount(sidesPerDice+7);
+        model.setRowCount(11);
         this.setModel(model);
     }
 
@@ -83,8 +71,8 @@ public class SCTable extends JTable {
      * Keeps the ScoreCard and table in tact, but clears the middle column
      */
     void resetColumn1() {
-        String[][] values = new String[sidesPerDice+7][3];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[][] values = new String[11][3];
+        for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
             if (line.getPointsEarned() == 0 && line.getUsed() == false) {
@@ -101,8 +89,8 @@ public class SCTable extends JTable {
             String[] a = {name, String.valueOf(0), pe};
             values[i] = a;
         }
-        String[] names = new String[sidesPerDice+7];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[] names = new String[11];
+        for (int i = 0; i < 11; i++){
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
@@ -114,20 +102,20 @@ public class SCTable extends JTable {
      * Resets all the values of the table
      */
     void reset() {
-        String[][] values = new String[sidesPerDice+7][3];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[][] values = new String[11][3];
+        for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String[] a = {line.getName(), String.valueOf(0), "-" };
             values[i] = a;
         }
-        String[] names = new String[sidesPerDice+7];
-        for (int i = 0; i < sidesPerDice+7; i++){
+        String[] names = new String[11];
+        for (int i = 0; i < 11; i++){
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
         model.setColumnCount(3);
         this.setModel(model);
-        for (int i = 0; i < sidesPerDice+7; i++){
+        for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             line.setPointsEarned(0);
         }
