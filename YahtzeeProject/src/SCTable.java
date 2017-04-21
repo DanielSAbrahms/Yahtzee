@@ -10,7 +10,7 @@ public class SCTable extends JTable {
     private ScoreCard sc;
 
     SCTable() {
-        sc = new ScoreCard(11);
+        sc = new ScoreCard();
         reset();
     }
 

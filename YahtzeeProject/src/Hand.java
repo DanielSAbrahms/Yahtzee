@@ -160,21 +160,7 @@ public class Hand {
 
 
 
-	/**
-	 * The hand has been sorted from low to high
-	 */
-	public void sortHand() {
-		Dice temp;
-		for (int i = 0; i < diceNumber - 1; i++) {
-			for (int j = 1; j < diceNumber - i; j++) {
-				if (die[j-1].getValue() > die[j].getValue()) {
-					temp = die[j - 1];
-					die[j - 1] = die[j];
-					die[j] = temp;
-				}
-			}
-		}
-	}
+
 
 	/**
 	 * @return the sum of the entire hand's value

@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * @author: Daniel Abrahms
  * Last Edited: 2/14/17
@@ -13,6 +15,9 @@ public class Dice {
 	boolean kept;
 	boolean isVowel;
 
+	public int getPoints() {
+		return points;
+	}
 
 	/**
 	 * Dice object has been created with random value within range
@@ -22,12 +27,12 @@ public class Dice {
 		this.isVowel = isVowel;
 		range = 26;
 		kept = false;
+		points = 1;
 		int intValue;
-		Random rand = new Random();
 		if (isVowel) {
-			intValue = rand.nextInt((6 - 1) + 1) + 1;
+			intValue = ThreadLocalRandom.current().nextInt(1, 7);
 		} else {
-			intValue = rand.nextInt((20 - 1) + 1) + 7;
+            intValue = ThreadLocalRandom.current().nextInt(7, 27);
 		}
 		value = intToChar(intValue);
 	}
@@ -100,35 +105,48 @@ public class Dice {
 				case (5):
 					return 'U';
 				case (6):
+					points = 4;
 					return 'Y';
 			}
 		} else {
 			switch(i) {
 				case (7):
+					points = 3;
 					return 'B';
 				case (8):
+					points = 3;
 					return 'C';
 				case (9):
+					points = 2;
 					return 'D';
 				case (10):
+					points = 4;
 					return 'F';
 				case (11):
+					points = 2;
 					return 'G';
 				case (12):
+					points = 4;
 					return 'H';
 				case (13):
+					points = 8;
 					return 'J';
 				case (14):
+					points = 5;
 					return 'K';
 				case (15):
+					points = 1;
 					return 'L';
 				case (16):
+					points = 3;
 					return 'M';
 				case (17):
 					return 'N';
 				case (18):
+					points = 3;
 					return 'P';
 				case (19):
+					points = 10;
 					return 'Q';
 				case (20):
 					return 'R';
@@ -137,12 +155,16 @@ public class Dice {
 				case (22):
 					return 'T';
 				case (23):
+					points = 4;
 					return 'V';
 				case (24):
+					points = 4;
 					return 'W';
 				case (25):
+					points = 8;
 					return 'X';
 				case (26):
+					points = 10;
 					return 'Z';
 			}
 		}
@@ -204,7 +226,7 @@ public class Dice {
 			case ('Z'):
 				return 26;
 		}
-		return '?';
+		return 0;
 	}
 }
 

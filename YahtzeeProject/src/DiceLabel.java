@@ -43,6 +43,10 @@ public class DiceLabel extends JToggleButton {
      */
     public void refresh(){
         if (d == null) d = new Dice(isVowel);
+        if (d.getValue() == '?') {
+            setIcon(new ImageIcon(images[0]));
+            return;
+        }
         if (d.getKept()) {
             setIcon(new ImageIcon(images[d.charToInt(d.getValue())+26]));
         } else {
