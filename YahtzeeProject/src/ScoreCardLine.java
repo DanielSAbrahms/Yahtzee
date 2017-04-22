@@ -13,8 +13,6 @@ public class ScoreCardLine {
 	// how many points this will be scored for, works in tatum with multiplier
 	int points;
 	// how many points this was scored for
-	int multiplier;
-	// the multiplier of how many points this will be scored, 1 if dependent on dice, otherwise certain score, like 35, 25, etc.
 	int pointsEarned;
 	// whether or not the ScoreCardLine has been used this game.
 	boolean used;
@@ -68,15 +66,7 @@ public class ScoreCardLine {
 	}
 
     public void setPointsEarned() {
-		if (
-				getName().equalsIgnoreCase("(FH)- Full House") ||
-				getName().equalsIgnoreCase("(SS)- Small Straight") ||
-				getName().equalsIgnoreCase("(LS)- Large Straight") ||
-				getName().equalsIgnoreCase("(YA)- Yahtzee")) {
-			multiplier = 1;
-		}
-
-		pointsEarned = points * multiplier;
+		pointsEarned = points;
     }
 
 	public void setPointsEarned(int newPointsEarned) {
@@ -104,62 +94,6 @@ public class ScoreCardLine {
 		return used;
 	}
 
-	/**
-	 * @param newMult- int value for the multipier attribute
- 	 */
-	public void setMultiplier(int newMult) {
-		multiplier = newMult;
-		if (
-				getName().equalsIgnoreCase("(FH)- Full House") ||
-						getName().equalsIgnoreCase("(SS)- Small Straight") ||
-						getName().equalsIgnoreCase("(LS)- Large Straight") ||
-						getName().equalsIgnoreCase("(YA)- Yahtzee")) {
-			multiplier = 1;
-		}
-	}
-
-	/**
-	 * @return the attribute multiplier
- 	 */
-	public int getMultiplier() {
-		return multiplier;
-	}
-
-	/**
-	 * Prints the points possible for the multiplier given to the scorecardline
-	 * @param newMult should be 0 for failed check of scorecardline qualification (i.e. scorecardline is fullhouse, hand failed this qualification)
-	 * @param nowUsed boolean on whether or not the line is used on this turn
- 	 */
-	public void printUnused(int newMult, boolean nowUsed) {
-		multiplier = newMult;
-
-		if (used) {
-			System.out.println("--------------------");
-			return;
-		}
-		System.out.print(name + "- ");
-		for (int i = 0 ; i < 20 - name.length(); i++) {
-			System.out.print(" ");
-		}
-		potentialPoints = points * multiplier;
-		System.out.println(potentialPoints);
-	}
-
-	/**
-	 * Prints the line for scorecard, not for possible scores
-	 */
-	public void printUsed() {
-        System.out.print(name + "- ");
-        for (int i = 0 ; i < 20 - name.length(); i++) {
-            System.out.print(" ");
-        }
-        if (!used && pointsEarned
-				==0) {
-			System.out.println("-");
-		} else {
-			System.out.println(pointsEarned);
-		}
-    }
 
 
 	public void setPotentialPoints(int potentialPoints) {

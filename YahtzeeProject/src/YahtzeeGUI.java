@@ -557,10 +557,8 @@ class YahtzeeGUI extends JFrame{
                 confirmSelectionButton.setEnabled(false);
                 pause = false;
                 scTable.getSc().getLine(getSelectedLine()).setUsed(true);
-                scTable.getSc().getLine(getSelectedLine()).setMultiplier(h.sum());
                 for (int i = 0; i < 12; i++) {
                     if (scTable.getSc().getLine(getSelectedLine()).getName().equalsIgnoreCase(String.valueOf(i))) {
-                        scTable.getSc().getLine(getSelectedLine()).setMultiplier(scTable.getSc().totalOfNum(i, h));
                     }
                 }
                 scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
