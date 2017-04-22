@@ -8,9 +8,8 @@ public class SpecialDice {
     private int numRolls = 3;
     private int range = 6;
     private boolean isKept;
-    private int sideUp;
+    private int value;
     private int[] specialDiceArray = {2, 2, 4, 4, 5, 6};
-
 
     /*
     (sideUp = 0 signifies that there is no side up. When reading outputs, should set (if ... == 0), do nothing.
@@ -35,15 +34,32 @@ public class SpecialDice {
         }
     }
 
-    int getSideUp() { return sideUp; }
+    /*
+    get current side up value of special die
+     */
+    int getValue() { return value; }
 
+
+    /*
+    get current range of special die, default range is 6
+     */
     int getRange() {return range; }
 
+    /*
+    set range of special die, implemented for conformity.
+     */
     int setRange(int newRange) {range = newRange; }
 
+
+    /*
+    set isKept boolean value of the die.
+     */
     void setIsKept(boolean newKept) { isKept = newKept; }
 
+    /*
+    gets isKept boolean value of the die. If die is kept, it cannot be rolled again until
+    the die is used.
+     */
     boolean getIsKept() { return isKept; }
-
 
 }
