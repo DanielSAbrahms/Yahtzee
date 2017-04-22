@@ -24,28 +24,24 @@ class YahtzeeGUI extends JFrame{
     private DiceLabel con4Label;
     private DiceLabel con5Label;
     private DiceLabel con6Label;
+    private String wordString;
+    private JLabel wordLabel;
     private JLabel difficultyLabel;
     private JLabel totalScoreLabel;
-    private JLabel upperTotalLabel;
-    private JLabel lowerTotalLabel;
-    private JLabel bonusLabel;
     private JLabel rollsLeftLabel;
     private JButton rollButton;
     private JButton confirmSelectionButton;
     private JComboBox difficultyBox;
-    private JButton saveGameButton;
     private JButton newGameButton;
-    private JButton loadGameButton;
     private JOptionPane gameOverPopup;
     private JOptionPane lineAlreadyUsedPopup;
     private JOptionPane rollWarningPopup;
-    private JTextField saveFileField;
     private Image unknownDiceImage;
 
     private int dicePerGameValue = 9;
     private int totalScoreValue = 0;
-    private int roundsLeft;
     private int rollsLeft;
+    private int roundsLeft;
     private int rollWarningValue;
     private boolean pause = false;
     private Hand h;
@@ -63,11 +59,13 @@ class YahtzeeGUI extends JFrame{
     private static final int TABLE_HEIGHT = 379;
     private static final int LABEL_WIDTH = 150;
     private static final int LABEL_HEIGHT = 30;
+    private static final int WORD_LABEL_WIDTH = 1030;
+    private static final int WORD_LABEL_HEIGHT = 50;
     //</editor-fold>
 
     //<editor-fold desc= "Location Constants for Components">
     private static final int DICE_X_COOR = 50;
-    private static final int DICE_Y_COOR = 44;
+    private static final int DICE_Y_COOR = 14;
     private static final int BUTTON_X_COOR = 190;
     private static final int BUTTON_Y_COOR = 656;
     private static final int GAME_BUTTON_X_COOR = 1135;
@@ -76,6 +74,8 @@ class YahtzeeGUI extends JFrame{
     private static final int TABLE_Y_COOR = 258;
     private static final int LABEL_X_COOR = 1105;
     private static final int LABEL_Y_COOR = 44;
+    private static final int WORD_LABEL_X_COOR = 50;
+    private static final int WORD_LABEL_Y_COOR = 144;
     private static final int SCORE_LABEL_X_COOR = 1095;
     private static final int SCORE_LABEL_Y_COOR = 530;
     private static final int ROLLS_LEFT_LABEL_X_COOR = 308;
@@ -343,6 +343,13 @@ class YahtzeeGUI extends JFrame{
         con6Label.setSize(DICE_WIDTH, DICE_HEIGHT);
         con6Label.setLocation(DICE_X_COOR + (9*100), DICE_Y_COOR);
         c.add(con6Label);
+
+        wordLabel = new JLabel("No Word Created");
+        wordLabel.setFont(new Font ("Garamond", Font.BOLD , 50));
+        wordLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        wordLabel.setSize(WORD_LABEL_WIDTH, WORD_LABEL_HEIGHT);
+        wordLabel.setLocation(WORD_LABEL_X_COOR, WORD_LABEL_Y_COOR);
+        c.add(wordLabel);
 
         //</editor-fold>
 
@@ -758,8 +765,6 @@ class YahtzeeGUI extends JFrame{
         repaint();
     }
 
-
-
     /**
      * Sets all the Score Labels to the score Values
      */
@@ -781,6 +786,7 @@ class YahtzeeGUI extends JFrame{
         refreshDice();
         rollButton.setText("Roll Hand");
         rollsLeftLabel.setText("Rolls Left: " + rollsLeft);
+        refreshWordLabel();
         repaint();
     }
 
@@ -811,6 +817,12 @@ class YahtzeeGUI extends JFrame{
         c.remove(con4Label);
         c.remove(con5Label);
         c.remove(con6Label);
+    }
+
+    private void refreshWordLabel() {
+        String str = wordString.toUpperCase();
+        wordLabel.setText(str);
+        repaint();
     }
 }
 
