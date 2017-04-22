@@ -25,7 +25,8 @@ public class Dice {
  	 */
 	public Dice(boolean isVowel){
 		this.isVowel = isVowel;
-		range = 26;
+		if (isVowel) range = 6;
+		else range = 20;
 		kept = false;
 		points = 1;
 		int intValue;
@@ -92,84 +93,71 @@ public class Dice {
 	}
 
 	public char intToChar(int i){
-		if (isVowel) {
-			switch(i) {
-				case (1):
-					return 'A';
-				case (2):
-					return 'E';
-				case (3):
-					return 'I';
-				case (4):
-					return 'O';
-				case (5):
-					return 'U';
-				case (6):
-					points = 4;
-					return 'Y';
-			}
-		} else {
-			switch(i) {
-				case (7):
-					points = 3;
-					return 'B';
-				case (8):
-					points = 3;
-					return 'C';
-				case (9):
-					points = 2;
-					return 'D';
-				case (10):
-					points = 4;
-					return 'F';
-				case (11):
-					points = 2;
-					return 'G';
-				case (12):
-					points = 4;
-					return 'H';
-				case (13):
-					points = 8;
-					return 'J';
-				case (14):
-					points = 5;
-					return 'K';
-				case (15):
-					points = 1;
-					return 'L';
-				case (16):
-					points = 3;
-					return 'M';
-				case (17):
-					return 'N';
-				case (18):
-					points = 3;
-					return 'P';
-				case (19):
-					points = 10;
-					return 'Q';
-				case (20):
-					return 'R';
-				case (21):
-					return 'S';
-				case (22):
-					return 'T';
-				case (23):
-					points = 4;
-					return 'V';
-				case (24):
-					points = 4;
-					return 'W';
-				case (25):
-					points = 8;
-					return 'X';
-				case (26):
-					points = 10;
-					return 'Z';
-			}
-		}
-		return '?';
-	}
+        if (i == 1) return 'A';
+        if (i == 2) return 'E';
+        if (i == 3) return 'I';
+        if (i == 4) return 'O';
+        if (i == 5) return 'U';
+        if (i == 6) {
+            points = 4;
+            return 'Y';
+        } if (i == 7) {
+            points = 3;
+            return 'B';
+        } if (i == 8) {
+            points = 3;
+            return 'C';
+        } if (i == 9) {
+            points = 2;
+            return 'D';
+        } if (i == 10) {
+            points = 4;
+            return 'F';
+        } if (i == 11) {
+            points = 2;
+            return 'G';
+        } if (i == 12) {
+            points = 4;
+            return 'H';
+        } if (i == 13) {
+            points = 8;
+            return 'J';
+        } if (i == 14) {
+            points = 5;
+            return 'K';
+        } if (i == 15) return 'L';
+        if (i == 16) {
+            points = 3;
+            return 'M';
+        } if (i == 17) {
+            return 'N';
+        } if (i == 18) {
+            points = 3;
+            return 'P';
+        } if (i == 19) {
+            points = 10;
+            return 'Q';
+        } if (i == 20) {
+            return 'R';
+        } if (i == 21) {
+            return 'S';
+        } if (i == 22) {
+            return 'T';
+        } if (i == 23) {
+            points = 4;
+            return 'V';
+        } if (i == 24) {
+            points = 4;
+            return 'W';
+        } if (i == 25) {
+            points = 8;
+            return 'X';
+        } if (i == 26) {
+            points = 10;
+            return 'Z';
+        }
+        return '?';
+    }
 
 	public int charToInt(char c){
 		switch(c) {

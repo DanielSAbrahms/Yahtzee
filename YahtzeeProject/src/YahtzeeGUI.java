@@ -737,23 +737,14 @@ class YahtzeeGUI extends JFrame{
      */
     private void refreshDice(){
         vowel1Label.refresh();
-        vowel1Label.setRange(6);
         vowel2Label.refresh();
-        vowel2Label.setRange(6);
         vowel3Label.refresh();
-        vowel3Label.setRange(6);
         con1Label.refresh();
-        con1Label.setRange(6);
         con2Label.refresh();
-        con2Label.setRange(6);
         con3Label.refresh();
-        con3Label.setRange(6);
         con4Label.refresh();
-        con4Label.setRange(6);
         con5Label.refresh();
-        con5Label.setRange(6);
         con6Label.refresh();
-        con6Label.setRange(6);
         if (dicePerGameValue == 6) {
             DiceLabel[] hand = {vowel1Label, vowel2Label, con1Label, con2Label, con3Label,con4Label};
             h = new Hand(hand);
@@ -764,7 +755,7 @@ class YahtzeeGUI extends JFrame{
             DiceLabel[] hand = {vowel1Label,  vowel2Label, vowel3Label, con1Label, con2Label, con3Label, con4Label, con5Label, con6Label};
             h = new Hand(hand);
         }
-
+        repaint();
     }
 
 
