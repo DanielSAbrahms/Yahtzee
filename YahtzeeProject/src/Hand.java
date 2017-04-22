@@ -17,21 +17,6 @@ public class Hand {
     private int diceRange;
 	private Scanner scan = new Scanner(System.in);
 
-	/**
-	 * @param initialDiceNumber- the number of dice in the game
-	 * @param initialRollsLeft- the number of rolls left in the game
-	 * @param newDiceRange- the number of sides per dice
-	 * @see Hand
-	 */
-	public Hand(int initialDiceNumber, int initialRollsLeft, int newDiceRange) {
-		diceNumber = initialDiceNumber;
-		rollsLeft = initialRollsLeft;
-		diceRange = newDiceRange;
-		die = new Dice[diceNumber];
-		for (int i = 0; i < diceNumber; i++) {
-			die[i] = new Dice(false);
-		}
-	}
 
 	/**
 	 * @param hand Hand object

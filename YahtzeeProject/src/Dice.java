@@ -42,10 +42,14 @@ public class Dice {
 	 * Value attribute is assigned a random value within range
  	 */
 	public void roll(){
-		Random rand = new Random();
 		if (!kept) {
-			int intValue = rand.nextInt((range - 1) + 1) + 1;
-			value = intToChar(intValue);
+		    int intValue;
+            if (isVowel) {
+                intValue = ThreadLocalRandom.current().nextInt(1, 7);
+            } else {
+                intValue = ThreadLocalRandom.current().nextInt(7, 27);
+            }
+            value = intToChar(intValue);
 		}
 	}
 
@@ -92,67 +96,67 @@ public class Dice {
 		return kept;
 	}
 
-	public char intToChar(int i){
-        if (i == 1) return 'A';
-        if (i == 2) return 'E';
-        if (i == 3) return 'I';
-        if (i == 4) return 'O';
-        if (i == 5) return 'U';
-        if (i == 6) {
+	private char intToChar(int i){
+        if (i == 1 && isVowel) return 'A';
+        if (i == 2 && isVowel) return 'E';
+        if (i == 3 && isVowel) return 'I';
+        if (i == 4 && isVowel) return 'O';
+        if (i == 5 && isVowel) return 'U';
+        if (i == 6 && isVowel) {
             points = 4;
             return 'Y';
-        } if (i == 7) {
+        } if (i == 7 && !isVowel) {
             points = 3;
             return 'B';
-        } if (i == 8) {
+        } if (i == 8 && !isVowel) {
             points = 3;
             return 'C';
-        } if (i == 9) {
+        } if (i == 9 && !isVowel) {
             points = 2;
             return 'D';
-        } if (i == 10) {
+        } if (i == 10 && !isVowel) {
             points = 4;
             return 'F';
-        } if (i == 11) {
+        } if (i == 11 && !isVowel) {
             points = 2;
             return 'G';
-        } if (i == 12) {
+        } if (i == 12 && !isVowel) {
             points = 4;
             return 'H';
-        } if (i == 13) {
+        } if (i == 13 && !isVowel) {
             points = 8;
             return 'J';
-        } if (i == 14) {
+        } if (i == 14 && !isVowel) {
             points = 5;
             return 'K';
-        } if (i == 15) return 'L';
-        if (i == 16) {
+        } if (i == 15 && !isVowel) return 'L';
+        if (i == 16 && !isVowel) {
             points = 3;
             return 'M';
-        } if (i == 17) {
+        } if (i == 17 && !isVowel) {
             return 'N';
-        } if (i == 18) {
+        } if (i == 18 && !isVowel) {
             points = 3;
             return 'P';
-        } if (i == 19) {
+        } if (i == 19 && !isVowel) {
             points = 10;
             return 'Q';
-        } if (i == 20) {
+        } if (i == 20 && !isVowel) {
             return 'R';
-        } if (i == 21) {
+        } if (i == 21 && !isVowel) {
             return 'S';
-        } if (i == 22) {
+        } if (i == 22 && !isVowel) {
             return 'T';
-        } if (i == 23) {
+        } if (i == 23 && !isVowel) {
             points = 4;
             return 'V';
-        } if (i == 24) {
+        } if (i == 24 && !isVowel) {
             points = 4;
             return 'W';
-        } if (i == 25) {
+        } if (i == 25 && !isVowel) {
             points = 8;
             return 'X';
-        } if (i == 26) {
+        } if (i == 26 && !isVowel) {
             points = 10;
             return 'Z';
         }
