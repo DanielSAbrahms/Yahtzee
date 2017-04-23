@@ -17,12 +17,9 @@ public class ScoreCardLine {
 	// whether or not the ScoreCardLine has been used this game.
 	boolean used;
 
+	String wordScored;
+
 	private int potentialPoints;
-
-	public int getPotentialPoints() {
-		return potentialPoints;
-	}
-
 
 	/**
 	 *  @param newName- String value of name attribute
@@ -37,11 +34,20 @@ public class ScoreCardLine {
 		used = newUsed;
 	}
 
-	/**
-	 * @param newName- String value of the name attribute
- 	 */
-	public void setName(String newName) {
-		name = newName;
+    public String getWordScored() {
+        return wordScored;
+    }
+
+    public void setWordScored(String wordScored) {
+        this.wordScored = wordScored;
+    }
+
+    public int getPotentialPoints() {
+		return potentialPoints;
+	}
+
+	public void setPotentialPoints(int potentialPoints) {
+		this.potentialPoints = potentialPoints;
 	}
 
 	/**
@@ -52,10 +58,10 @@ public class ScoreCardLine {
 	}
 
 	/**
-	 * @param newPoints- int value of points attribute
-	 */
-	public void setPoints(int newPoints) {
-		points = newPoints;
+	 * @param newName- String value of the name attribute
+ 	 */
+	public void setName(String newName) {
+		name = newName;
 	}
 
 	/**
@@ -65,13 +71,16 @@ public class ScoreCardLine {
 		return points;
 	}
 
+	/**
+	 * @param newPoints- int value of points attribute
+	 */
+	public void setPoints(int newPoints) {
+		points = newPoints;
+	}
+
     public void setPointsEarned() {
 		pointsEarned = points;
     }
-
-	public void setPointsEarned(int newPointsEarned) {
-		pointsEarned = newPointsEarned;
-	}
 
 	/**
 	 * @return the attribute pointsEarned
@@ -80,11 +89,8 @@ public class ScoreCardLine {
         return pointsEarned;
     }
 
-	/**
-	 *  @param newUsed- boolean value of used attribute
- 	 */
-	public void setUsed(boolean newUsed) {
-		used = newUsed;
+	public void setPointsEarned(int newPointsEarned) {
+		pointsEarned = newPointsEarned;
 	}
 
 	/**
@@ -94,9 +100,10 @@ public class ScoreCardLine {
 		return used;
 	}
 
-
-
-	public void setPotentialPoints(int potentialPoints) {
-		this.potentialPoints = potentialPoints;
+	/**
+	 *  @param newUsed- boolean value of used attribute
+ 	 */
+	public void setUsed(boolean newUsed) {
+		used = newUsed;
 	}
 }

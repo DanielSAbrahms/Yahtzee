@@ -10,20 +10,9 @@
 public class ScoreCard {
 
 	ScoreCardLine line[];
-	private int totalScore = 0;
 	boolean bonusUsed = false;
+	private int totalScore = 0;
 
-
-	/**
-	 * @return totalScore value
-	 */
-	public int getTotalScore() {
-		if(!bonusUsed){
-			int n = calculateBonus();
-			totalScore += n;
-		}
-		return totalScore;
-	}
 
 	/**
 	@see ScoreCard
@@ -49,21 +38,44 @@ public class ScoreCard {
 		line[10] = new ScoreCardLine("Chance", 1, false);
 
 	}
+
+	/**
+	 * @return totalScore value
+	 */
+	public int getTotalScore() {
+	    totalScore = 0;
+	    for (int i = 0; i < 11; i++) {
+	        totalScore += line[i].getPointsEarned();
+        }
+		if(!bonusUsed){
+			totalScore += calculateBonus();
+		}
+		return totalScore;
+	}
+
 	/**
 	 * Every possible score has been printed
      * @param hand- hand object that has been initiated
 	**/
-	public void checkScore(Hand hand) {
-		for (int j = 0; j < 11; j++) {
-			int score = 0;
-			for (int i = 0; i < hand.getDiceNumber(); i++) {
-				score += hand.getDice(i).getPoints();
-			}
-			totalScore+=score;
-			line[j].setPoints(score);
-		}
+	public int checkScore(String str) {
+		int score = 0;
+		for (int i = 0; i < str.length(); i++) {
+            score+=letterScorer(str.charAt(i));
+        }
+        return score + str.length();
 	}
-	/**
+
+    private int letterScorer(char c) {
+	    if (c == 'D' || c == 'G') return 2;
+	    else if (c == 'B' || c == 'C' || c == 'M' || c == 'P') return 3;
+	    else if (c == 'F' || c == 'H' || c == 'V' || c == 'W' || c == 'Y') return 4;
+	    else if (c == 'K') return 5;
+	    else if (c == 'J' || c == 'X') return 8;
+	    else if (c == 'Q' || c == 'Z') return 10;
+	    else return 1;
+    }
+
+    /**
 	@return int of how many score card lines havent been used
 	@see howManyLeft
 	 */
@@ -115,7 +127,8 @@ public class ScoreCard {
 	public int calculateBonus(){
 		int sum = 0;
 		for (int i = 0; i < 4; i++){
-			sum += line[i].getPointsEarned();
+			//sum += line[i].getPointsEarned();
+			sum += 15;
 		}
 		if(sum >= 30) {
 			bonusUsed = true;

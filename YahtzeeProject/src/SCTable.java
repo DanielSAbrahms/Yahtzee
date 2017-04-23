@@ -33,7 +33,7 @@ public class SCTable extends JTable {
      * Refreshes the table, based on the values of the ScoreCard
      */
     void refresh() {
-        String[][] values = new String[11][2];
+        String[][] values = new String[11][3];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
@@ -48,8 +48,8 @@ public class SCTable extends JTable {
             } else {
                 name = line.getName();
             }
-
-            String[] a = {name, pe};
+            String word = line.getWordScored();
+            String[] a = {name, pe, word};
             values[i] = a;
         }
         String[] names = new String[11];
@@ -57,7 +57,7 @@ public class SCTable extends JTable {
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(2);
+        model.setColumnCount(3);
         model.setRowCount(11);
         this.setModel(model);
     }
@@ -68,7 +68,7 @@ public class SCTable extends JTable {
      * Resets all the values of the table
      */
     void reset() {
-        String[][] values = new String[11][2];
+        String[][] values = new String[11][3];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String[] a = {line.getName(), String.valueOf(0), "-" };
@@ -79,7 +79,7 @@ public class SCTable extends JTable {
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(2);
+        model.setColumnCount(3);
         this.setModel(model);
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
