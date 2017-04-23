@@ -48,15 +48,13 @@ public class ScoreCard {
 	 * Every possible score has been printed
      * @param hand- hand object that has been initiated
 	**/
-	public void checkScore(Hand hand) {
-		for (int j = 0; j < 11; j++) {
-			int score = 0;
-			for (int i = 0; i < hand.getDiceNumber(); i++) {
-				score += hand.getDice(i).getPoints();
-			}
-			totalScore+=score;
-			line[j].setPoints(score);
+	public int checkScore(Hand hand) {
+		int score = 0;
+		for (int j = 0; j < hand.getDiceNumber(); j++) {
+			score+=hand.getDice(j).getPoints();
 		}
+		return score;
+
 	}
 	/**
 	@return int of how many score card lines havent been used
@@ -76,7 +74,7 @@ public class ScoreCard {
 	@param index- the index you want the scorecardline at
 	 */
 	public ScoreCardLine getLine(int index) {
-		assert(index >= 0 && index < line.length);
+		assert(index >= 0 || index < line.length);
 	    return line[index];
     }
 

@@ -33,7 +33,7 @@ public class SCTable extends JTable {
      * Refreshes the table, based on the values of the ScoreCard
      */
     void refresh() {
-        String[][] values = new String[11][3];
+        String[][] values = new String[11][2];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String pe;
@@ -48,13 +48,8 @@ public class SCTable extends JTable {
             } else {
                 name = line.getName();
             }
-            String pp;
-            if (line.getUsed()) {
-                pp = "-";
-            } else {
-                pp = String.valueOf(line.getPotentialPoints());
-            }
-            String[] a = {name, pp, pe};
+
+            String[] a = {name, pe};
             values[i] = a;
         }
         String[] names = new String[11];
@@ -62,47 +57,18 @@ public class SCTable extends JTable {
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(3);
+        model.setColumnCount(2);
         model.setRowCount(11);
         this.setModel(model);
     }
 
-    /**
-     * Keeps the ScoreCard and table in tact, but clears the middle column
-     */
-    void resetColumn1() {
-        String[][] values = new String[11][3];
-        for (int i = 0; i < 11; i++){
-            ScoreCardLine line = sc.getLine(i);
-            String pe;
-            if (line.getPointsEarned() == 0 && line.getUsed() == false) {
-                pe = "-";
-            } else {
-                pe = String.valueOf(line.getPointsEarned());
-            }
-            String name;
-            if (line.getUsed()) {
-                name = "-";
-            } else {
-                name = line.getName();
-            }
-            String[] a = {name, String.valueOf(0), pe};
-            values[i] = a;
-        }
-        String[] names = new String[11];
-        for (int i = 0; i < 11; i++){
-            names[i] = String.valueOf(i);
-        }
-        DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(3);
-        this.setModel(model);
-    }
+
 
     /**
      * Resets all the values of the table
      */
     void reset() {
-        String[][] values = new String[11][3];
+        String[][] values = new String[11][2];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             String[] a = {line.getName(), String.valueOf(0), "-" };
@@ -113,11 +79,12 @@ public class SCTable extends JTable {
             names[i] = String.valueOf(i);
         }
         DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(3);
+        model.setColumnCount(2);
         this.setModel(model);
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             line.setPointsEarned(0);
         }
     }
+
 }

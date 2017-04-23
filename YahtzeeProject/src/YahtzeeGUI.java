@@ -31,6 +31,7 @@ class YahtzeeGUI extends JFrame{
     private JLabel rollsLeftLabel;
     private JButton rollButton;
     private JButton confirmSelectionButton;
+    private JButton resetWordButton;
     private JComboBox difficultyBox;
     private JButton newGameButton;
     private JOptionPane gameOverPopup;
@@ -53,6 +54,8 @@ class YahtzeeGUI extends JFrame{
     private static final int DICE_HEIGHT = 100;
     private static final int BUTTON_HEIGHT = 50;
     private static final int BUTTON_WIDTH = 300;
+    private static final int RESET_WORD_BUTTON_HEIGHT = 50;
+    private static final int RESET_WORD_BUTTON_WIDTH = 50;
     private static final int GAME_BUTTON_HEIGHT = 30;
     private static final int GAME_BUTTON_WIDTH = 100;
     private static final int TABLE_WIDTH = 1030;
@@ -70,6 +73,8 @@ class YahtzeeGUI extends JFrame{
     private static final int BUTTON_Y_COOR = 656;
     private static final int GAME_BUTTON_X_COOR = 1135;
     private static final int GAME_BUTTON_Y_COOR = 330;
+    private static final int RESET_WORD_BUTTON_X_COOR = 100;
+    private static final int RESET_WORD_BUTTON_Y_COOR = 656;
     private static final int TABLE_X_COOR = 50;
     private static final int TABLE_Y_COOR = 258;
     private static final int LABEL_X_COOR = 1105;
@@ -278,6 +283,13 @@ class YahtzeeGUI extends JFrame{
         rollButton.setLocation(BUTTON_X_COOR, BUTTON_Y_COOR);
         c.add(rollButton);
 
+        resetWordButton = new JButton();
+        resetWordButton.setText("Reset Word");
+        resetWordButton.setEnabled(false);
+        resetWordButton.setSize(RESET_WORD_BUTTON_WIDTH, RESET_WORD_BUTTON_HEIGHT);
+        resetWordButton.setLocation(RESET_WORD_BUTTON_X_COOR, RESET_WORD_BUTTON_Y_COOR);
+        c.add(resetWordButton);
+
         confirmSelectionButton = new JButton();
         confirmSelectionButton.setText("Confirm Selection");
         confirmSelectionButton.setEnabled(false);
@@ -389,8 +401,6 @@ class YahtzeeGUI extends JFrame{
         //</editor-fold>
 
 
-
-
         newGameButton = new JButton();
         newGameButton.setText("New Game");
         newGameButton.setSize(GAME_BUTTON_WIDTH, GAME_BUTTON_HEIGHT);
@@ -434,7 +444,22 @@ class YahtzeeGUI extends JFrame{
             }
         });
 
-
+        resetWordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                wordString = "";
+                vowel1Label.getD().setKept(false);
+                vowel2Label.getD().setKept(false);
+                vowel3Label.getD().setKept(false);
+                con1Label.getD().setKept(false);
+                con2Label.getD().setKept(false);
+                con3Label.getD().setKept(false);
+                con4Label.getD().setKept(false);
+                con5Label.getD().setKept(false);
+                con6Label.getD().setKept(false);
+                refresh();
+            }
+        });
 
         rollButton.addActionListener(new ActionListener() {
             @Override
@@ -445,6 +470,7 @@ class YahtzeeGUI extends JFrame{
                     refresh();
                 }
                 if (rollsLeft <= 0 || pause){
+                    resetWordButton.setEnabled(true);
                     rollButton.setText("No Rolls Left");
                     vowel1Label.getD().setKept(false);
                     vowel2Label.getD().setKept(false);
@@ -456,7 +482,6 @@ class YahtzeeGUI extends JFrame{
                     con5Label.getD().setKept(false);
                     con6Label.getD().setKept(false);
                     refreshDice();
-                    checkScorePotential();
                     pause = true;
                     if (rollWarningValue >= 4) {
                         rollWarningPopup = new JOptionPane();
@@ -464,8 +489,8 @@ class YahtzeeGUI extends JFrame{
                                 "You have no rolls left this round. \n To end this round select a line on the ScoreCard and press \"Confirm Selection|\"");
                     }
                     else rollWarningValue++;
-                    rollsLeft = 3;
                 } else {
+                    resetWordButton.setEnabled(false);
                     vowel1Label.getD().roll();
                     vowel2Label.getD().roll();
                     vowel3Label.getD().roll();
@@ -539,20 +564,21 @@ class YahtzeeGUI extends JFrame{
                     lineAlreadyUsedPopup.showMessageDialog(null, "Line Already Used");
                     return;
                 }
+                wordString = "";
+                refreshWordLabel();
                 rollWarningValue = 0;
+                rollsLeft = 0;
                 confirmSelectionButton.setEnabled(false);
                 pause = false;
                 scTable.getSc().getLine(getSelectedLine()).setUsed(true);
                 scTable.getSc().getLine(getSelectedLine()).setMultiplier(h.sum());
-                for (int i = 0; i < 12; i++) {
+                for (int i = 0; i < 11; i++) {
                     if (scTable.getSc().getLine(getSelectedLine()).getName().equalsIgnoreCase(String.valueOf(i))) {
                         scTable.getSc().getLine(getSelectedLine()).setMultiplier(scTable.getSc().totalOfNum(i, h));
                     }
                 }
                 scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
-                scTable.getSc().getLine(getSelectedLine()).setPotentialPoints(0);
                 scTable.refresh();
-                scTable.getSc().showScoreCard(11);
                 reset(false);
                 if (scTable.getSc().howManyLeft() <= 0) {
                     gameOverPopup = new JOptionPane();
@@ -779,15 +805,6 @@ class YahtzeeGUI extends JFrame{
     }
 
     /**
-     * Calls of the ScoreCards method and refreshes Table
-     */
-    private void checkScorePotential(){
-        confirmSelectionButton.setEnabled(true);
-        scTable.getSc().checkScore(h);
-        scTable.refresh();
-    }
-
-    /**
      * @return Whether or not all dice are kept
      */
     private boolean allKept() {
@@ -803,7 +820,7 @@ class YahtzeeGUI extends JFrame{
      */
     private int getSelectedLine() {
         int selected = scTable.getSelectedRow();
-        assert(selected > -1 && selected < (11));
+        if (selected == -1) return 0;
         return selected;
     }
 
@@ -866,7 +883,6 @@ class YahtzeeGUI extends JFrame{
         rollsLeft = 3;
         refresh();
         resetDice();
-        scTable.resetColumn1();
         if (fullReset) {
             scTable.reset();
             totalScoreValue = 0;
