@@ -24,6 +24,7 @@ class YahtzeeGUI extends JFrame{
     private DiceLabel con4Label;
     private DiceLabel con5Label;
     private DiceLabel con6Label;
+    private SpecialDiceLabel specialDiceLabel;
     private String wordString = "";
     private JLabel wordLabel;
     private JLabel difficultyLabel;
@@ -52,6 +53,8 @@ class YahtzeeGUI extends JFrame{
     //<editor-fold desc="Size Constants for Components">
     private static final int DICE_WIDTH = 100;
     private static final int DICE_HEIGHT = 100;
+    private static final int SPECIAL_DICE_WIDTH = 100;
+    private static final int SPECIAL_DICE_HEIGHT = 100;
     private static final int BUTTON_HEIGHT = 50;
     private static final int BUTTON_WIDTH = 300;
     private static final int RESET_WORD_BUTTON_HEIGHT = 50;
@@ -67,6 +70,8 @@ class YahtzeeGUI extends JFrame{
     //</editor-fold>
 
     //<editor-fold desc= "Location Constants for Components">
+    private static final int SPECIAL_DICE_X_COOR = 50;
+    private static final int SPECIAL_DICE_Y_COOR = 14;
     private static final int DICE_X_COOR = 50;
     private static final int DICE_Y_COOR = 14;
     private static final int BUTTON_X_COOR = 190;
@@ -150,6 +155,10 @@ class YahtzeeGUI extends JFrame{
         BufferedImage diceSideX_Locked_raw = null;
         BufferedImage diceSideY_Locked_raw = null;
         BufferedImage diceSideZ_Locked_raw = null;
+        BufferedImage doubleLetterImage_raw = null;
+        BufferedImage doublePointsImage_raw = null;
+        BufferedImage blankLetterImage_raw = null;
+        BufferedImage forcedHandImage_raw = null;
         BufferedImage unknownDiceImage_raw = null;
         BufferedImage background_raw = null;
         BufferedImage refresh_raw = null;
@@ -208,7 +217,10 @@ class YahtzeeGUI extends JFrame{
             diceSideW_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideW_Locked.png"));
             diceSideX_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideX_Locked.png"));
             diceSideY_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideY_Locked.png"));
-            diceSideZ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            forcedHandImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            doubleLetterImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            doublePointsImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            blankLetterImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
             unknownDiceImage_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
             background_raw = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
             refresh_raw = ImageIO.read(new File(USER_DIR + "/refresh.png"));
@@ -316,6 +328,10 @@ class YahtzeeGUI extends JFrame{
                 diceSideW_LockedImage, diceSideX_LockedImage, diceSideY_LockedImage,diceSideZ_LockedImage
         };
 
+        Image[] specialDiceImages = {
+                unknownDiceImage, doubleLetterImage, doublePointsImage, blankLetterImage, forcedHandImage
+        };
+
         vowel1Label = new DiceLabel(images, 6);
         vowel1Label.setSize(DICE_WIDTH, DICE_HEIGHT);
         vowel1Label.setLocation(DICE_X_COOR + (0*100), DICE_Y_COOR);
@@ -360,6 +376,11 @@ class YahtzeeGUI extends JFrame{
         con6Label.setSize(DICE_WIDTH, DICE_HEIGHT);
         con6Label.setLocation(DICE_X_COOR + (9*100), DICE_Y_COOR);
         c.add(con6Label);
+
+        specialDiceLabel = new SpecialDiceLabel(specialDiceImages);
+        specialDiceLabel.setSize(DICE_WIDTH, DICE_HEIGHT);
+        specialDiceLabel.setLocation(DICE_X_COOR + (9*100), DICE_Y_COOR);
+        c.add(specialDiceLabel);
 
         wordLabel = new JLabel("No Word Created");
         wordLabel.setFont(new Font ("Garamond", Font.BOLD , 50));

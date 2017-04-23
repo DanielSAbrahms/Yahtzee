@@ -5,44 +5,44 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class SpecialDice{
 
-    private static final int RANGE = 4;
-    private String sideUp;
-    private int rollsLeft;
+    private static final int RANGE = 6;
+    private String value;
+    private int usesLeft;
     private final String DOUBLE_LETTER = "Double Letter";
     private final String DOUBLE_POINTS = "Double Points";
     private final String BLANK_LETTER = "Blank Letter";
     private final String FORCED_HAND = "Forced Hand";
-    private final String[] sideArray = {DOUBLE_LETTER, DOUBLE_POINTS, BLANK_LETTER, FORCED_HAND};
+    private final String[] sideArray = {DOUBLE_LETTER, DOUBLE_LETTER, DOUBLE_POINTS, DOUBLE_POINTS, BLANK_LETTER, FORCED_HAND};
 
 
     public SpecialDice() {
-        rollsLeft = 3;
+        usesLeft = 3;
         roll();
     }
 
     public void roll() {
-        rollsLeft--;
+        usesLeft--;
         int randValue = ThreadLocalRandom.current().nextInt(0, RANGE);
-        sideUp = sideArray[randValue];
+        value = sideArray[randValue];
     }
 
-    public String getSideUp() {
-        return sideUp;
+    public String getValue() {
+        return value;
     }
 
-    public void setSideUp(String sideUp) {
-        this.sideUp = sideUp;
+    public void setValue(String value) {
+        this.value = value;
     }
 
-    public int getRollsLeft() {
-        return rollsLeft;
+    public int getUsesLeft() {
+        return usesLeft;
     }
 
-    public void setRollsLeft(int rollsLeft) {
-        this.rollsLeft = rollsLeft;
+    public void setUsesLeft(int usesLeft) {
+        this.usesLeft = usesLeft;
     }
 
-    public static int getRANGE() {
+    public static int getRange() {
         return RANGE;
     }
 }
