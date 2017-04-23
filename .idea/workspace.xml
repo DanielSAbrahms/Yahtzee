@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="Everything Working but the Special Dice">
+    <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" afterPath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/SCTable.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/SCTable.class" />
@@ -911,7 +911,7 @@
       <workItem from="1492632499724" duration="11821000" />
       <workItem from="1492739106105" duration="1197000" />
       <workItem from="1492894890369" duration="10698000" />
-      <workItem from="1492963717066" duration="15572000" />
+      <workItem from="1492963717066" duration="15586000" />
     </task>
     <task id="LOCAL-00001" summary="Functioning GUI, no Game yet">
       <created>1489858999570</created>
@@ -1032,11 +1032,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492973421297</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Everything Working but the Special Dice and bonus">
+      <created>1492981022547</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1492981022547</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63494000" />
+    <option name="totallyTimeSpent" value="63508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1155,7 +1162,8 @@
     <MESSAGE value="We got bamboozled" />
     <MESSAGE value="Needs Scorecard and Special Dice" />
     <MESSAGE value="Everything Working but the Special Dice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Everything Working but the Special Dice" />
+    <MESSAGE value="Everything Working but the Special Dice and bonus" />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything Working but the Special Dice and bonus" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
