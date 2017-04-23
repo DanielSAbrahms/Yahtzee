@@ -71,14 +71,14 @@ class YahtzeeGUI extends JFrame{
     private static final int DICE_Y_COOR = 14;
     private static final int BUTTON_X_COOR = 190;
     private static final int BUTTON_Y_COOR = 656;
-    private static final int GAME_BUTTON_X_COOR = 1135;
-    private static final int GAME_BUTTON_Y_COOR = 330;
+    private static final int GAME_BUTTON_X_COOR = 1130;
+    private static final int GAME_BUTTON_Y_COOR = 100;
     private static final int RESET_WORD_BUTTON_X_COOR = 100;
     private static final int RESET_WORD_BUTTON_Y_COOR = 656;
     private static final int TABLE_X_COOR = 50;
     private static final int TABLE_Y_COOR = 258;
     private static final int LABEL_X_COOR = 1105;
-    private static final int LABEL_Y_COOR = 44;
+    private static final int LABEL_Y_COOR = 14;
     private static final int WORD_LABEL_X_COOR = 50;
     private static final int WORD_LABEL_Y_COOR = 144;
     private static final int SCORE_LABEL_X_COOR = 1095;
