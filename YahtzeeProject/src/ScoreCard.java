@@ -11,12 +11,17 @@ public class ScoreCard {
 
 	ScoreCardLine line[];
 	private int totalScore = 0;
+	boolean bonusUsed = false;
 
 
 	/**
 	 * @return totalScore value
 	 */
 	public int getTotalScore() {
+		if(!bonusUsed){
+			int n = calculateBonus();
+			totalScore += n;
+		}
 		return totalScore;
 	}
 
@@ -105,5 +110,17 @@ public class ScoreCard {
 			}
 		}
 		return sum;
+	}
+
+	public int calculateBonus(){
+		int sum = 0;
+		for (int i = 0; i < 4; i++){
+			sum += line[i].getPointsEarned();
+		}
+		if(sum >= 30) {
+			bonusUsed = true;
+			return 15;
+		}
+		return 0;
 	}
 }
