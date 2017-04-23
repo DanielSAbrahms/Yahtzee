@@ -48,12 +48,12 @@ public class ScoreCard {
 	 * Every possible score has been printed
      * @param hand- hand object that has been initiated
 	**/
-	public int checkScore(Hand hand) {
+	public int checkScore(String str) {
 		int score = 0;
-		for (int j = 0; j < hand.getDiceNumber(); j++) {
-			score+=hand.getDice(j).getPoints();
+		for (int j = 0; j < str.length(); j++) {
+            score+=letterScorer(str.charAt(j));
 		}
-		return score;
+		return score + str.length();
 
 	}
 	/**
@@ -104,4 +104,14 @@ public class ScoreCard {
 		}
 		return sum;
 	}
+
+	private int letterScorer(char c) {
+	    if (c == 'Q' || c == 'Z') return 10;
+	    else if (c == 'J' || c == 'X') return 8;
+	    else if (c == 'K') return 5;
+	    else if (c == 'F' || c == 'H' || c == 'V' || c == 'W' || c == 'Y') return 4;
+	    else if (c == 'B' || c == 'C' || c == 'M' || c == 'P') return 3;
+        else if (c == 'D' || c == 'G') return 2;
+        else return 1;
+    }
 }

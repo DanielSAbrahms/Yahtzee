@@ -152,6 +152,7 @@ class YahtzeeGUI extends JFrame{
         BufferedImage diceSideZ_Locked_raw = null;
         BufferedImage unknownDiceImage_raw = null;
         BufferedImage background_raw = null;
+        BufferedImage refresh_raw = null;
         //</editor-fold>
 
         //<editor-fold desc = "Loads Images">
@@ -210,10 +211,12 @@ class YahtzeeGUI extends JFrame{
             diceSideZ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
             unknownDiceImage_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
             background_raw = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
+            refresh_raw = ImageIO.read(new File(USER_DIR + "/refresh.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         unknownDiceImage = unknownDiceImage_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image refresh = refresh_raw.getScaledInstance(RESET_WORD_BUTTON_WIDTH, WORD_LABEL_HEIGHT, Image.SCALE_SMOOTH);
         Image background = background_raw.getScaledInstance(1280, 760, Image.SCALE_SMOOTH);
         Image diceSideAImage = diceSideA_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         Image diceSideBImage = diceSideB_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
@@ -286,6 +289,7 @@ class YahtzeeGUI extends JFrame{
         resetWordButton = new JButton();
         resetWordButton.setText("Reset Word");
         resetWordButton.setEnabled(false);
+        resetWordButton.setIcon(new ImageIcon(refresh));
         resetWordButton.setSize(RESET_WORD_BUTTON_WIDTH, RESET_WORD_BUTTON_HEIGHT);
         resetWordButton.setLocation(RESET_WORD_BUTTON_X_COOR, RESET_WORD_BUTTON_Y_COOR);
         c.add(resetWordButton);
@@ -471,6 +475,8 @@ class YahtzeeGUI extends JFrame{
                 }
                 if (rollsLeft <= 0 || pause){
                     resetWordButton.setEnabled(true);
+                    confirmSelectionButton.setEnabled(true);
+                    rollButton.setEnabled(false);
                     rollButton.setText("No Rolls Left");
                     vowel1Label.getD().setKept(false);
                     vowel2Label.getD().setKept(false);
@@ -564,21 +570,16 @@ class YahtzeeGUI extends JFrame{
                     lineAlreadyUsedPopup.showMessageDialog(null, "Line Already Used");
                     return;
                 }
-                wordString = "";
-                refreshWordLabel();
                 rollWarningValue = 0;
                 rollsLeft = 0;
                 confirmSelectionButton.setEnabled(false);
+                rollButton.setEnabled(true);
                 pause = false;
-                scTable.getSc().getLine(getSelectedLine()).setUsed(true);
-                scTable.getSc().getLine(getSelectedLine()).setMultiplier(h.sum());
-                for (int i = 0; i < 11; i++) {
-                    if (scTable.getSc().getLine(getSelectedLine()).getName().equalsIgnoreCase(String.valueOf(i))) {
-                        scTable.getSc().getLine(getSelectedLine()).setMultiplier(scTable.getSc().totalOfNum(i, h));
-                    }
-                }
-                scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
-                scTable.refresh();
+                ScoreCardLine lineUsed = scTable.getSc().getLine(getSelectedLine());
+                lineUsed.setUsed(true);
+                lineUsed.setPointsEarned(scTable.getSc().checkScore(wordString));
+                wordString = "";
+                refresh();
                 reset(false);
                 if (scTable.getSc().howManyLeft() <= 0) {
                     gameOverPopup = new JOptionPane();
