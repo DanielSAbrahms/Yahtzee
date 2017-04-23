@@ -24,6 +24,7 @@ class YahtzeeGUI extends JFrame{
     private DiceLabel con4Label;
     private DiceLabel con5Label;
     private DiceLabel con6Label;
+    private SpecialDiceLabel specialDiceLabel;
     private String wordString = "";
     private JLabel wordLabel;
     private JLabel difficultyLabel;
@@ -31,6 +32,7 @@ class YahtzeeGUI extends JFrame{
     private JLabel rollsLeftLabel;
     private JButton rollButton;
     private JButton confirmSelectionButton;
+    private JButton resetWordButton;
     private JComboBox difficultyBox;
     private JButton newGameButton;
     private JOptionPane gameOverPopup;
@@ -51,8 +53,12 @@ class YahtzeeGUI extends JFrame{
     //<editor-fold desc="Size Constants for Components">
     private static final int DICE_WIDTH = 100;
     private static final int DICE_HEIGHT = 100;
+    private static final int SPECIAL_DICE_WIDTH = 100;
+    private static final int SPECIAL_DICE_HEIGHT = 100;
     private static final int BUTTON_HEIGHT = 50;
     private static final int BUTTON_WIDTH = 300;
+    private static final int RESET_WORD_BUTTON_HEIGHT = 50;
+    private static final int RESET_WORD_BUTTON_WIDTH = 50;
     private static final int GAME_BUTTON_HEIGHT = 30;
     private static final int GAME_BUTTON_WIDTH = 100;
     private static final int TABLE_WIDTH = 1030;
@@ -64,16 +70,20 @@ class YahtzeeGUI extends JFrame{
     //</editor-fold>
 
     //<editor-fold desc= "Location Constants for Components">
+    private static final int SPECIAL_DICE_X_COOR = 50;
+    private static final int SPECIAL_DICE_Y_COOR = 14;
     private static final int DICE_X_COOR = 50;
     private static final int DICE_Y_COOR = 14;
     private static final int BUTTON_X_COOR = 190;
     private static final int BUTTON_Y_COOR = 656;
-    private static final int GAME_BUTTON_X_COOR = 1135;
-    private static final int GAME_BUTTON_Y_COOR = 330;
+    private static final int GAME_BUTTON_X_COOR = 1130;
+    private static final int GAME_BUTTON_Y_COOR = 100;
+    private static final int RESET_WORD_BUTTON_X_COOR = 100;
+    private static final int RESET_WORD_BUTTON_Y_COOR = 656;
     private static final int TABLE_X_COOR = 50;
     private static final int TABLE_Y_COOR = 258;
     private static final int LABEL_X_COOR = 1105;
-    private static final int LABEL_Y_COOR = 44;
+    private static final int LABEL_Y_COOR = 14;
     private static final int WORD_LABEL_X_COOR = 50;
     private static final int WORD_LABEL_Y_COOR = 144;
     private static final int SCORE_LABEL_X_COOR = 1095;
@@ -145,8 +155,13 @@ class YahtzeeGUI extends JFrame{
         BufferedImage diceSideX_Locked_raw = null;
         BufferedImage diceSideY_Locked_raw = null;
         BufferedImage diceSideZ_Locked_raw = null;
+        BufferedImage doubleLetterImage_raw = null;
+        BufferedImage doublePointsImage_raw = null;
+        BufferedImage blankLetterImage_raw = null;
+        BufferedImage forcedHandImage_raw = null;
         BufferedImage unknownDiceImage_raw = null;
         BufferedImage background_raw = null;
+        BufferedImage refresh_raw = null;
         //</editor-fold>
 
         //<editor-fold desc = "Loads Images">
@@ -202,13 +217,18 @@ class YahtzeeGUI extends JFrame{
             diceSideW_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideW_Locked.png"));
             diceSideX_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideX_Locked.png"));
             diceSideY_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideY_Locked.png"));
-            diceSideZ_Locked_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            forcedHandImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            doubleLetterImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            doublePointsImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
+            blankLetterImage_raw = ImageIO.read(new File(USER_DIR + "/diceSideZ_Locked.png"));
             unknownDiceImage_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
             background_raw = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
+            refresh_raw = ImageIO.read(new File(USER_DIR + "/refresh.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         unknownDiceImage = unknownDiceImage_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
+        Image refresh = refresh_raw.getScaledInstance(RESET_WORD_BUTTON_WIDTH, WORD_LABEL_HEIGHT, Image.SCALE_SMOOTH);
         Image background = background_raw.getScaledInstance(1280, 760, Image.SCALE_SMOOTH);
         Image diceSideAImage = diceSideA_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
         Image diceSideBImage = diceSideB_raw.getScaledInstance(DICE_WIDTH, DICE_HEIGHT, Image.SCALE_SMOOTH);
@@ -278,6 +298,14 @@ class YahtzeeGUI extends JFrame{
         rollButton.setLocation(BUTTON_X_COOR, BUTTON_Y_COOR);
         c.add(rollButton);
 
+        resetWordButton = new JButton();
+        resetWordButton.setText("Reset Word");
+        resetWordButton.setEnabled(false);
+        resetWordButton.setIcon(new ImageIcon(refresh));
+        resetWordButton.setSize(RESET_WORD_BUTTON_WIDTH, RESET_WORD_BUTTON_HEIGHT);
+        resetWordButton.setLocation(RESET_WORD_BUTTON_X_COOR, RESET_WORD_BUTTON_Y_COOR);
+        c.add(resetWordButton);
+
         confirmSelectionButton = new JButton();
         confirmSelectionButton.setText("Confirm Selection");
         confirmSelectionButton.setEnabled(false);
@@ -298,6 +326,10 @@ class YahtzeeGUI extends JFrame{
                 diceSideI_LockedImage, diceSideJ_LockedImage, diceSideK_LockedImage,diceSideL_LockedImage,diceSideM_LockedImage,diceSideN_LockedImage,diceSideO_LockedImage,
                 diceSideP_LockedImage, diceSideQ_LockedImage, diceSideR_LockedImage,diceSideS_LockedImage,diceSideT_LockedImage,diceSideU_LockedImage,diceSideV_LockedImage,
                 diceSideW_LockedImage, diceSideX_LockedImage, diceSideY_LockedImage,diceSideZ_LockedImage
+        };
+
+        Image[] specialDiceImages = {
+                unknownDiceImage, doubleLetterImage, doublePointsImage, blankLetterImage, forcedHandImage
         };
 
         vowel1Label = new DiceLabel(images, 6);
@@ -345,6 +377,11 @@ class YahtzeeGUI extends JFrame{
         con6Label.setLocation(DICE_X_COOR + (9*100), DICE_Y_COOR);
         c.add(con6Label);
 
+        specialDiceLabel = new SpecialDiceLabel(specialDiceImages);
+        specialDiceLabel.setSize(DICE_WIDTH, DICE_HEIGHT);
+        specialDiceLabel.setLocation(DICE_X_COOR + (9*100), DICE_Y_COOR);
+        c.add(specialDiceLabel);
+
         wordLabel = new JLabel("No Word Created");
         wordLabel.setFont(new Font ("Garamond", Font.BOLD , 50));
         wordLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -387,8 +424,6 @@ class YahtzeeGUI extends JFrame{
         difficultyBox.setLocation(LABEL_X_COOR, LABEL_Y_COOR + 30);
         c.add(difficultyBox);
         //</editor-fold>
-
-
 
 
         newGameButton = new JButton();
@@ -434,7 +469,22 @@ class YahtzeeGUI extends JFrame{
             }
         });
 
-
+        resetWordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                wordString = "";
+                vowel1Label.getD().setKept(false);
+                vowel2Label.getD().setKept(false);
+                vowel3Label.getD().setKept(false);
+                con1Label.getD().setKept(false);
+                con2Label.getD().setKept(false);
+                con3Label.getD().setKept(false);
+                con4Label.getD().setKept(false);
+                con5Label.getD().setKept(false);
+                con6Label.getD().setKept(false);
+                refresh();
+            }
+        });
 
         rollButton.addActionListener(new ActionListener() {
             @Override
@@ -445,6 +495,9 @@ class YahtzeeGUI extends JFrame{
                     refresh();
                 }
                 if (rollsLeft <= 0 || pause){
+                    resetWordButton.setEnabled(true);
+                    confirmSelectionButton.setEnabled(true);
+                    rollButton.setEnabled(false);
                     rollButton.setText("No Rolls Left");
                     vowel1Label.getD().setKept(false);
                     vowel2Label.getD().setKept(false);
@@ -456,7 +509,6 @@ class YahtzeeGUI extends JFrame{
                     con5Label.getD().setKept(false);
                     con6Label.getD().setKept(false);
                     refreshDice();
-                    checkScorePotential();
                     pause = true;
                     if (rollWarningValue >= 4) {
                         rollWarningPopup = new JOptionPane();
@@ -464,8 +516,8 @@ class YahtzeeGUI extends JFrame{
                                 "You have no rolls left this round. \n To end this round select a line on the ScoreCard and press \"Confirm Selection|\"");
                     }
                     else rollWarningValue++;
-                    rollsLeft = 3;
                 } else {
+                    resetWordButton.setEnabled(false);
                     vowel1Label.getD().roll();
                     vowel2Label.getD().roll();
                     vowel3Label.getD().roll();
@@ -540,17 +592,15 @@ class YahtzeeGUI extends JFrame{
                     return;
                 }
                 rollWarningValue = 0;
+                rollsLeft = 0;
                 confirmSelectionButton.setEnabled(false);
+                rollButton.setEnabled(true);
                 pause = false;
-                scTable.getSc().getLine(getSelectedLine()).setUsed(true);
-                for (int i = 0; i < 12; i++) {
-                    if (scTable.getSc().getLine(getSelectedLine()).getName().equalsIgnoreCase(String.valueOf(i))) {
-                    }
-                }
-                scTable.getSc().getLine(getSelectedLine()).setPointsEarned(scTable.getSc().getLine(getSelectedLine()).getPotentialPoints());
-                scTable.getSc().getLine(getSelectedLine()).setPotentialPoints(0);
-                scTable.refresh();
-                scTable.getSc().showScoreCard(11);
+                ScoreCardLine lineUsed = scTable.getSc().getLine(getSelectedLine());
+                lineUsed.setUsed(true);
+                lineUsed.setPointsEarned(scTable.getSc().checkScore(wordString));
+                wordString = "";
+                refresh();
                 reset(false);
                 if (scTable.getSc().howManyLeft() <= 0) {
                     gameOverPopup = new JOptionPane();
@@ -777,15 +827,6 @@ class YahtzeeGUI extends JFrame{
     }
 
     /**
-     * Calls of the ScoreCards method and refreshes Table
-     */
-    private void checkScorePotential(){
-        confirmSelectionButton.setEnabled(true);
-        scTable.getSc().checkScore(h);
-        scTable.refresh();
-    }
-
-    /**
      * @return Whether or not all dice are kept
      */
     private boolean allKept() {
@@ -801,7 +842,7 @@ class YahtzeeGUI extends JFrame{
      */
     private int getSelectedLine() {
         int selected = scTable.getSelectedRow();
-        assert(selected > -1 && selected < (11));
+        if (selected == -1) return 0;
         return selected;
     }
 
@@ -864,7 +905,6 @@ class YahtzeeGUI extends JFrame{
         rollsLeft = 3;
         refresh();
         resetDice();
-        scTable.resetColumn1();
         if (fullReset) {
             scTable.reset();
             totalScoreValue = 0;

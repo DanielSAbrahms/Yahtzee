@@ -48,6 +48,7 @@ public class SCTable extends JTable {
             } else {
                 name = line.getName();
             }
+
             String[] a = {name, pe};
             values[i] = a;
         }
@@ -61,37 +62,7 @@ public class SCTable extends JTable {
         this.setModel(model);
     }
 
-    /**
-     * Keeps the ScoreCard and table in tact, but clears the middle column
-     */
-    void resetColumn1() {
-        String[][] values = new String[11][2];
-        for (int i = 0; i < 11; i++){
-            ScoreCardLine line = sc.getLine(i);
-            String pe;
-            if (line.getPointsEarned() == 0 && line.getUsed() == false) {
-                pe = "-";
-            } else {
-                pe = String.valueOf(line.getPointsEarned());
-            }
-            String name;
-            if (line.getUsed()) {
-                name = "-";
-            } else {
-                name = line.getName();
-            }
-            String[] a = {name, pe};
-            values[i] = a;
-            int h = 0;
-        }
-        String[] names = new String[11];
-        for (int i = 0; i < 11; i++){
-            names[i] = String.valueOf(i);
-        }
-        DefaultTableModel model = new DefaultTableModel(values, names);
-        model.setColumnCount(2);
-        this.setModel(model);
-    }
+
 
     /**
      * Resets all the values of the table
@@ -115,4 +86,5 @@ public class SCTable extends JTable {
             line.setPointsEarned(0);
         }
     }
+
 }
