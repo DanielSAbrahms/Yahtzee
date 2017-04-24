@@ -661,7 +661,9 @@ class YahtzeeGUI extends JFrame {
                     return;
                 }
                 specialDiceLabel.setEnabled(false);
-                specialDiceUsesValue--;
+                if (specialDiceUsesValue > 0) {
+                    specialDiceUsesValue--;
+                }
                 SpecialDice sd = specialDiceLabel.getSd();
                 if (sd.getValue() == DOUBLE_POINTS) {
                     doublePointsActive = true;
@@ -1006,7 +1008,7 @@ class YahtzeeGUI extends JFrame {
             specialDiceUsesValue = 3;
             refreshScores();
         }
-        if (specialDiceUsesValue > 3) {
+        if (specialDiceUsesValue > 0) {
             specialDiceLabel.setEnabled(true);
         }
         repaint();
