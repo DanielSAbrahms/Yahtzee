@@ -506,6 +506,7 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //TODO: Fix bug granting users unlimited special dice uses when resetting word
                 wordString = "";
+                if (doubleLetterActive) specialDiceUsesValue++;
                 doubleLetterActive = false;
                 blankLetterActive = false;
                 specialDiceLabel.setEnabled(true);
