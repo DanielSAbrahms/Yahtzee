@@ -504,6 +504,7 @@ class YahtzeeGUI extends JFrame {
         resetWordButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TODO: Fix bug granting users unlimited special dice uses when resetting word
                 wordString = "";
                 doubleLetterActive = false;
                 blankLetterActive = false;
@@ -684,6 +685,7 @@ class YahtzeeGUI extends JFrame {
             }
         });
 
+        //TODO: Fix bug forcing users to click twice of DiceLabels to select
         //<editor-fold desc = "Dice Checkboxes Listeners">
         vowel1Label.addActionListener(new ActionListener() {
             @Override
@@ -1009,6 +1011,10 @@ class YahtzeeGUI extends JFrame {
         repaint();
     }
 
+    /**
+     *  Removes the Dice Labels from re-adding
+     * @param c The Container object to remove Labels from
+     */
     private void removeLabels(Container c) {
         c.remove(vowel1Label);
         c.remove(vowel2Label);
@@ -1021,6 +1027,9 @@ class YahtzeeGUI extends JFrame {
         c.remove(con6Label);
     }
 
+    /**
+     *   Refreshes the Word Label
+     */
     private void refreshWordLabel() {
         if (wordString == null) {
             wordLabel.setText("No Word Created");
@@ -1031,6 +1040,9 @@ class YahtzeeGUI extends JFrame {
         repaint();
     }
 
+    /**
+     * Refreshes the Label of how many Special Dice Uses are Left
+     */
     private void refreshUsesLabel() {
         specialDiceUsesLabel.setText("Uses Left: " + String.valueOf(specialDiceUsesValue));
         repaint();

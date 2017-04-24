@@ -70,6 +70,10 @@ public class ScoreCard {
 
 	}
 
+	/**
+	 * @param c The character to be scored
+	 * @return The value of the letter scored
+	 */
     private int letterScorer(char c) {
 	    if (c == 'D' || c == 'G') return 2;
 	    else if (c == 'B' || c == 'C' || c == 'M' || c == 'P') return 3;
@@ -129,6 +133,9 @@ public class ScoreCard {
 		return sum;
 	}
 
+	/**
+	 * Sets the Bonus value if prerequisits are met
+	 */
 	public void calculateBonus(){
 		int sum = 0;
 		for (int i = 0; i < 4; i++){

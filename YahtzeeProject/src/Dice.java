@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -96,6 +95,17 @@ public class Dice {
 		return kept;
 	}
 
+	/**
+	 * @return Whether or not this object is vowel
+	 */
+	public boolean getIsVowel() {
+		return isVowel;
+	}
+
+	/**
+	 * @param i The int to be converted to a char
+	 * @return The char from the given int
+	 */
 	private char intToChar(int i){
         if (i == 1 && isVowel) return 'A';
         if (i == 2 && isVowel) return 'E';
@@ -163,6 +173,10 @@ public class Dice {
         return '?';
     }
 
+	/**
+	 * @param c The char to be converted to an int
+	 * @return the int value converted from the given char
+	 */
 	public int charToInt(char c){
 		switch(c) {
 			case ('A'):

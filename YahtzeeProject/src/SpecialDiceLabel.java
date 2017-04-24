@@ -54,10 +54,4 @@ public class SpecialDiceLabel extends JToggleButton {
         repaint();
     }
 
-
-    public void setRange(int range) {
-        this.range = range;
-    }
-
-
 }

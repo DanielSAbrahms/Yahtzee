@@ -9,17 +9,13 @@
  */
 public class ScoreCardLine {
 	// the name of the ScoreCardLine (i.e. Full House)
-	String name;
-	// how many points this will be scored for, works in tatum with multiplier
-	int points;
+	private String name;
 	// how many points this was scored for
 	int pointsEarned;
 	// whether or not the ScoreCardLine has been used this game.
 	boolean used;
 
-	String wordScored;
-
-
+	private String wordScored;
 
 	/**
 	 *  @param newName- String value of name attribute
@@ -29,15 +25,20 @@ public class ScoreCardLine {
 	public ScoreCardLine(String newName, int newPoints, boolean newUsed) {
 	    pointsEarned = 0;
 		name = newName;
-		points = newPoints;
 		used = newUsed;
 	}
 
+	/**
+	 * @return The word scored for this line
+	 */
     public String getWordScored() {
         return wordScored;
     }
 
-    public void setWordScored(String wordScored) {
+	/**
+	 * @param wordScored the Word to be set for the wordScored value
+	 */
+	public void setWordScored(String wordScored) {
         this.wordScored = wordScored;
     }
 
@@ -56,11 +57,6 @@ public class ScoreCardLine {
 		name = newName;
 	}
 
-
-    public void setPointsEarned() {
-		pointsEarned = points;
-    }
-
 	/**
 	 * @return the attribute pointsEarned
 	*/
@@ -68,6 +64,9 @@ public class ScoreCardLine {
         return pointsEarned;
     }
 
+	/**
+	 * @param newPointsEarned The points earned for this line
+	 */
 	public void setPointsEarned(int newPointsEarned) {
 		pointsEarned = newPointsEarned;
 	}
