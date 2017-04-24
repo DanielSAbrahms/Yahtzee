@@ -12,6 +12,7 @@ public class ScoreCard {
 	ScoreCardLine line[];
 	boolean bonusUsed = false;
 	private int totalScore = 0;
+	private int bonus = 0;
 
 
 	/**
@@ -42,27 +43,31 @@ public class ScoreCard {
 	/**
 	 * @return totalScore value
 	 */
-	public int getTotalScore() {
+	public void calculateTotalScore() {
 	    totalScore = 0;
 	    for (int i = 0; i < 11; i++) {
 	        totalScore += line[i].getPointsEarned();
         }
-		if(!bonusUsed){
-			totalScore += calculateBonus();
-		}
-		return totalScore;
+        calculateBonus();
+		totalScore += bonus;
 	}
+
+	public int getTotalScore() {
+	    return totalScore;
+    }
 
 	/**
 	 * Every possible score has been printed
      * @param hand- hand object that has been initiated
 	**/
-	public int checkScore(String str) {
+	public int checkScore(String str, boolean doublePointsActive) {
 		int score = 0;
 		for (int i = 0; i < str.length(); i++) {
             score+=letterScorer(str.charAt(i));
         }
-        return score + str.length();
+        if (doublePointsActive) return (score + str.length())*2;
+		else return score + str.length();
+
 	}
 
     private int letterScorer(char c) {
@@ -124,16 +129,14 @@ public class ScoreCard {
 		return sum;
 	}
 
-	public int calculateBonus(){
+	public void calculateBonus(){
 		int sum = 0;
 		for (int i = 0; i < 4; i++){
-			//sum += line[i].getPointsEarned();
-			sum += 15;
+			sum += line[i].getPointsEarned();
 		}
 		if(sum >= 30) {
 			bonusUsed = true;
-			return 15;
+			bonus = 15;
 		}
-		return 0;
 	}
 }

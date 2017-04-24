@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" afterPath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/SCTable.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/SCTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCardLine.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ScoreCardLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$1.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$10.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$11.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$12.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$13.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$2.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$3.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$4.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$5.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$6.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$7.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$8.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$9.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -67,24 +47,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YahtzeeGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="YahtzeeGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="901" column="58" lean-forward="false" selection-start-line="901" selection-start-column="58" selection-end-line="901" selection-end-column="58" />
+            <state relative-caret-position="200">
+              <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4096#4137#0" expanded="false" />
-                <element signature="e#6985#7022#0" expanded="false" />
-                <element signature="e#32763#32764#0" expanded="true" />
-                <element signature="e#32839#32840#0" expanded="true" />
-                <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-                <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-                <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-                <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-                <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-                <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-                <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+                <element signature="e#4645#4686#0" expanded="false" />
+                <element signature="e#7534#7571#0" expanded="false" />
+                <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+                <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+                <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+                <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+                <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+                <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+                <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -93,8 +71,8 @@
       <file leaf-file-name="SpecialDiceLabel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="909">
+              <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,19 +83,16 @@
       <file leaf-file-name="SpecialDice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="336">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
               <folding>
-                <element signature="e#671#672#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#892#893#0" expanded="true" />
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#996#997#0" expanded="true" />
-                <element signature="e#1028#1029#0" expanded="true" />
-                <element signature="e#1059#1060#0" expanded="true" />
-                <element signature="e#1104#1105#0" expanded="true" />
-                <element signature="e#1144#1145#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#894#895#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,22 +101,25 @@
       <file leaf-file-name="SCTable.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="720">
+              <caret line="74" column="36" lean-forward="false" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1492979891046" expanded="true" signature="2129:2237" ph="{...}" />
+                <marker date="1492994902449" expanded="true" signature="2203:2311" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScoreCard.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScoreCard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="122" column="9" lean-forward="true" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="636">
+              <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+              <folding>
+                <element signature="e#1463#1464#0" expanded="true" />
+                <element signature="e#1493#1494#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -149,35 +127,27 @@
       <file leaf-file-name="ScoreCardLine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
+            <state relative-caret-position="714">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1089#1090#0" expanded="true" />
-                <element signature="e#1141#1142#0" expanded="true" />
-                <element signature="e#1185#1186#0" expanded="true" />
-                <element signature="e#1224#1225#0" expanded="true" />
-                <element signature="e#1253#1254#0" expanded="true" />
-                <element signature="e#1309#1310#0" expanded="true" />
-                <element signature="e#1354#1355#0" expanded="true" />
-                <element signature="e#1422#1423#0" expanded="true" />
-                <element signature="e#1440#1441#0" expanded="true" />
-                <element signature="e#1546#1547#0" expanded="true" />
-                <element signature="e#1567#1568#0" expanded="true" />
-                <element signature="e#1637#1638#0" expanded="true" />
-                <element signature="e#1657#1658#0" expanded="true" />
-                <element signature="e#1760#1761#0" expanded="true" />
-                <element signature="e#1785#1786#0" expanded="true" />
-                <element signature="e#1822#1823#0" expanded="true" />
-                <element signature="e#1853#1854#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
-                <element signature="e#1972#1973#0" expanded="true" />
-                <element signature="e#2025#2026#0" expanded="true" />
-                <element signature="e#2062#2063#0" expanded="true" />
-                <element signature="e#2131#2132#0" expanded="true" />
-                <element signature="e#2149#2150#0" expanded="true" />
-                <element signature="e#2254#2255#0" expanded="true" />
-                <element signature="e#2275#2276#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1034#1035#0" expanded="true" />
+                <element signature="e#1086#1087#0" expanded="true" />
+                <element signature="e#1130#1131#0" expanded="true" />
+                <element signature="e#1199#1200#0" expanded="true" />
+                <element signature="e#1217#1218#0" expanded="true" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
+                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1497#1498#0" expanded="true" />
+                <element signature="e#1532#1533#0" expanded="true" />
+                <element signature="e#1585#1586#0" expanded="true" />
+                <element signature="e#1622#1623#0" expanded="true" />
+                <element signature="e#1691#1692#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+                <element signature="e#1814#1815#0" expanded="true" />
+                <element signature="e#1835#1836#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,10 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>lower</find>
-      <find>totalScore</find>
-      <find>new Score</find>
-      <find>@pre</find>
       <find>setUsed</find>
       <find>keepDice7Box</find>
       <find>keepDice2Box</find>
@@ -224,6 +190,10 @@
       <find>con6Label</find>
       <find>difficultyBox</find>
       <find>'</find>
+      <find>specialDiceLabel.setEnab</find>
+      <find>uses</find>
+      <find>usesLeft</find>
+      <find>rollsLeft</find>
     </findStrings>
     <replaceStrings>
       <replace>dice7</replace>
@@ -254,6 +224,7 @@
       <replace>specialDiceLabel</replace>
       <replace>letterPicker</replace>
       <replace>&quot;</replace>
+      <replace>specialDiceUses</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -280,12 +251,12 @@
         <option value="$PROJECT_DIR$/YahtzeeProject/src/DiceLabel.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/Hand.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/Dice.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java" />
-        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java" />
         <option value="$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java" />
+        <option value="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
       </list>
     </option>
   </component>
@@ -911,7 +882,7 @@
       <workItem from="1492632499724" duration="11821000" />
       <workItem from="1492739106105" duration="1197000" />
       <workItem from="1492894890369" duration="10698000" />
-      <workItem from="1492963717066" duration="15586000" />
+      <workItem from="1492963717066" duration="25785000" />
     </task>
     <task id="LOCAL-00001" summary="Functioning GUI, no Game yet">
       <created>1489858999570</created>
@@ -1039,11 +1010,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492981022547</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Everything Working but the Special Dice and bonus">
+      <created>1492981034860</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1492981034861</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63508000" />
+    <option name="totallyTimeSpent" value="73707000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1081,7 +1059,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35936254" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35880932" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1168,12 +1146,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="intValue" language="JAVA" />
-        <watch expression="images[d.charToInt(d.getValue())]" language="JAVA" />
+        <watch expression="specialDiceLabel.getSd().getUsesLeft()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -1182,34 +1162,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeProject.java" />
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1231,17 +1198,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1263,17 +1228,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1295,17 +1258,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1327,17 +1288,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1357,7 +1316,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/GUIRound.java" />
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/Round.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/ActionListener.java" />
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/diceSide5_Locked.png" />
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/backgroundFancy.png" />
     <entry file="uml://JAVA/YahtzeeGUI" />
@@ -1446,6 +1404,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1034#1035#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1130#1131#0" expanded="true" />
+            <element signature="e#1199#1200#0" expanded="true" />
+            <element signature="e#1217#1218#0" expanded="true" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1532#1533#0" expanded="true" />
+            <element signature="e#1585#1586#0" expanded="true" />
+            <element signature="e#1622#1623#0" expanded="true" />
+            <element signature="e#1691#1692#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+            <element signature="e#1814#1815#0" expanded="true" />
+            <element signature="e#1835#1836#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -1456,107 +1441,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCardLine.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="41" column="37" lean-forward="false" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-          <folding>
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1185#1186#0" expanded="true" />
-            <element signature="e#1224#1225#0" expanded="true" />
-            <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1309#1310#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-            <element signature="e#1546#1547#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-            <element signature="e#1760#1761#0" expanded="true" />
-            <element signature="e#1785#1786#0" expanded="true" />
-            <element signature="e#1822#1823#0" expanded="true" />
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2025#2026#0" expanded="true" />
-            <element signature="e#2062#2063#0" expanded="true" />
-            <element signature="e#2131#2132#0" expanded="true" />
-            <element signature="e#2149#2150#0" expanded="true" />
-            <element signature="e#2254#2255#0" expanded="true" />
-            <element signature="e#2275#2276#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="34" column="7" lean-forward="false" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1104#1105#0" expanded="true" />
-            <element signature="e#1144#1145#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="546">
+          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SCTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        <state relative-caret-position="720">
+          <caret line="74" column="36" lean-forward="false" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1492979891046" expanded="true" signature="2129:2237" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="901" column="58" lean-forward="false" selection-start-line="901" selection-start-column="58" selection-end-line="901" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4096#4137#0" expanded="false" />
-            <element signature="e#6985#7022#0" expanded="false" />
-            <element signature="e#32763#32764#0" expanded="true" />
-            <element signature="e#32839#32840#0" expanded="true" />
-            <element signature="class#ForcedListSelectionModel#0" expanded="false" />
-            <marker date="1492980649001" expanded="false" signature="24444:24463" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="24476:24490" ph=" }" />
-            <marker date="1492980649001" expanded="false" signature="34164:40579" ph="Dice Checkboxes Listeners" />
-            <marker date="1492980649001" expanded="false" signature="37195:37744" ph="{...}" />
-            <marker date="1492980649001" expanded="false" signature="45168:45179" ph=" { " />
-            <marker date="1492980649001" expanded="false" signature="45233:45239" ph=" }" />
+            <marker date="1492994902449" expanded="true" signature="2203:2311" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/ScoreCard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="122" column="9" lean-forward="true" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+        <state relative-caret-position="636">
+          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding>
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1493#1494#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/SpecialDiceLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="909">
+          <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/Images/refresh.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="23" column="56" lean-forward="false" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4645#4686#0" expanded="false" />
+            <element signature="e#7534#7571#0" expanded="false" />
+            <marker date="1493000187293" expanded="false" signature="24993:25012" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="25025:25039" ph=" }" />
+            <marker date="1493000187293" expanded="false" signature="36546:43744" ph="Dice Checkboxes Listeners" />
+            <marker date="1493000187293" expanded="false" signature="41497:42133" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48951:49206" ph="{...}" />
+            <marker date="1493000187293" expanded="false" signature="48990:49001" ph=" { " />
+            <marker date="1493000187293" expanded="false" signature="49055:49061" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>

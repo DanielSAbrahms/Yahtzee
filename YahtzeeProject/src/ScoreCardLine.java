@@ -19,7 +19,7 @@ public class ScoreCardLine {
 
 	String wordScored;
 
-	private int potentialPoints;
+
 
 	/**
 	 *  @param newName- String value of name attribute
@@ -28,7 +28,6 @@ public class ScoreCardLine {
 	 */
 	public ScoreCardLine(String newName, int newPoints, boolean newUsed) {
 	    pointsEarned = 0;
-	    potentialPoints = 0;
 		name = newName;
 		points = newPoints;
 		used = newUsed;
@@ -42,13 +41,6 @@ public class ScoreCardLine {
         this.wordScored = wordScored;
     }
 
-    public int getPotentialPoints() {
-		return potentialPoints;
-	}
-
-	public void setPotentialPoints(int potentialPoints) {
-		this.potentialPoints = potentialPoints;
-	}
 
 	/**
 	 * @return the attribute name
@@ -64,19 +56,6 @@ public class ScoreCardLine {
 		name = newName;
 	}
 
-	/**
-	 * @return the attribute points
-	 */
-	public int getPoints() {
-		return points;
-	}
-
-	/**
-	 * @param newPoints- int value of points attribute
-	 */
-	public void setPoints(int newPoints) {
-		points = newPoints;
-	}
 
     public void setPointsEarned() {
 		pointsEarned = points;

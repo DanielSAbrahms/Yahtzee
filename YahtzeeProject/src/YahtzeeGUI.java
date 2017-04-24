@@ -48,16 +48,20 @@ class YahtzeeGUI extends JFrame {
     private static final int LABEL_X_COOR = 1105;
     private static final int LABEL_Y_COOR = 14;
     private static final int WORD_LABEL_X_COOR = 50;
-
-    //</editor-fold>
     private static final int WORD_LABEL_Y_COOR = 144;
     private static final int SCORE_LABEL_X_COOR = 1095;
     private static final int SCORE_LABEL_Y_COOR = 530;
     private static final int ROLLS_LEFT_LABEL_X_COOR = 308;
     private static final int ROLLS_LEFT_LABEL_Y_COOR = 663;
+    private static final int USES_LEFT_LABEL_X_COOR = 1130;
+    private static final int USES_LEFT_LABEL_Y_COOR = 300;
     // User Directory to Locate Source Images
     private static final String USER_DIR = System.getProperty("user.home") + "/Desktop/Yahtzee/YahtzeeProject/src/Images";
     //<editor-fold desc = "Private Variables">
+    private final String DOUBLE_LETTER = "Double Letter";
+    private final String DOUBLE_POINTS = "Double Points";
+    private final String BLANK_LETTER = "Blank Letter";
+    private final String FORCED_HAND = "Forced Hand";
     private SCTable scTable;
     private DiceLabel vowel1Label;
     private DiceLabel vowel2Label;
@@ -75,6 +79,7 @@ class YahtzeeGUI extends JFrame {
     private JLabel difficultyLabel;
     private JLabel totalScoreLabel;
     private JLabel rollsLeftLabel;
+    private JLabel specialDiceUsesLabel;
     private JButton rollButton;
     private JButton confirmSelectionButton;
     private JButton resetWordButton;
@@ -89,8 +94,12 @@ class YahtzeeGUI extends JFrame {
     private int totalScoreValue = 0;
     private int rollsLeft;
     private int roundsLeft;
+    private int specialDiceUsesValue = 3;
     private int rollWarningValue;
     private boolean pause = false;
+    private boolean doublePointsActive = false;
+    private boolean doubleLetterActive = false;
+    private boolean blankLetterActive = false;
     //</editor-fold>
     private Hand h;
 
@@ -434,6 +443,7 @@ class YahtzeeGUI extends JFrame {
                 "W", "X", "Y", "Z"};
         letterPicker = new JComboBox(letters);
         letterPicker.setSelectedIndex(0);
+        letterPicker.setEnabled(false);
         letterPicker.setSize(LETTER_PICKER_WIDTH, LETTER_PICKER_HEIGHT);
         letterPicker.setLocation(SPECIAL_DICE_X_COOR, SPECIAL_DICE_Y_COOR + 120);
         c.add(letterPicker);
@@ -466,6 +476,14 @@ class YahtzeeGUI extends JFrame {
         rollsLeftLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT);
         rollsLeftLabel.setLocation(ROLLS_LEFT_LABEL_X_COOR + 200, ROLLS_LEFT_LABEL_Y_COOR);
         c.add(rollsLeftLabel);
+
+        specialDiceUsesLabel = new JLabel();
+        specialDiceUsesLabel.setFont(new Font("Garamond", Font.BOLD, 20));
+        specialDiceUsesLabel.setForeground(Color.BLACK);
+        specialDiceUsesLabel.setText("Uses Left: " + String.valueOf(specialDiceUsesValue));
+        specialDiceUsesLabel.setSize(LABEL_WIDTH, LABEL_HEIGHT);
+        specialDiceUsesLabel.setLocation(USES_LEFT_LABEL_X_COOR, USES_LEFT_LABEL_Y_COOR);
+        c.add(specialDiceUsesLabel);
         //</editor-fold>
 
 
@@ -487,6 +505,10 @@ class YahtzeeGUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 wordString = "";
+                doubleLetterActive = false;
+                blankLetterActive = false;
+                specialDiceLabel.setEnabled(true);
+                letterPicker.setEnabled(false);
                 vowel1Label.getD().setKept(false);
                 vowel2Label.getD().setKept(false);
                 vowel3Label.getD().setKept(false);
@@ -597,12 +619,6 @@ class YahtzeeGUI extends JFrame {
             }
         });
 
-        specialDiceLabel.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (specialDiceLabel.getSd() == null) return;
-            }
-        });
 
 
         confirmSelectionButton.addActionListener(new ActionListener() {
@@ -613,15 +629,18 @@ class YahtzeeGUI extends JFrame {
                     lineAlreadyUsedPopup.showMessageDialog(null, "Line Already Used");
                     return;
                 }
+                ScoreCardLine lineUsed = scTable.getSc().getLine(getSelectedLine());
+                lineUsed.setUsed(true);
+                lineUsed.setPointsEarned(scTable.getSc().checkScore(wordString, doublePointsActive));
+                lineUsed.setWordScored(wordString);
                 rollWarningValue = 0;
                 rollsLeft = 0;
                 confirmSelectionButton.setEnabled(false);
                 rollButton.setEnabled(true);
                 pause = false;
-                ScoreCardLine lineUsed = scTable.getSc().getLine(getSelectedLine());
-                lineUsed.setUsed(true);
-                lineUsed.setPointsEarned(scTable.getSc().checkScore(wordString));
-                lineUsed.setWordScored(wordString);
+                doublePointsActive = false;
+                doubleLetterActive = false;
+                blankLetterActive = false;
                 wordString = "";
                 refresh();
                 reset(false);
@@ -633,14 +652,47 @@ class YahtzeeGUI extends JFrame {
             }
         });
 
+        specialDiceLabel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (specialDiceLabel.getSd() == null){
+                    return;
+                }
+                specialDiceLabel.setEnabled(false);
+                specialDiceUsesValue--;
+                SpecialDice sd = specialDiceLabel.getSd();
+                if (sd.getValue() == DOUBLE_POINTS) {
+                    doublePointsActive = true;
+                } else if (sd.getValue() == DOUBLE_LETTER) {
+                    doubleLetterActive = true;
+                } else if (sd.getValue() == BLANK_LETTER) {
+                    letterPicker.setEnabled(true);
+                    letterPicker.setBackground(Color.YELLOW);
+                }
+                refresh();
+            }
+        });
+
+        letterPicker.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!blankLetterActive) {
+                    blankLetterActive = true;
+                    wordString += letterPicker.getSelectedItem();
+                }
+                refreshWordLabel();
+            }
+        });
+
         //<editor-fold desc = "Dice Checkboxes Listeners">
         vowel1Label.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (vowel1Label.getD() == null) return;
                 if (vowel1Label.isSelected()) {
-                    if (pause && !vowel1Label.getD().getKept()) {
+                    if ((pause && !vowel1Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += vowel1Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     vowel1Label.getD().setKept(true);
                 } else {
@@ -658,8 +710,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (vowel2Label.getD() == null) return;
                 if (vowel2Label.isSelected()) {
-                    if (pause && !vowel2Label.getD().getKept()) {
+                    if ((pause && !vowel2Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += vowel2Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     vowel2Label.getD().setKept(true);
                 } else {
@@ -677,8 +730,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (vowel3Label.getD() == null) return;
                 if (vowel3Label.isSelected()) {
-                    if (pause && !vowel3Label.getD().getKept()) {
+                    if ((pause && !vowel3Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += vowel3Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     vowel3Label.getD().setKept(true);
                 } else {
@@ -696,8 +750,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con1Label.getD() == null) return;
                 if (con1Label.isSelected()) {
-                    if (pause && !con1Label.getD().getKept()) {
+                    if ((pause && !con1Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con1Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con1Label.getD().setKept(true);
                 } else {
@@ -715,8 +770,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con2Label.getD() == null) return;
                 if (con2Label.isSelected()) {
-                    if (pause && !con2Label.getD().getKept()) {
+                    if ((pause && !con2Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con2Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con2Label.getD().setKept(true);
                 } else {
@@ -734,8 +790,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con3Label.getD() == null) return;
                 if (con3Label.isSelected()) {
-                    if (pause && !con3Label.getD().getKept()) {
+                    if ((pause && !con3Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con3Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con3Label.getD().setKept(true);
                 } else {
@@ -753,8 +810,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con4Label.getD() == null) return;
                 if (con4Label.isSelected()) {
-                    if (pause && !con4Label.getD().getKept()) {
+                    if ((pause && !con4Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con4Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con4Label.getD().setKept(true);
                 } else {
@@ -772,8 +830,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con5Label.getD() == null) return;
                 if (con5Label.isSelected()) {
-                    if (pause && !con5Label.getD().getKept()) {
+                    if ((pause && !con5Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con5Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con5Label.getD().setKept(true);
                 } else {
@@ -791,8 +850,9 @@ class YahtzeeGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (con6Label.getD() == null) return;
                 if (con6Label.isSelected()) {
-                    if (pause && !con6Label.getD().getKept()) {
+                    if ((pause && !con6Label.getD().getKept()) || (pause && doubleLetterActive)) {
                         wordString += con6Label.getD().getValue();
+                        doubleLetterActive = false;
                     }
                     con6Label.getD().setKept(true);
                 } else {
@@ -842,8 +902,9 @@ class YahtzeeGUI extends JFrame {
         con4Label.setD(null);
         con5Label.setD(null);
         con6Label.setD(null);
+        specialDiceLabel.setSd(null);
 
-        JToggleButton[] dice = {vowel1Label, vowel2Label, vowel3Label, con1Label, con2Label, con3Label, con4Label, con5Label, con6Label};
+        JToggleButton[] dice = {vowel1Label, vowel2Label, vowel3Label, con1Label, con2Label, con3Label, con4Label, con5Label, con6Label, specialDiceLabel};
         for (int i = 0; i < dice.length; i++) {
             changeImage(dice[i], unknownDiceImage);
         }
@@ -882,6 +943,7 @@ class YahtzeeGUI extends JFrame {
         con4Label.refresh();
         con5Label.refresh();
         con6Label.refresh();
+        specialDiceLabel.refresh();
         if (dicePerGameValue == 6) {
             DiceLabel[] hand = {vowel1Label, vowel2Label, con1Label, con2Label, con3Label, con4Label};
             h = new Hand(hand);
@@ -899,6 +961,7 @@ class YahtzeeGUI extends JFrame {
      * Sets all the Score Labels to the score Values
      */
     private void refreshScores() {
+        scTable.getSc().calculateTotalScore();
         totalScoreValue = scTable.getSc().getTotalScore();
         totalScoreLabel.setText("Total: " + String.valueOf(totalScoreValue));
         repaint();
@@ -915,7 +978,7 @@ class YahtzeeGUI extends JFrame {
         rollButton.setText("Roll Hand");
         rollsLeftLabel.setText("Rolls Left: " + rollsLeft);
         refreshWordLabel();
-
+        refreshUsesLabel();
         repaint();
     }
 
@@ -925,13 +988,23 @@ class YahtzeeGUI extends JFrame {
      * @param fullReset boolean if its a newGame, resets everything
      */
     private void reset(boolean fullReset) {
+        wordString = "";
+        refreshWordLabel();
         rollsLeft = 3;
+        doublePointsActive = false;
+        doubleLetterActive = false;
+        blankLetterActive = false;
+        letterPicker.setEnabled(false);
         refresh();
         resetDice();
         if (fullReset) {
             scTable.reset();
             totalScoreValue = 0;
+            specialDiceUsesValue = 3;
             refreshScores();
+        }
+        if (specialDiceUsesValue > 3) {
+            specialDiceLabel.setEnabled(true);
         }
         repaint();
     }
@@ -955,6 +1028,11 @@ class YahtzeeGUI extends JFrame {
         }
         String str = wordString.toUpperCase();
         wordLabel.setText(str);
+        repaint();
+    }
+
+    private void refreshUsesLabel() {
+        specialDiceUsesLabel.setText("Uses Left: " + String.valueOf(specialDiceUsesValue));
         repaint();
     }
 }

@@ -71,6 +71,8 @@ public class SCTable extends JTable {
         String[][] values = new String[11][3];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
+            line.setPointsEarned(0);
+            line.setWordScored("-");
             String[] a = {line.getName(), String.valueOf(0), "-" };
             values[i] = a;
         }
