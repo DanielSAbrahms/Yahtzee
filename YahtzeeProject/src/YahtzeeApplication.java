@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
@@ -31,9 +32,11 @@ class NullOutputStream extends OutputStream {
 public class YahtzeeApplication {
     public static void main (String [] args) {
         System.setOut(new PrintStream(new NullOutputStream()));
-        YahtzeeGUI frame = new YahtzeeGUI("Yahtzee");
+        YahtzeeGUI frame = new YahtzeeGUI("WORDZEE GOTY");
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.setSize(1280, 760);
+        frame.setIconImage(new ImageIcon(System.getProperty("user.home")
+                + "/Desktop/Yahtzee/YahtzeeProject/src//Icon.png").getImage());
         frame.setVisible(true);
     }
 }

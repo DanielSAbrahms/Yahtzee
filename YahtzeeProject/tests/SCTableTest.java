@@ -11,7 +11,7 @@ public class SCTableTest {
     {
         SCTable table = new SCTable();
         table.refresh();
-        table.reset();
+        table.reset(true);
         assertNotEquals(null, table.getSc());
     }
 

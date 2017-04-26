@@ -11,7 +11,7 @@ public class SCTable extends JTable {
 
     SCTable() {
         sc = new ScoreCard();
-        reset();
+        reset(true);
     }
 
     /**
@@ -67,12 +67,13 @@ public class SCTable extends JTable {
     /**
      * Resets all the values of the table
      */
-    void reset() {
+    void reset(boolean fullReset) {
         String[][] values = new String[11][3];
         for (int i = 0; i < 11; i++){
             ScoreCardLine line = sc.getLine(i);
             line.setPointsEarned(0);
             line.setWordScored("-");
+            if (fullReset) line.setUsed(false);
             String[] a = {line.getName(), String.valueOf(0), "-" };
             values[i] = a;
         }

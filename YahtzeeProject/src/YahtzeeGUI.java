@@ -25,7 +25,7 @@ class YahtzeeGUI extends JFrame {
     private static final int GAME_BUTTON_HEIGHT = 30;
     private static final int GAME_BUTTON_WIDTH = 100;
     private static final int TABLE_WIDTH = 1030;
-    private static final int TABLE_HEIGHT = 379;
+    private static final int TABLE_HEIGHT = 374;
     private static final int LABEL_WIDTH = 150;
     private static final int LABEL_HEIGHT = 30;
     private static final int WORD_LABEL_WIDTH = 1030;
@@ -231,7 +231,7 @@ class YahtzeeGUI extends JFrame {
             doublePointsImage_raw = ImageIO.read(new File(USER_DIR + "/doublePoints.png"));
             blankLetterImage_raw = ImageIO.read(new File(USER_DIR + "/blankLetter.png"));
             unknownDiceImage_raw = ImageIO.read(new File(USER_DIR + "/unknownDice.png"));
-            background_raw = ImageIO.read(new File(USER_DIR + "/backgroundFancy.png"));
+            background_raw = ImageIO.read(new File(USER_DIR + "/background.png"));
             refresh_raw = ImageIO.read(new File(USER_DIR + "/refresh.png"));
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -414,8 +414,8 @@ class YahtzeeGUI extends JFrame {
         };
         scTable.setSelectionModel(new ForcedListSelectionModel());
         scTable.setRowSelectionAllowed(true);
-        scTable.setRowHeight(27);
-        scTable.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        scTable.setRowHeight(34);
+        scTable.setFont(new Font("Times New Roman", Font.PLAIN, 22));
         scTable.setSize(TABLE_WIDTH, TABLE_HEIGHT);
         scTable.setLocation(TABLE_X_COOR, TABLE_Y_COOR);
         c.add(scTable);
@@ -1003,7 +1003,7 @@ class YahtzeeGUI extends JFrame {
         refresh();
         resetDice();
         if (fullReset) {
-            scTable.reset();
+            scTable.reset(fullReset);
             totalScoreValue = 0;
             specialDiceUsesValue = 3;
             refreshScores();
