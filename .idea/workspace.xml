@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e35aca0e-dc03-4f64-b79a-68b92d938828" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/YahtzeeProject/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/Images/background.png" afterPath="$PROJECT_DIR$/YahtzeeProject/src/Images/background.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" afterPath="$PROJECT_DIR$/out/artifacts/Yahtzee_jar/Yahtzee.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/ForcedListSelectionModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/Images/background.png" afterPath="$PROJECT_DIR$/out/production/Yahtzee/Images/background.png" />
@@ -23,12 +21,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$8.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$8.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$9.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI$9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI.class" afterPath="$PROJECT_DIR$/out/production/Yahtzee/YahtzeeGUI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Yahtzee_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Yahtzee_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/SCTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" afterPath="$PROJECT_DIR$/YahtzeeProject/src/YahtzeeGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/YahtzeeProject/tests/SCTableTest.java" afterPath="$PROJECT_DIR$/YahtzeeProject/tests/SCTableTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -775,7 +768,7 @@
       <workItem from="1493068000583" duration="290000" />
       <workItem from="1493069558606" duration="56000" />
       <workItem from="1493226462788" duration="2449000" />
-      <workItem from="1493234683810" duration="1253000" />
+      <workItem from="1493234683810" duration="1277000" />
     </task>
     <task id="LOCAL-00001" summary="Functioning GUI, no Game yet">
       <created>1489858999570</created>
@@ -931,7 +924,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493068243566</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Final Edition - GOTY">
+      <created>1493235959819</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1493235959819</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -964,7 +964,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86453000" />
+    <option name="totallyTimeSpent" value="86477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1050,7 +1050,8 @@
     <MESSAGE value="Everything Working but the Special Dice and bonus" />
     <MESSAGE value="Guys....I think its done" />
     <MESSAGE value="Few Bugs to Squash" />
-    <option name="LAST_COMMIT_MESSAGE" value="Few Bugs to Squash" />
+    <MESSAGE value="Final Edition - GOTY" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final Edition - GOTY" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
